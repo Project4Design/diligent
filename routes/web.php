@@ -15,13 +15,17 @@ Route::get('/', function () {
     return view('login');
 })->name('login');
 
+//verificar rutas con permiso auth
 Route::group(['middleware' => 'auth'], function() {
-
    Route::get('dashboard', function () {
     return view('layouts.app');
    })->name('index');
 
+    
 });
+//fin group
+
+
 
 
 //rutas del auth Ver formulario de login y autenticacion
