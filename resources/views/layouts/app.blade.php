@@ -19,15 +19,19 @@
     <link rel="shortcut icon" href="{{asset('img/unnamed.png')}}">
 
   </head>
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ route('index') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>D</b></span>
+          <span class="logo-mini"><img class="img-responsive" src="{{ asset('img/logo.png') }}" alt="Logo" style="height:30px;margin:10px 0 0 10px"></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Diligent</b></span>
+          <span class="logo-lg">
+            <b style="font-size: 18px">
+              <img src="{{ asset('img/logo.png') }}" alt="logo" height="25px">&nbsp;{{ config('app.name') }}
+            </b>
+          </span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -49,10 +53,8 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    
                     <p>
-                      www.github.com/simoleans - Laravel
-                      <small>Fran - Siguiendo tutoriales</small>
+                      <small>{{ Auth::user()->email }}</small>
                     </p>
                   </li>
                   
@@ -93,11 +95,15 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-clipboard"></i>
-                <span>Registry</span>
+                <span>Insurances</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Show All</a></li>
+                <li><a href="{{ route('index') }}"><i class="fa fa-circle-o"></i> Show All</a></li>
+                <li><a href="{{ url('/car') }}"><i class="fa fa-circle-o"></i> Car</a></li>
+                <li><a href="{{ url('/van') }}"><i class="fa fa-circle-o"></i> Van</a></li>
+                <li><a href="{{ url('/home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
+                <li><a href="{{ url('/business') }}"><i class="fa fa-circle-o"></i> Business</a></li>
               </ul>
             </li>
             
@@ -121,7 +127,7 @@
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
       <footer class="main-footer">
-        <strong>Copyright &copy; 2016-2017 <a href="/www.project4design.com.ve">Project 4 Design C.A</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2016-2017 <a href="http://www.project4design.com.ve">Project 4 Design C.A</a>.</strong> All rights reserved.
       </footer>
     </div>
 

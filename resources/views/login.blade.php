@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Insure | UK</title>
+    <title>{{ config('app.name') }}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -14,14 +14,15 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
-    <link rel="shortcut icon" href="{{asset('img/unnamed.png')}}">
+    <link rel="shortcut icon" href="{{asset('img/logo.png')}}">
 
   </head>
 
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>INSURE</b></a>
+    <center><img class="img-responsive" src="{{ asset('img/logo.png') }}" alt="Logo" style="height:75px"></center>
+      <a href="#"><b>{{ config('app.name') }}</b></a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
       <p class="login-box-msg">-Authorized personal only-</p>

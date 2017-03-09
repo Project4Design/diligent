@@ -27,7 +27,7 @@
             <p>Van Insurances</p>
           </div>
           <div class="icon">
-            <i class="fa fa-cubes"></i>
+            <i class="fa fa-bus"></i>
           </div>
           <a href="#" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
@@ -39,7 +39,7 @@
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($homes) }}</h3>
-            <p>House Insurances</p>
+            <p>Home Insurances</p>
           </div>
           <div class="icon">
             <i class="fa fa-home"></i>
