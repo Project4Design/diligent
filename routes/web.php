@@ -17,10 +17,13 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function() {
 
+	Route::get('dashboard','HomeController@index')->name('index');
+/*
    Route::get('dashboard', function () {
     return view('layouts.app');
+    
    })->name('index');
-
+*/
 });
 
 

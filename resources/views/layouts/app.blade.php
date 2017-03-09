@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Insure | UK</title>
+    <title>@yield('title',config('app.name'))</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -21,15 +21,13 @@
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-
       <header class="main-header">
-
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>In</b>S</span>
+          <span class="logo-mini"><b>D</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Insure</b></span>
+          <span class="logo-lg"><b>Diligent</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -46,7 +44,6 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <small class="bg-red">Online</small>
                   <span class="hidden-xs">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -63,10 +60,10 @@
                   <li class="user-footer">
                     
                     <div class="pull-right">
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                       {{ csrf_field() }}
-                       <input type="submit" name="logout" class="btn btn-default" value="Logout">
-                    </form>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="submit" name="logout" class="btn btn-default" value="Logout">
+                      </form>
                     </div>
                   </li>
                 </ul>
@@ -85,11 +82,17 @@
                     
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header"></li>
+            <li class="header">MENU</li>
+
+            <li>
+              <a href="{{ url('/') }}">
+                <i class="fa fa-home"></i> <span>Home</span>
+              </a>
+            </li> 
             
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-laptop"></i>
+                <i class="fa fa-clipboard"></i>
                 <span>Registry</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -100,7 +103,7 @@
             
              <li>
               <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Reports</span>
+                <i class="fa fa-file-pdf-o"></i> <span>Reports</span>
                 <small class="label pull-right bg-red">PDF</small>
               </a>
             </li> 
@@ -113,45 +116,14 @@
        <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        
         <!-- Main content -->
-        <section class="content">
-          
-          <div class="row">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
-                  <h3 class="box-title">System insure</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                  	<div class="row">
-	                  	<div class="col-md-12">
-		                          <!--Contenido-->
-                            <h2> @yield('content') </h2>
-		                          <!--Fin Contenido-->
-                           </div>
-                        </div>
-		                    
-                  		</div>
-                  	</div><!-- /.row -->
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-
-        </section><!-- /.content -->
+        @yield('content')
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
       <footer class="main-footer">
-        
         <strong>Copyright &copy; 2016-2017 <a href="/www.project4design.com.ve">Project 4 Design C.A</a>.</strong> All rights reserved.
       </footer>
+    </div>
 
       
     <!-- jQuery 2.1.4 -->
