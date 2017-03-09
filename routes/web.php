@@ -17,11 +17,9 @@ Route::get('/', function () {
 
 //verificar rutas con permiso auth
 Route::group(['middleware' => 'auth'], function() {
-   Route::get('dashboard', function () {
-    return view('layouts.app');
-   })->name('index');
 
-    
+	Route::get('dashboard','HomeController@index')->name('index');
+
 });
 //fin group
 
