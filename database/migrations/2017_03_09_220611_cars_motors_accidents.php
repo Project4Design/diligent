@@ -35,6 +35,9 @@ class CarsMotorsAccidents extends Migration
      */
     public function down()
     {
+        Schema::table('cars', function (Blueprint $table) {
+        $table->dropForeign('cars_id_motor_accidents_foreign');
+    });
         Schema::dropIfExists('cars_motors_accidents');
     }
 

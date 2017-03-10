@@ -23,8 +23,7 @@ class CarsMotorsOffense extends Migration
             $table->string('ban_month', 195)->nullable()->comment('ban if any');
             
         });
-
-         Schema::table('cars', function($table)
+ Schema::table('cars', function($table)
             {
                 $table->foreign('id_motor_accidents')->references('id')->on('cars_motors_accidents');
                $table->foreign('id_motor_offences')->references('id')->on('cars_motors_offences');
@@ -40,7 +39,11 @@ class CarsMotorsOffense extends Migration
      * @return void
      */
     public function down()
-    {
-        Schema::dropIfExist('cars_motors_offences');
+{
+    Schema::table('cars', function (Blueprint $table) {
+        $table->dropForeign('cars_id_motor_offences_foreign');
+    });
+    
+        Schema::dropIfExists('cars_motors_offences');
     }
 }
