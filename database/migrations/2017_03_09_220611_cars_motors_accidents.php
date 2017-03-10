@@ -15,8 +15,8 @@ class CarsMotorsAccidents extends Migration
     {
         Schema::create('cars_motors_accidents', function (Blueprint $table) {
             $table->increments('id_cars_motors_accidents');
-            $table->integer('id_cars')->unsigned();
-            $table->foreign('id_cars')->references('id')->on('cars');
+            $table->integer('id_motor_accidents')->unsigned();
+            $table->foreign('id_motor_accidents')->references('id')->on('cars');
             $table->string('type',195)->nullable()->comment('Type of accident
 ');
             $table->string('date',195)->nullable()->comment('Date of accident'); //DD-MM-YYYY

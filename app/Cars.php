@@ -85,4 +85,9 @@ class Cars extends Model
 
    	return $this->hasMany(Cars_motors_accidents::class);
    }
+
+   public function cars_motors_offenses()
+   {
+      return $this->hasMany(Cars_motors_offenses::class);
+   }
 }
