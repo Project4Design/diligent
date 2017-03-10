@@ -14,6 +14,8 @@ class CreateCarInsuranceTable extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
+
+            $table->engine = 'InnoDB';
             $table->increments('id');
 
             //Personal info
@@ -53,8 +55,9 @@ class CreateCarInsuranceTable extends Migration
             $table->string('became_resident')->nullable()->comment('If no born_uk.'); //DD-MM-YYYY
             $table->string('use_other_vehicle');
             $table->string('monitoring_criminal_convictions');
-            $table->string('motor_accidents')->comment('In the last 5 years.'); //RELATION WITH CAR_MOTOR_ACCIDENTS
-            $table->string('motor_offences')->comment('In the last 5 years.'); //RELATION WITH CAR_MOTOR_OFFENSES
+            $table->integer('id_motor_accidents')->unsigned(); //RELATION WITH CAR_MOTOR_ACCIDENTS
+            $table->integer('id_motor_offences')->unsigned(); //RELATION WITH CAR_MOTOR_OFFENSES
+         
 
             //Vehicles Details
             $table->string('vehicle_registration');
@@ -102,7 +105,9 @@ class CreateCarInsuranceTable extends Migration
             $table->timestamps();
         });
 
-    }
+           
+
+}
 
     /**
      * Reverse the migrations.
