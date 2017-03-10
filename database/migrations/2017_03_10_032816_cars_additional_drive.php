@@ -15,6 +15,22 @@ class CarsAdditionalDrive extends Migration
     {
         Schema::create('cars_additional_drive', function (Blueprint $table) {
             $table->increments('id');
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
+            $table->
             $table->timestamps();
         });
     }
