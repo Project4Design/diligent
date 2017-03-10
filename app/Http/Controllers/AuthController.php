@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
 
+
 	public function index()
 	 {
-
 	 		return view('login');
+
 
 	 }
     public function authenticate(Request $request)
@@ -28,7 +29,7 @@ class AuthController extends Controller
 
 	        if (Auth::attempt($request->only(['email' , 'password'])))
 	        {
-	        	return redirect('dashboard');
+	        	return redirect()->intended('dashboard');
 	            
 	        }else{
 

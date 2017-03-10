@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+ Route::get('/', function () {
+
+ 	if(Auth::check()){
+ 		return redirect('/dashboard');
+ 	}
     return view('login');
 })->name('login');
+
+
 
 //verificar rutas con permiso auth
 Route::group(['middleware' => 'auth'], function() {

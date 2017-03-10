@@ -18,12 +18,12 @@ class CreateCarInsuranceTable extends Migration
 
             //Personal info
             $table->string('title');
-            $table->string('firts_name');
+            $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('sure_name');
             $table->string('birthdate'); //DD-MM-YYYY
             $table->string('house_number');
-            $table->string('firts_line_address');
+            $table->string('first_line_address');
             $table->string('postcode');
             $table->string('marital_status');
             $table->string('employment_status');
