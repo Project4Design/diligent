@@ -14,7 +14,7 @@ class CarsAdditionalDrive extends Migration
     public function up()
     {
         Schema::create('cars_additional_drive', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_additional_drive');
             $table->string('title')->nullable();
             $table->string('first_name')->nullable();
             $table->string('surname')->nullable();
@@ -39,6 +39,21 @@ class CarsAdditionalDrive extends Migration
             $table->timestamps();
         });
 
+        Schema::table('cars' , function($table) {
+            $table->foreign('additional_drive')->references('id_additional_drive')->on('cars_additional_drive');
+        });
+
+        Schema::table('cars_motors_accidents', function ($table) {
+            $table->foreign('id_accidents')->references('id_additional_drive')->on('cars_additional_drive');
+            
+        
+        });
+
+        Schema::table('cars_motors_offences', function ($table) {
+            $table->foreign('id_offences')->references('id_additional_drive')->on('cars_additional_drive');
+            
+        
+        });
         
 
     }

@@ -15,7 +15,7 @@ class CarsMotorsOffense extends Migration
     {
         Schema::create('cars_motors_offences', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
+            $table->increments('id_offences');
             $table->string('conviction_code', 195)->nullable()->comment('Code of conviction');
             $table->string('date_conviction', 195)->nullable()->comment('date of conviction'); //DD-MM-YYYY
             $table->string('points', 195)->nullable()->comment('points');
@@ -23,10 +23,10 @@ class CarsMotorsOffense extends Migration
             $table->string('ban_month', 195)->nullable()->comment('ban if any');
             
         });
- Schema::table('cars', function($table)
+        Schema::table('cars', function($table)
             {
-                $table->foreign('id_motor_accidents')->references('id')->on('cars_motors_accidents');
-               $table->foreign('id_motor_offences')->references('id')->on('cars_motors_offences');
+                $table->foreign('motor_accidents')->references('id_accidents')->on('cars_motors_accidents');
+               $table->foreign('motor_offences')->references('id_offences')->on('cars_motors_offences');
 
                 
             });

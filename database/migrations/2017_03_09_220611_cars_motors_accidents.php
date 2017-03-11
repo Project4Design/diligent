@@ -16,7 +16,8 @@ class CarsMotorsAccidents extends Migration
         Schema::create('cars_motors_accidents', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             
-            $table->increments('id');
+            $table->increments('id_accidents');
+            $table->string('id_additional_drive')->nullable();
             $table->string('type',195)->nullable()->comment('Type of accident');
             $table->string('date',195)->nullable()->comment('Date of accident'); //DD-MM-YYYY
             $table->string('damage',195)->nullable()->comment('Damage of accident');
