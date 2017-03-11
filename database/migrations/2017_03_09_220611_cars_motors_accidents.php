@@ -17,7 +17,10 @@ class CarsMotorsAccidents extends Migration
             $table->engine = 'InnoDB';
             
             $table->increments('id_accidents');
-            $table->string('id_additional_drive')->nullable();
+            $table->integer('id_cars')->unsigned();
+            $table->foreign('id_cars')->references('id')->on('cars')->onDelete('cascade');
+            $table->integer('id_additional_drive')->unsigned()->nullable();
+            $table->foreign('id_additional_drive')->references('id_additional_drive')->on('cars_additional_drive')->onDelete('cascade');
             $table->string('type',195)->nullable()->comment('Type of accident');
             $table->string('date',195)->nullable()->comment('Date of accident'); //DD-MM-YYYY
             $table->string('damage',195)->nullable()->comment('Damage of accident');
@@ -26,6 +29,12 @@ class CarsMotorsAccidents extends Migration
             $table->string('any_injuries',195)->nullable()->comment('any injuries of accidents'); //Yes or not
             $table->timestamps();
         });
+
+
+
+
+
+
     }
 
     
@@ -36,9 +45,7 @@ class CarsMotorsAccidents extends Migration
      */
     public function down()
     {
-        Schema::table('cars', function (Blueprint $table) {
-        $table->dropForeign('cars_id_motor_accidents_foreign');
-    });
+    
         Schema::dropIfExists('cars_motors_accidents');
     }
 

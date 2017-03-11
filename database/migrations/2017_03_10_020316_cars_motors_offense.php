@@ -16,6 +16,10 @@ class CarsMotorsOffense extends Migration
         Schema::create('cars_motors_offences', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id_offences');
+            $table->integer('id_cars_offences')->unsigned();
+            $table->foreign('id_cars_offences')->references('id')->on('cars')->onDelete('cascade');
+            $table->integer('id_additional_drive_offences')->unsigned()->nullable();
+            $table->foreign('id_additional_drive_offences')->references('id_additional_drive')->on('cars_additional_drive')->onDelete('cascade');
             $table->string('conviction_code', 195)->nullable()->comment('Code of conviction');
             $table->string('date_conviction', 195)->nullable()->comment('date of conviction'); //DD-MM-YYYY
             $table->string('points', 195)->nullable()->comment('points');
@@ -23,13 +27,8 @@ class CarsMotorsOffense extends Migration
             $table->string('ban_month', 195)->nullable()->comment('ban if any');
             
         });
-        Schema::table('cars', function($table)
-            {
-                $table->foreign('motor_accidents')->references('id_accidents')->on('cars_motors_accidents');
-               $table->foreign('motor_offences')->references('id_offences')->on('cars_motors_offences');
 
-                
-            });
+
 
     }
 
@@ -39,10 +38,8 @@ class CarsMotorsOffense extends Migration
      * @return void
      */
     public function down()
-{
-    Schema::table('cars', function (Blueprint $table) {
-        $table->dropForeign('cars_id_motor_offences_foreign');
-    });
+  {
+
     
         Schema::dropIfExists('cars_motors_offences');
     }

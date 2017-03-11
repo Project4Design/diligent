@@ -55,8 +55,8 @@ class CreateCarInsuranceTable extends Migration
             $table->string('became_resident')->nullable()->comment('If no born_uk.'); //DD-MM-YYYY
             $table->string('use_other_vehicle');
             $table->string('monitoring_criminal_convictions');
-            $table->integer('motor_accidents')->unsigned()->nullable(); //RELATION WITH CAR_MOTOR_ACCIDENTS
-            $table->integer('motor_offences')->unsigned()->nullable(); //RELATION WITH CAR_MOTOR_OFFENSES
+            $table->string('motor_accidents')->nullable(); //RELATION WITH CAR_MOTOR_ACCIDENTS
+            $table->string('motor_offences')->nullable(); //RELATION WITH CAR_MOTOR_OFFENSES
          
 
             //Vehicles Details
@@ -95,7 +95,7 @@ class CreateCarInsuranceTable extends Migration
             $table->string('policy_start'); //DD-MM-YYYY
 
             //Aditional Drive
-            $table->integer('additional_drive')->unsigned()->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
+            $table->string('additional_drive')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
 
             //FINAL PART
             $table->string('heard_from_us');
