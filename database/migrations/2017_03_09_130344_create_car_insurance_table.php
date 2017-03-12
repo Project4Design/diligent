@@ -90,7 +90,6 @@ class CreateCarInsuranceTable extends Migration
 
             //Claims & Convictions
             $table->string('non_motoring_convictions',3);
-            $table->string('non_motoring_convictions',3);
             $table->string('motor_accidents',3); //RELATION WITH CAR_MOTOR_ACCIDENTS
             $table->string('motor_offences',3); //RELATION WITH CAR_MOTOR_OFFENSES
 
