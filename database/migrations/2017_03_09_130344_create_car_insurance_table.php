@@ -95,7 +95,7 @@ class CreateCarInsuranceTable extends Migration
             $table->string('policy_start'); //DD-MM-YYYY
 
             //Aditional Drive
-            $table->string('additional_drive'); //RELATION WITH CARS_ADDITIONAL_DRIVERS
+            $table->string('additional_drive')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
 
             //FINAL PART
             $table->string('heard_from_us');

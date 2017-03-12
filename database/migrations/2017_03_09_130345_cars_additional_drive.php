@@ -14,7 +14,9 @@ class CarsAdditionalDrive extends Migration
     public function up()
     {
         Schema::create('cars_additional_drive', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_additional_drive');
+            $table->integer('id_cars_additional')->unsigned();
+            $table->foreign('id_cars_additional')->references('id')->on('cars')->onDelete('cascade');
             $table->string('title')->nullable();
             $table->string('first_name')->nullable();
             $table->string('surname')->nullable();
@@ -39,7 +41,6 @@ class CarsAdditionalDrive extends Migration
             $table->timestamps();
         });
 
-        
 
     }
 
