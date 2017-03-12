@@ -19,22 +19,80 @@ class CreateCarInsuranceTable extends Migration
             $table->increments('id');
 
             //Personal info
-            $table->string('title');
-            $table->string('first_name');
-            $table->string('middle_name')->nullable();
-            $table->string('sur_name');
-            $table->string('birthdate'); //DD-MM-YYYY
-            $table->string('house_number');
-            $table->string('first_line_address');
-            $table->string('postcode');
-            $table->string('marital_status');
-            $table->string('employment_status');
+            $table->string('title',5);
+            $table->string('first_name',45);
+            $table->string('middle_name',45)->nullable();
+            $table->string('sur_name',45);
+            $table->string('birthdate',10); //DD-MM-YYYY
+            $table->string('marital_status',10);
+            $table->string('address_line1',100);
+            $table->string('address_line2',100)->nullable();
+            $table->string('address_city',50);
+            $table->string('address_postcode',50);
+            $table->string('born_uk',3);
+            $table->string('became_resident',10)->nullable()->comment('If no born_uk.'); //DD-MM-YYYY
+            $table->string('employment_status',40);
             $table->string('occupation')->nullable()->comment('If employed/Self employed');
-            $table->string('business')->nullable()->comment('If employed/Self employed');
-            $table->string('business_owner');
             $table->string('business_type')->nullable()->comment('If business_owner is YES');
-            $table->string('home_owner');
-            $table->string('children')->comment('Any Children Under 16');
+            $table->string('license_type',40);
+            $table->string('license_period_held',10);
+            $table->string('date_provitional_license',10)->nullable()->comment('If license_type is Full UK, Full UK Automatic');;
+            $table->string('license_enter',3);
+            $table->string('license_number',16)->nullable(); //16 characters
+            $table->string('dvla_medical_condition',40);
+            $table->string('aditional_qualifications',40);
+            $table->string('date_qualifications_obtained',10)->nullable()->comment('If any aditional_qualifications is selectd'); //DD-MM-YYYY
+            $table->string('use_other_vehicle',40);
+
+            //Car Details
+            $table->string('vehicle_registration',50);
+            $table->string('vehicle_registration_year',10)->nullable();
+            $table->string('vehicle_aprox_value',30)->nullable(); //How much is the car worth?
+            $table->string('vehicle_manufacturer',50);
+            $table->string('vehicle_model',50);
+            $table->string('vehicle_number_seats',2);
+            $table->string('vehicle_number_doors',2);
+            $table->string('vehicle_alarms',50)->nullable();
+            $table->string('vehicle_engine_size',20)->nullable();
+            $table->string('vehicle_transmission',10)->nullable();
+            $table->string('vehicle_imported',3);
+            $table->string('vehile_modifications',3);
+            $table->string('vehile_dash_cam',3);
+
+            //Car ownership
+            $table->string('vehicle_date_purchase',10); //DD-MM-YYYY OR Not yet.
+            $table->string('vehicle_registered_keeper',20);
+            $table->string('vehicle_legal_owner',20);
+            $table->string('vehicle_inpounded',3); //Is the car impounded with the police?
+
+            //Vehicle Usage
+            $table->string('usage_kept_day',30); //Kept during day
+            $table->string('usage_kept_night',30); //Kept during night
+            $table->string('usage_kept_same_address',3);
+            $table->string('usage_kept_other_address',100)->nullable()->comment('If usage_kept_same_address if NO');
+            $table->string('drivers_insurance_imposed',3); //Yes or No
+            $table->string('usage',50);
+            $table->string('usage_annual_milage',50)->nullable();
+            $table->string('type_coverage',28)->nullable();
+            $table->string('no_claims',15);
+            $table->string('no_claims_earned_uk',3)->nullable();
+            $table->string('no_claims_protect',3)->nullable();
+            $table->string('voluntary_excess');
+            $table->string('pay_insurance',10);
+            $table->string('policy_start',10); //DD-MM-YYYY
+
+            //Your Household
+            $table->string('children',3)->comment('Any Children Under 16');
+            $table->string('vehicles_how_many',3)->comment('How many cars are at home');
+            $table->string('home_owner',3);
+            $table->string('business_owner',3);
+            $table->string('business',100)->nullable()->comment('If own a business');
+
+            //Claims & Convictions
+            $table->string('non_motoring_convictions',3);
+            $table->string('non_motoring_convictions',3);
+            $table->string('motor_accidents',3); //RELATION WITH CAR_MOTOR_ACCIDENTS
+            $table->string('motor_offences',3); //RELATION WITH CAR_MOTOR_OFFENSES
 
             //Contact info
             $table->string('email')->nullable();
@@ -42,65 +100,14 @@ class CreateCarInsuranceTable extends Migration
             $table->string('mobile');
             $table->string('contact_via')->nullable();
 
-            //Driving history
-            $table->string('license_type');
-            $table->string('date_obtained')->nullable()->comment('If license_type is Full UK, Full UK Automatic');
-            $table->string('license_period_held');
-            $table->string('license_enter'); //If want to enter the license number
-            $table->string('license_number')->nullable(); //16 characters
-            $table->string('dvla_medical_condition');
-            $table->string('aditional_qualifications');
-            $table->string('qualifications_obtained')->nullable()->comment('If any aditional_qualifications is selectd'); //DD-MM-YYYY
-            $table->string('born_uk');
-            $table->string('became_resident')->nullable()->comment('If no born_uk.'); //DD-MM-YYYY
-            $table->string('use_other_vehicle');
-            $table->string('motoring_criminal_convictions');
-            $table->string('motor_accidents'); //RELATION WITH CAR_MOTOR_ACCIDENTS
-            $table->string('motor_offences'); //RELATION WITH CAR_MOTOR_OFFENSES
-         
-
-            //Vehicles Details
-            $table->string('vehicle_registration');
-            $table->string('unknow_registration'); //Checkbox
-            $table->string('vehicle_manufacture')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_model')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_registration_year')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_alarms')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_number_seats')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_number_doors')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_engine_size')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_transmission')->nullable()->comment('If unknow_registration'); //Checkbox true
-            $table->string('vehicle_aprox_value')->nullable(); //Approximate value of the car right now?
-            $table->string('vehicle_modifications');
-            $table->text('vehicle_modifications_made')->nullable()->comment('If vehicle_modifications is YES');
-            $table->string('vehicle_date_purchase'); //DD-MM-YYYY OR Not yet.
-            $table->string('vehicle_registered_keeper');
-            $table->string('vehicle_legal_owner');
-            $table->string('vehicle_inpounded'); //Is the car impounded with the police?
-
-            //Vehicle Usage
-            $table->string('usage_kept_day'); //Kept during day
-            $table->string('usage_kept_night'); //Kept during night
-            $table->string('usage_kept_same_address');
-            $table->string('usage_kept_other_address')->nullable()->comment('If usage_kept_same_address if NO');
-            $table->string('drivers_insurance_imposed'); //Yes or No
-            $table->string('usage');
-            $table->string('usage_annual_milage')->nullable();
-            $table->string('type_coverage')->nullable();
-            $table->string('no_claims');
-            $table->string('no_claims_earned_uk')->nullable();
-            $table->string('no_claims_protect')->nullable();
-            $table->string('voluntary_axcess');
-            $table->string('pay_insurance');
-            $table->string('policy_start'); //DD-MM-YYYY
+            //Hear about us
+            $table->string('heard_from_us',20)->nullable();
+            $table->string('referrer')->nullable();
+            $table->string('comments')->nullable();
 
             //Aditional Drive
-            $table->string('additional_drive')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
-
-            //FINAL PART
-            $table->string('heard_from_us');
-            $table->string('referrer');
-            $table->string('additional_comments');
+            $table->string('additional_driver1')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
+            $table->string('additional_driver2')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
 
             $table->timestamps();
         });

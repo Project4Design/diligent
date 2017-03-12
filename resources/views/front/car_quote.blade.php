@@ -59,11 +59,11 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="address1">Address *</label>
+              <label for="address_line1">Address *</label>
               <input id="address_line1" class="form-control" type="text" name="address_line1" placeholder="Address line 1" required>
               <input id="address_line2" class="form-control" type="text" name="address_line2" placeholder="Address line 2">
               <input id="address_city" class="form-control" type="text" name="address_city" placeholder="City" required>
-              <input id="zip_code" class="form-control" type="text" name="zip_code" placeholder="Postal/ Zip code" required>
+              <input id="address_postcode" class="form-control" type="text" name="address_postcode" placeholder="Postal/ Zip code" required>
             </div>
           </div><!--Row-->
 
@@ -82,7 +82,7 @@
               </div>
             </div>
             <div class="form-group col-xs-12 col-md-3">
-              <label for="birthdate">When did you became a UK resident? </label>
+              <label for="became_resident">When did you became a UK resident? </label>
               <div class="input-group">
                 <input id="became_resident" class="form-control datepicker" type="date" name="became_resident" placeholder="DD-MM-YYYY" readonly>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -155,7 +155,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="vehicle_registration">Date obtained provisional licence? *</label>
+              <label for="date_provitional_license">Date obtained provisional licence? *</label>
               <div class="input-group">
                 <input id="date_provitional_license" class="form-control datepicker" type="text" name="date_provitional_license" placeholder="DD-MM-YYYY" readonly>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -172,7 +172,7 @@
                   <label>Yes</label>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                  <input type="radio" name="license_enter" value="No">
+                  <input type="radio" name="license_enter" value="No" checked>
                   <label>No</label>
                 </div>
               </fieldset>
@@ -219,8 +219,8 @@
           <div class="row">
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label for="qualifications_obtained">If one is selected, what date was qualification obtained</label>
-                <input id="qualifications_obtained" class="form-control" type="" name="qualifications_obtained" readonly>
+                <label for="date_qualifications_obtained">If one is selected, what date was qualification obtained</label>
+                <input id="date_qualifications_obtained" class="form-control" type="" name="qualifications_obtained" readonly>
               </div>
             </div>
           </div><!--Row-->
@@ -261,8 +261,8 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
-              <label for="vehicle_manufacture">Manufacturer *</label>
-              <select id="vehicle_manufacture" class="form-control" name="vehicle_manufacture">
+              <label for="vehicle_manufacturer">Manufacturer *</label>
+              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" required>
                 <option value="" selected="">Please select</option>
                 <option value="Abarth">Abarth</option><option value="AC">AC</option><option value="Aixam">Aixam</option><option value="Alfa Romeo">Alfa Romeo</option>
                 <option value="Asia">Asia</option><option value="Aston Martin">Aston Martin</option><option value="Audi">Audi</option><option value="Austin">Austin</option>
@@ -353,13 +353,13 @@
                 <label>Has the car been imported? *</label>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-3">
-                    <input id="yes-born" type="radio" class="form-check-input" name="vechicle_imported" value="Yes" required>
+                    <input id="yes-born" type="radio" class="form-check-input" name="vehicle_imported" value="Yes" required>
                     <label class="form-check-label">Yes</label>
                   </div>
                 </div>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" class="form-check-input" name="vechicle_imported" id="no-born" value="No" checked required>
+                    <input type="radio" class="form-check-input" name="vehicle_imported" id="no-born" value="No" checked required>
                     <label class="form-check-label">No</label>
                   </div>
                 </div>
@@ -390,12 +390,12 @@
             <div class="col-xs-12 col-md-4">
               <div class="form-group">
                 <label>Do you have a dashcam fitted to your car?</label>
-                <div class="col-xs-12 col-md-6">
-                  <input type="radio" name="dash_cam" value="Yes">
+                <div class="col-xs-12 col-md-4">
+                  <input type="radio" name="vehicle_dashcam" value="Yes">
                   <label>Yes</label>
                 </div>
-                <div class="col-xs-12 col-md-6">
-                  <input type="radio" name="dash_cam" value="No" checked>
+                <div class="col-xs-12 col-md-4">
+                  <input type="radio" name="vehicle_dashcam" value="No" checked>
                   <label>No</label>
                 </div>
               </div>
@@ -473,13 +473,13 @@
                   <label>Is the car impounded with the police? *</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-6">
-                      <input type="radio" class="form-check-input" name="home_owner" value="Yes" required>
+                      <input type="radio" class="form-check-input" name="vehicle_inpounded" value="Yes" required>
                       <label class="form-check-label">Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-6">
-                      <input type="radio" class="form-check-input" name="home_owner" value="No" checked required>
+                      <input type="radio" class="form-check-input" name="vehicle_inpounded" value="No" checked required>
                       <label class="form-check-label">No</label>
                     </div>
                   </div>
@@ -533,7 +533,6 @@
                 </div>
               </div>
             </div><!--Row-->
-
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
@@ -697,8 +696,8 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="vechicles_how_many">How many cars are at your home? *</label>
-                  <input id="vechicles_how_many" class="form-control" type="number" name="vechicles_how_many" step="1" min="0" style="width: 65px" required>
+                  <label for="vehicles_how_many">How many cars are at your home? *</label>
+                  <input id="vehicles_how_many" class="form-control" type="number" name="vehicles_how_many" step="1" min="0" style="width: 65px" required>
                 </div>
               </div>
             </div>
@@ -750,8 +749,8 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="motoring_criminal_convictions">Non motoring criminal convictions</label>
-                  <select id="motoring_criminal_convictions" class="form-control" name="motoring_criminal_convictions">
+                  <label for="non_motoring_convictions">Non motoring criminal convictions</label>
+                  <select id="non_motoring_convictions" class="form-control" name="non_motoring_convictions">
                     <option value="No" selected>No</option>
                     <option value="Yes">Yes</option>
                   </select>
