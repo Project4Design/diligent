@@ -40,8 +40,8 @@ class CreateCarInsuranceTable extends Migration
             $table->string('license_enter',3);
             $table->string('license_number',16)->nullable(); //16 characters
             $table->string('dvla_medical_condition',40);
-            $table->string('aditional_qualifications',40);
-            $table->string('date_qualifications_obtained',10)->nullable()->comment('If any aditional_qualifications is selectd'); //DD-MM-YYYY
+            $table->string('additional_qualifications',40);
+            $table->string('date_qualifications_obtained',10)->nullable()->comment('If any additional_qualifications is selectd'); //DD-MM-YYYY
             $table->string('use_other_vehicle',40);
 
             //Car Details
@@ -105,7 +105,7 @@ class CreateCarInsuranceTable extends Migration
             $table->string('referrer')->nullable();
             $table->string('comments')->nullable();
 
-            //Aditional Drive
+            //Additional Drive
             $table->string('additional_driver1')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
             $table->string('additional_driver2')->nullable(); //RELATION WITH CARS_ADDITIONAL_DRIVERS
 

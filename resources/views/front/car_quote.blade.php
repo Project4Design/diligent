@@ -205,8 +205,8 @@
           <div class="row">
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label for="aditional_qualifications">Any additional driving qualifications *</label>
-                <select id="aditional_qualifications" class="form-control" name="aditional_qualifications" required>
+                <label for="additional_qualifications">Any additional driving qualifications *</label>
+                <select id="additional_qualifications" class="form-control" name="additional_qualifications" required>
                   <option value="" selected>Please Select</option>
                   <option value="No">No</option>
                   <option value="AA Proficiency">AA Proficiency</option>
@@ -1356,7 +1356,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-4">
-                <fieldset class="form-group">
+                <div class="form-group">
                   <label>Please contact me via</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
@@ -1376,9 +1376,35 @@
                       <label class="form-check-label">Email</label>
                     </div>
                   </div>
-                 </fieldset>
+                </div>
               </div>
             </div><!--Row-->
+						<!--===================================|| ADDITIONAL DRIVER ||================================-->
+            <legend class="legend">Additional Drivers</legend>
+            <div class="row">
+              <div class="col-xs-12 col-md-4">
+                <div class="form-group">
+                  <label>Would you like to add an additional driver? *</label>
+                  <div class="col-xs-12 col-md-3">
+                    <input type="radio" name="additional_driver1" value="Yes" required>
+                    <label>Yes</label>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <input type="radio" name="additional_driver1" value="No"c checked required>
+                    <label>No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+						<!--===============================|| ADDITIONAL DRIVER FORM ||================================-->
+            <fieldset id="driver_1" style="display:none" disabled>
+            	<div class="col-md-10 col-md-offset-1">
+            		<legend class="legend">Additional Driver (1) Details</legend>
+            	</div>
+            </fieldset>
+            <!--===========================================================================================-->
+            <!--===========================================================================================-->
+            <!--===========================================================================================-->
             <hr>
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
@@ -1405,7 +1431,7 @@
 
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
-                <label for="comments">Aditional comments</label>
+                <label for="comments">Additional comments</label>
                 <textarea id="comments" class="form-control" type="text" name="comments"></textarea>
               </div>
             </div><!--Row-->
@@ -1416,7 +1442,7 @@
                 <button type="submit" class="btn btn-block" style="padding-top:15px;padding-bottom:15px;">Submit Quote</button>
               </div>
             </div>
-            </form>
+          </form>
             <br>
             <br>
             <br>
@@ -1503,6 +1529,16 @@
 	      var bool = (this.value == "" || this.value == "No NCD");
 	      $('#no_claims_earned_uk,#no_claims_protect').prop({'disabled':bool,'required':!bool}).val('');
 	    })
+
+	    //Activate Offences sub form
+	    $("input[name='additional_driver1']").click(function(){
+	      var bool = (this.value === "Yes");
+	      if(bool){
+	        $('#driver_1').show().prop('disabled',!bool);
+	      }else{
+	        $('#driver_1').hide().prop('disabled',!bool);
+	      }
+	    });
 	  });
 	</script>
 @endsection
