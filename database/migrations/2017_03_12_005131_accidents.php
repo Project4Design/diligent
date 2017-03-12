@@ -14,7 +14,7 @@ class Accidents extends Migration
     public function up()
     {
         Schema::create('accidents', function (Blueprint $table) {
-            $table->increments('id_accidnts_management');
+            $table->increments('id_accidents_management');
             $table->string('how_about_us')->nullable();
             $table->string('friend_family_referral')->nullable();
             $table->string('title')->comment('starting form personal info all required');
