@@ -42,23 +42,14 @@
             <div class="form-group col-xs-12 col-md-2">
               <label for="birthdate">Date of Birth *</label>
               <div class="input-group">
-<<<<<<< HEAD
                 <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
-=======
-                <input id="birthday" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" value="01-03-2017" >
->>>>>>> c812a11891dc271725bd7d009dcb4f627294d25b
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
               </div>
             </div>
             <div class="form-group col-xs-12 col-md-2">
               <label for="marital_status">Marital Status *</label>
-<<<<<<< HEAD
               <select id="marital_status" class="form-control" name="marital_status" required>
                 <option value="" selected>Please Select</option>
-=======
-              <select id="marital_status" name="marital_status" class="form-control" >
-                <option value="Single" selected>Please Select</option>
->>>>>>> c812a11891dc271725bd7d009dcb4f627294d25b
                 <option value="Single">Single</option>
                 <option value="Married">Married</option>
                 <option value="Divorced">Divorced</option>
@@ -230,11 +221,7 @@
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
                 <label for="date_qualifications_obtained">If one is selected, what date was qualification obtained</label>
-<<<<<<< HEAD
                 <input id="date_qualifications_obtained" class="form-control datepicker" type="" name="date_qualifications_obtained" readonly>
-=======
-                <input id="date_qualifications_obtained" class="form-control" type="text" name="date_qualifications_obtained" value="12">
->>>>>>> c812a11891dc271725bd7d009dcb4f627294d25b
               </div>
             </div>
           </div><!--Row-->
@@ -1404,11 +1391,7 @@
                     <label>Yes</label>
                   </div>
                   <div class="col-xs-12 col-md-3">
-<<<<<<< HEAD
                     <input type="radio" name="additional_driver1" value="No" checked required>
-=======
-                    <input type="radio" name="additional_driver1" value="No"c checked >
->>>>>>> c812a11891dc271725bd7d009dcb4f627294d25b
                     <label>No</label>
                   </div>
                 </div>
