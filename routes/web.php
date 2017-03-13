@@ -13,6 +13,8 @@
 /*
 Route::get('/','AuthController@index')->name('login');
 */
+
+
 Route::get('/','FrontController@index')->name('front');
 Route::get('/car',function(){ return view('front.car'); });
 Route::get('/van',function(){ return view('front.van'); });
@@ -24,8 +26,9 @@ Route::get('/fleet',function(){ return view('front.fleet'); });
 //QUOTES
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
 
-
-
+//Registrar cars insurance
+Route::post('cars','CarsController@store', function() {
+})->name('register_cars');
 
 Route::get('/login','AuthController@index')->name('login');
 //verificar rutas con permiso auth

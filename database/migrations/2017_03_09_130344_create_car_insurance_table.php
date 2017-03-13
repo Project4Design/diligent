@@ -21,7 +21,7 @@ class CreateCarInsuranceTable extends Migration
             //Personal info
             $table->string('title',5);
             $table->string('first_name',45);
-            $table->string('middle_name',45)->nullable();
+            $table->string('middle_name',45);
             $table->string('sur_name',45);
             $table->string('birthdate',10); //DD-MM-YYYY
             $table->string('marital_status',10);
@@ -56,8 +56,8 @@ class CreateCarInsuranceTable extends Migration
             $table->string('vehicle_engine_size',20)->nullable();
             $table->string('vehicle_transmission',10)->nullable();
             $table->string('vehicle_imported',3);
-            $table->string('vehile_modifications',3);
-            $table->string('vehile_dash_cam',3);
+            $table->string('vehicle_modifications',3)->nullable();
+            $table->string('vehicle_dash_cam',3);
 
             //Car ownership
             $table->string('vehicle_date_purchase',10); //DD-MM-YYYY OR Not yet.
