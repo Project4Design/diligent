@@ -323,7 +323,7 @@
 					<div class="row">
 	          <div class="col-md-4 col-md-offset-4">
 	            <br>
-	            <button type="submit" class="btn btn-block" style="padding-top:15px;padding-bottom:15px;">Submit Quote</button>
+	            <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
 	          </div>
 	        </div>
       		<br><br><br>

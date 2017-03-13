@@ -1401,7 +1401,7 @@
             <!--===============================|| ADDITIONAL DRIVER FORM - 1 ||================================-->
             <!--===============================|| ADDITIONAL DRIVER FORM - 1 ||================================-->
             <fieldset id="driver_1" style="display:none" disabled>
-            	<div class="col-md-10 col-md-offset-1">
+            	<div class="col-md-11 col-md-offset-1">
             		<legend class="legend">Additional Driver (1) Details</legend>
             		<div class="row">
 			            <div class="col-md-12">
@@ -1640,7 +1640,7 @@
 
                 <!--==========================|| ADDITIONAL DRIVER 1 - ACCIDENST FORM ||===============================-->
                 <fieldset id="accident-sub-from_1" class="row" style="display:none" disabled>
-                  <div class="col-md-10 col-md-offset-1">
+                  <div class="col-md-11 col-md-offset-1">
                     <legend class="legend">Motor Accidents or Claim Details (Additional Driver 1)</legend>
                     <div class="col-md-3">
                       <!--================|| ADDITIONAL DRIVER 1 - SECTION 1 ||======================-->
@@ -1967,7 +1967,7 @@
 
                 <!--===============================|| ADDITIONAL 1 - OFFENCES FORM ||====================================================-->
                 <fieldset id="offences-sub-from_1" class="row" style="display:none" disabled>
-                  <div class="col-md-10 col-md-offset-1">
+                  <div class="col-md-11 col-md-offset-1">
                     <legend class="legend">Motor Conviction, Fixed Penalty or Disqualification Details (Additional Driver 1)</legend>
                     <!--===============================|| ADDITIONAL 1 - SECTION 1 ||============================================-->
                     <div class="col-md-3">
@@ -2193,7 +2193,7 @@
                 </fieldset>
 
                 <div class="row">
-                  <div class="col-xs-12 col-md-5">
+                  <div class="col-xs-12 col-md-4">
                     <div class="form-group">
                       <label>Would you like to add an additional driver (2)? *</label>
                       <div class="col-xs-12 col-md-3">
@@ -2213,7 +2213,7 @@
             <!--===============================|| ADDITIONAL DRIVER FORM - 2 ||================================-->
             <!--===============================|| ADDITIONAL DRIVER FORM - 2 ||================================-->
             <fieldset id="driver_2" style="display:none" disabled>
-              <div class="col-md-10 col-md-offset-1">
+              <div class="col-md-11 col-md-offset-1">
                 <legend class="legend">Additional Driver (2) Details</legend>
                 <div class="row">
                   <div class="col-md-12">
@@ -2452,7 +2452,7 @@
 
                 <!--==========================|| ADDITIONAL DRIVER 2 - ACCIDENST FORM ||===============================-->
                 <fieldset id="accident-sub-from_2" class="row" style="display:none" disabled>
-                  <div class="col-md-10 col-md-offset-1">
+                  <div class="col-md-11 col-md-offset-1">
                     <legend class="legend">Motor Accidents or Claim Details (Additional Driver 2)</legend>
                     <div class="col-md-3">
                       <!--================|| ADDITIONAL DRIVER 2 - SECTION 1 ||======================-->
@@ -2779,7 +2779,7 @@
 
                 <!--===============================|| ADDITIONAL 2 - OFFENCES FORM ||====================================================-->
                 <fieldset id="offences-sub-from_2" class="row" style="display:none" disabled>
-                  <div class="col-md-10 col-md-offset-1">
+                  <div class="col-md-11 col-md-offset-1">
                     <legend class="legend">Motor Conviction, Fixed Penalty or Disqualification Details (Additional Driver 2)</legend>
                     <!--===============================|| ADDITIONAL 2 - SECTION 1 ||============================================-->
                     <div class="col-md-3">
@@ -3042,7 +3042,7 @@
             <div class="row">
               <div class="col-md-4 col-md-offset-4">
                 <br>
-                <button type="submit" class="btn btn-block" style="padding-top:15px;padding-bottom:15px;">Submit Quote</button>
+                <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
               </div>
             </div>
           </form>

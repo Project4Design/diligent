@@ -126,30 +126,26 @@
   <div class="content-section-records">
     <div class="container">
       <div class="record row">
-        <div class="col-xs-12 col-md-2"></div>
-
-        <div class="col-xs-12 col-md-2">
+        <div class="col-xs-6 col-md-2 col-md-offset-2">
           <p class="record-badge">230</p>
           <img src="img/diploma.svg" alt="">
           <p>Contrats signed</p>
         </div>
-        <div class="col-xs-12 col-md-2">
+        <div class="col-xs-6 col-md-2">
           <p class="record-badge">230</p>
           <img src="img/car-insurance.svg" alt="">
           <p>Protected vehicles</p>
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-md-2">
           <p class="record-badge">56</p>
           <img src="img/house-insurance.svg" alt="">
           <p>Protected houses</p>
         </div>
-        <div class="col-md-2">
+        <div class="col-xs-6 col-md-2">
           <p class="record-badge">56</p>
           <img src="img/businessman.svg" alt="">
           <p>Protected business</p>
         </div>
-        
-        <div class="col-md-2"></div>
       </div>
     </div>
   </div>
@@ -167,17 +163,17 @@
         </div>
         <div class="col-lg-8">
           <div class="col-md-12">
-            <ul class="list-inline banner-social-buttons">
-              <li>
+            <div style="margin-top:90px;">
+              <div class="col-md-4" style="margin-top:10px">
                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-              </li>
-              <li>
+              </div>
+              <div class="col-md-4" style="margin-top:10px">
                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-              </li>
-              <li>
+              </div>
+              <div class="col-md-4" style="margin-top:10px">
                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagam</span></a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <div class="col-md-6 col-md-offset-5" style="margin-top:50px">
             <ul class="contact-info">
