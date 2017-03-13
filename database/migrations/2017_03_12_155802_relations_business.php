@@ -29,7 +29,7 @@ class RelationsBusiness extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return voi
      */
     public function down()
     {
