@@ -19,8 +19,8 @@ class CarsMotorsAccidents extends Migration
             $table->increments('id_accidents');
             $table->integer('id_cars')->unsigned();
             $table->foreign('id_cars')->references('id')->on('cars')->onDelete('cascade');
-            $table->integer('id_additional_drive')->unsigned()->nullable();
-            $table->foreign('id_additional_drive')->references('id_additional_drive')->on('cars_additional_drive')->onDelete('cascade');
+            $table->integer('id_additional_driver')->unsigned()->nullable();
+            $table->foreign('id_additional_driver')->references('id_additional_driver')->on('cars_additional_driver')->onDelete('cascade');
             $table->string('type',195)->nullable()->comment('Type of accident');
             $table->string('date',195)->nullable()->comment('Date of accident'); //DD-MM-YYYY
             $table->string('damage',195)->nullable()->comment('Damage of accident');

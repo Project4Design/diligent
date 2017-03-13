@@ -46,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand topnav" href="index.php">
+          <a class="navbar-brand topnav" href="{{route('front')}}">
             <span class="pull-left"><img src="img/logo.png" alt="logo" height="35" width="35"></span>
             <span class="pull-left">&nbsp;&nbsp;{{ config('app.name')}}</span>
           </a>

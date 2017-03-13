@@ -10,7 +10,7 @@ class Cars_motors_accidents extends Model
 
 		public $fillable = [
 		'id_cars',
-		'id_additional_drive',
+		'id_additional_driver',
 		'type',
 		'date',
 		'damage',

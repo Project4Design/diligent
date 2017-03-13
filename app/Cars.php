@@ -83,7 +83,8 @@ class Cars extends Model
    'voluntary_excess',
    'pay_insurance',
    'policy_start',
-   'additional_drive',
+   'additional_driver1',
+   'additional_driver2',
    'heard_from_us',
    'referrer',
    'additional_comments'];

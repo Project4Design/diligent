@@ -9,7 +9,6 @@ class Cars_motors_offences extends Model
     
     protected $table = "Cars_motors_offences";
 
-    
 
 	public $timestamps=false;
 

@@ -1391,7 +1391,7 @@
                     <label>Yes</label>
                   </div>
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" name="additional_driver1" value="No" checked required>
+                    <input type="radio" name="additional_driver1" value="No" checked>
                     <label>No</label>
                   </div>
                 </div>
@@ -1561,7 +1561,7 @@
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
                       <label for="dvla_medical_1">DVLA medical conditions or disabilities *</label>
-                      <select id="dvla_medical_1" class="form-control" name="dvla_medical_1" required>
+                      <select id="dvla_medical_1" class="form-control" name="ca_dvla_medical_1" required>
                         <option value="" selected>Please Select</option>
                         <option value="No">No</option>
                         <option value="DVLA aware – No restrictions">DVLA aware – No restrictions</option>
