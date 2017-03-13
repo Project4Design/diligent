@@ -3060,12 +3060,14 @@
 	<script type="text/javascript">
 	  $(document).ready(function(){
 	    $('.datepicker').datepicker({
+        autoclose: true,
 	      format: "dd-mm-yyyy",
 	      endDate: "today",
 	      enableOnReadonly: false
 	    });
 
 	    $('#policy_start').datepicker({
+        autoclose: true,
 	      format: "dd-mm-yyyy",
 	      startDate: "today",
 	      enableOnReadonly: false

@@ -17,9 +17,9 @@ class AccidentPassengersInjury extends Migration
             $table->increments('id_passengers_injury');
             $table->integer('id_accidents_injury')->unsigned();
             $table->foreign('id_accidents_injury')->references('id_accidents_management')->on('accidents')->onDelete('cascade');
-            $table->string('witness_name')->nullable();
-            $table->string('witness_address')->nullable();
-            $table->string('witness_contact_number')->nullable();
+            $table->string('passenger_name')->nullable();
+            $table->string('passenger_address')->nullable();
+            $table->string('passenger_contact_number')->nullable();
             $table->timestamps();
         });
     }

@@ -172,6 +172,10 @@ footer {
   color: #fff;
 }
 
+.footer-quote-list a{
+  color: #fff;
+}
+
 p.copyright {
   margin: 15px 0 0;
 }
