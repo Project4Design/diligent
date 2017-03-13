@@ -12,7 +12,7 @@
               Diligent <br>Services <br>Shopper
             </h1>
 
-            <a href="#services" class="btn btn-float services">Services</a>
+            <a href="#services" class="btn btn-float services link-scroll">Services</a>
           </div>
         </div>
       </div>
@@ -202,7 +202,7 @@
   <!-- /.Contact -->
 
   <!--Scroll top link-->
-  <span class="scrolltop"><a href="#main-body"><i class="fa fa-chevron-up"></i></a></span>
+  <span class="scrolltop"><a class="link-scroll" href="#main-body"><i class="fa fa-chevron-up"></i></a></span>
 
 @section('scripts')
   <script type="text/javascript">
@@ -211,6 +211,8 @@
 
       var $root = $('body'),
           $sS   = $('#services').offset().top+200;
+      console.log("Load: "+$sS);
+
       $(window).scroll(function(){
         var wH = $root.height(),
             wS = $(this).scrollTop();
@@ -218,13 +220,14 @@
         (wS > $('a.services'))?$('a.services').fadeOut(300):$('a.services').fadeIn(300);
 
         if(wS > ($sS-wH)){
+          console.log("Show");
           $('.menu-item').show().addClass('animated fadeInLeft'); $('.scrolltop a').fadeIn(300);
         }else{
           $('.scrolltop a').fadeOut(300);
         }
       });
 
-      $('.scrolltop a,.link-scroll').click(function() {
+      $('.link-scroll').click(function() {
         console.log(this.href);
           $root.animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top

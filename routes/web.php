@@ -23,6 +23,7 @@ Route::get('/fleet',function(){ return view('front.fleet'); });
 
 //QUOTES
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
+Route::get('/accident-quote',function(){ return view('front.accident_quote'); });
 
 
 

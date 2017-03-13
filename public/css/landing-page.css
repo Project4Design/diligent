@@ -204,7 +204,9 @@ p.copyright {
   text-decoration: none;
   color: #373737;
 }
-
+.item-index{
+  display: none;
+}
 .item-index a{
   text-decoration: none;
   color: #fff !important;

@@ -41,13 +41,13 @@
             <div class="form-group col-xs-12 col-md-2">
               <label for="birthdate">Date of Birth *</label>
               <div class="input-group">
-                <input id="birthday" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
+                <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
               </div>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <label for="marital-status">Marital Status *</label>
-              <select id="marital-status" class="form-control" required>
+              <label for="marital_status">Marital Status *</label>
+              <select id="marital_status" class="form-control" name="marital_status" required>
                 <option value="" selected>Please Select</option>
                 <option value="Single">Single</option>
                 <option value="Married">Married</option>
@@ -82,7 +82,7 @@
               </div>
             </div>
             <div class="form-group col-xs-12 col-md-3">
-              <label for="became_resident">When did you became a UK resident? </label>
+              <label for="became_resident">If no, When did you became a UK resident? </label>
               <div class="input-group">
                 <input id="became_resident" class="form-control datepicker" type="date" name="became_resident" placeholder="DD-MM-YYYY" readonly>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -220,7 +220,7 @@
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
                 <label for="date_qualifications_obtained">If one is selected, what date was qualification obtained</label>
-                <input id="date_qualifications_obtained" class="form-control" type="" name="qualifications_obtained" readonly>
+                <input id="date_qualifications_obtained" class="form-control datepicker" type="" name="date_qualifications_obtained" readonly>
               </div>
             </div>
           </div><!--Row-->
@@ -387,7 +387,7 @@
           </div><!--Row-->
           
           <div class="row">
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-3">
               <div class="form-group">
                 <label>Do you have a dashcam fitted to your car?</label>
                 <div class="col-xs-12 col-md-4">
@@ -1007,7 +1007,7 @@
                   </div>
                 </div><!--Col-md-3 Section 3 -->
                 <!--==========================================================================================-->
-                <!--==================================|| ACCIDENTS SECTION 4 ||==================================-->
+                <!--================|| ADDITIONAL DRIVER 1 - SECTION 4 ||==================================-->
                 <div class="col-md-3">
                   <legend class="legend">4</legend>
                   <div class="col-md-12">
@@ -1086,8 +1086,8 @@
                 </div>
               </div>
             </fieldset>
-            <!--=====================================|| ACCIDENST FORM ||====================================================-->
-            <!--=====================================================================================-->
+            <!--===================================================================================================-->
+            <!--====================================================================================================-->
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
@@ -1390,17 +1390,1619 @@
                     <label>Yes</label>
                   </div>
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" name="additional_driver1" value="No"c checked required>
+                    <input type="radio" name="additional_driver1" value="No" checked required>
                     <label>No</label>
                   </div>
                 </div>
               </div>
             </div>
-						<!--===============================|| ADDITIONAL DRIVER FORM ||================================-->
+						<!--===============================|| ADDITIONAL DRIVER FORM - 1 ||================================-->
+            <!--===============================|| ADDITIONAL DRIVER FORM - 1 ||================================-->
+            <!--===============================|| ADDITIONAL DRIVER FORM - 1 ||================================-->
             <fieldset id="driver_1" style="display:none" disabled>
             	<div class="col-md-10 col-md-offset-1">
             		<legend class="legend">Additional Driver (1) Details</legend>
+            		<div class="row">
+			            <div class="col-md-12">
+			              <label>Name *</label>
+			            </div>
+			            <div class="form-group col-md-2">
+			              <select class="form-control" id="ca_title_1" name="ca_title_1" required>
+			                <option value="Mr.">Mr.</option>
+			                <option value="Mrs.">Mrs.</option>
+			                <option value="Miss">Miss</option>
+			              </select>
+			            </div>
+			            <div class="form-group col-xs-12 col-md-2">
+			              <input id="ca_first_name_1" class="form-control" type="text" name="ca_first_name_1" placeholder="First name" required>
+			            </div>
+			            <div class="form-group col-xs-12 col-md-2">
+			              <input id="ca_middle_name_1" class="form-control" type="text" name="ca_middle_name_1" placeholder="Middle name">
+			            </div>
+			            <div class="form-group col-xs-12 col-md-2">
+			              <input id="ca_sur_name_1" class="form-control" type="text" name="ca_sur_name_1" placeholder="Surname" required>
+			            </div>
+			          </div><!--Row-->
+			          <div class="row">
+			            <div class="form-group col-xs-12 col-md-4">
+			              <label for="ca_relationship_1">Relationship to Proposer/Policy Holder *</label>
+			              <select id="ca_relationship_1" class="form-control" name="ca_relationship_1" required>
+                      <option value="">Please select</option>
+                      <option value="Spouse">Spouse</option>
+                      <option value="Civil Partner">Civil Partner</option>
+                      <option value="Common Law Partner/Cohabitee">Common Law Partner/Cohabitee</option>
+                      <option value="Son/Daughter">Son/Daughter</option>
+                      <option value="Parent">Parent</option>
+                      <option value="Brother/Sister">Brother/Sister</option>
+                      <option value="Other Family">Other Family</option>
+                      <option value="Employee">Employee</option>
+                      <option value="Employer">Employer</option>
+                      <option value="Business Partner">Business Partner</option>
+                      <option value="Other">Other</option>
+			              </select>
+			            </div>
+			          </div>
+			          <div class="row">
+			            <div class="form-group col-xs-12 col-md-3">
+			              <label for="ca_birthdate_1">Date of Birth *</label>
+			              <div class="input-group">
+			                <input id="ca_birthdate_1" class="form-control datepicker" type="date" name="ca_birthdate_1" placeholder="DD-MM-YYYY" required>
+			                <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+			              </div>
+			            </div>
+			            <div class="form-group col-xs-12 col-md-3">
+			              <label for="ca_marital_status_1">Marital Status *</label>
+			              <select id="ca_marital_status_1" class="form-control" name="ca_marital_status_1" required>
+			                <option value="" selected>Please Select</option>
+			                <option value="Single">Single</option>
+			                <option value="Married">Married</option>
+			                <option value="Divorced">Divorced</option>
+			                <option value="Widow">Widow</option>
+			              </select>
+			            </div>
+			          </div><!--Row-->
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_employment_status_1">What's your employment status? *</label>
+                    <select id="ca_employment_status_1" class="form-control" name="ca_employment_status_1" required>
+                      <option value="" selected>Please Select</option>
+                      <option value="Employed">Employed</option>
+                      <option value="Unemployed">Unemployed</option>
+                      <option value="Self-Employed">Self-Employed</option>
+                      <option value="House Person">House Person</option>
+                      <option value="Education">Education</option>
+                      <option value="Retired">Retired</option>
+                      <option value="Not employed due to illness/disability">Not employed due to illness/disability</option>                       
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_employed_ocupation_1">If Employed/Self Employed, what is your occupation: </label>
+                    <input id="ca_employed_ocupation_1" class="form-control" type="text" name="ca_employed_ocupation_1">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_employed_business_1">If Employed/Self Employed, what type of business: </label>
+                    <input id="ca_employed_business_1" class="form-control" type="text" name="ca_employed_business_1">
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_license_type_1">What type of license do you have? *</label>
+                    <select id="ca_license_type_1" class="form-control" name="ca_license_type_1" required>
+                      <option value="">Please Select </option>
+                      <option value="Full UK Manual">Full UK Manual</option>
+                      <option value="Full UK Automatic">Full UK Automatic</option>
+                      <option value="Provisional UK">Provisional UK</option>
+                      <option value="Full Euro EEC">Full Euro EEC</option>
+                      <option value="Full UK-Pass Plus">Full UK-Pass Plus</option>
+                      <option value="Full UK-IAM">Full UK-IAM</option>
+                      <option value="International licence (non-exchangeable)">International licence (non-exchangeable)</option>
+                      <option value="International licence (exchangeable)">International licence (exchangeable)</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_period_license_1">Period License held for *</label>
+                    <select id="ca_period_license_1" class="form-control" name="ca_period_license_1">
+                      <option value="" selected>Please Select</option>
+                      <option value="Less than 1 year">Less than 1 year</option>
+                      <option value="1 year">1 year</option><option value="2 years">2 years</option>
+                      <option value="3 years">3 years</option><option value="4 years">4 years</option>
+                      <option value="5 years">5 years</option><option value="6 years">6 years</option>
+                      <option value="7 years">7 years</option><option value="8 years">8 years</option>
+                      <option value="9 years">9 years</option><option value="10 years">10 years</option>
+                      <option value="11 years">11 years</option><option value="12 years">12 years</option>
+                      <option value="13 years">13 years</option><option value="14 years">14 years</option>
+                      <option value="15 years">15 years</option><option value="15 years">16 years</option>
+                      <option value="15 years">17 years</option><option value="15 years">18 years</option>
+                      <option value="15 years">19 years</option><option value="15 years">20 years</option>
+                      <option value="20 years +">20 years +</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_date_provitional_license_1">Date obtained provisional licence? *</label>
+                    <div class="input-group">
+                      <input id="ca_date_provitional_license_1" class="form-control datepicker" type="text" name="ca_date_provitional_license_1" placeholder="DD-MM-YYYY" readonly>
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    </div>
+                  </div>
+                </div><!--Row-->
+                
+                <div class="row">
+                  <div class="col-xs-12 col-md-3">
+                    <fieldset class="form-group">
+                      <label>Would you like to enter your driving licence number?</label>
+                      <div class="col-xs-12 col-md-6">
+                        <input type="radio" name="ca_license_enter_1" value="Yes">
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                        <input type="radio" name="ca_license_enter_1" value="No" checked>
+                        <label>No</label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <div class="form-group">
+                      <label for="ca_license_number_1">Please enter your 16-character driving licence number.</label>
+                      <input id="ca_license_number_1" class="form-control" type="text" name="ca_license_number_1" maxlength="16" readonly>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                      <label for="dvla_medical_1">DVLA medical conditions or disabilities *</label>
+                      <select id="dvla_medical_1" class="form-control" name="dvla_medical_1" required>
+                        <option value="" selected>Please Select</option>
+                        <option value="No">No</option>
+                        <option value="DVLA aware – No restrictions">DVLA aware – No restrictions</option>
+                        <option value="DVLA aware – 1 year restricted Licence">DVLA aware – 1 year restricted Licence</option>
+                        <option value="DVLA aware – 2 year restricted Licence">DVLA aware – 2 year restricted Licence</option>
+                        <option value="DVLA aware – 3 year restricted Licence">DVLA aware – 3 year restricted Licence</option>
+                        <option value="DVLA unaware">DVLA unaware</option>
+                      </select>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-3">
+                    <div class="form-group">
+                      <label>Are you born in the UK? *</label>
+                      <div class="col-xs-6 col-md-6">
+                        <input type="radio" name="ca_born_uk_1" value="Yes" required>
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-6 col-md-6">
+                        <input type="radio" name="ca_born_uk_1" value="No" required>
+                        <label>No</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_uk_resident_1">If no, When did you became a UK resident? </label>
+                    <div class="input-group">
+                      <input id="ca_uk_resident_1" class="form-control datepicker" type="date" name="ca_uk_resident_1" placeholder="DD-MM-YYYY" readonly>
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    </div>
+                  </div>
+                </div><!---Row-->
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_other_vehicle_1">Use any other vehicles? *</label>
+                    <select id="ca_other_vehicle_1" class="form-control" name="ca_other_vehicle_1" required>
+                      <option value="" selected>Please Select</option>
+                      <option value="No access to any other vehicle">No access to any other vehicle</option>
+                      <option value="Own another car or van">Own another car or van</option>
+                      <option value="Have use of another car">Have use of another car</option>
+                      <option value="Company car(Including personal use)">Company car(Including personal use)</option>
+                      <option value="Company car(Excluding personal use)">Company car(Excluding personal use)</option>
+                    </select>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="ca_non_motoring_convictions_1">Non motoring criminal convictions</label>
+                      <select id="ca_non_motoring_convictions_1" class="form-control" name="ca_non_motoring_convictions_1">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                      </select>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                      <label>Any motor accidents or claims in the last 5 years? *</label>
+                      <div class="col-xs-12 col-md-3">
+                        <input type="radio" name="ca_motor_accidents_1" value="Yes" required>
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-9">
+                        <input type="radio" name="ca_motor_accidents_1" value="No" checked required>
+                        <label>No</label>
+                      </div>
+                     </div>
+                  </div>
+                </div><!--Row-->
+
+                <!--==========================|| ADDITIONAL DRIVER 1 - ACCIDENST FORM ||===============================-->
+                <fieldset id="accident-sub-from_1" class="row" style="display:none" disabled>
+                  <div class="col-md-10 col-md-offset-1">
+                    <legend class="legend">Motor Accidents or Claim Details (Additional Driver 1)</legend>
+                    <div class="col-md-3">
+                      <!--================|| ADDITIONAL DRIVER 1 - SECTION 1 ||======================-->
+                      <legend class="legend">1</legend>
+                      <div class="col-md-12">
+                        <label for="type_1_1">Type:</label>
+                        <select id="type_1_1" class="form-control" name="type_1_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_1_1">Date</label>
+                          <input id="date_1_1" class="form-control datepicker" type="text" name="date_1_1" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_1_1">Damage:</label>
+                          <select id="damage_1_1" class="form-control" name="damage_1_1">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_1_1">Cost(£) - if known:</label>
+                          <input id="cost_1_1" class="form-control" type="number" name="cost_1_1">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_1_1">Fault:</label>
+                        <select id="fault_1_1" class="form-control" name="fault_1_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_1_1" value="Yes" required>
+                              <label class="form-check-label">Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_1_1" value="No" checked required>
+                              <label class="form-check-label">No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 1 -->
+                    <!--===========================================================================-->
+                    <!--================|| ADDITIONAL DRIVER 1 -  SECTION 2 ||===========================-->
+                    <div class="col-md-3">
+                      <legend class="legend">2</legend>
+                      <div class="col-md-12">
+                        <label for="type_2_1">Type:</label>
+                        <select id="type_2_1" class="form-control" name="type_2_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_2_1">Date</label>
+                          <input id="date_2_1" class="form-control datepicker" type="text" name="date_2_1" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_2_1">Damage:</label>
+                          <select id="damage_2_1" class="form-control" name="damage_2_1">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_2_1">Cost(£) - if known:</label>
+                          <input id="cost_2_1" class="form-control" type="number" name="cost_2_1">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_2_1">Fault:</label>
+                        <select id="fault_2_1" class="form-control" name="fault_2_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_2_1" value="Yes" required>
+                              <label>Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_2_1" value="No" checked required>
+                              <label>No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 2 -->
+                    <!--==========================================================================================-->
+                    <!--================|| ADDITIONAL DRIVER 1 - SECTION 3 ||==================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">3</legend>
+                      <div class="col-md-12">
+                        <label for="type_3_1">Type:</label>
+                        <select id="type_3_1" class="form-control" name="type_3_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_3_1">Date</label>
+                          <input id="date_3_1" class="form-control datepicker" type="text" name="date_3_1" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_3_1">Damage:</label>
+                          <select id="damage_3_1" class="form-control" name="damage_3_1">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_3_1">Cost(£) - if known:</label>
+                          <input id="cost_3_1" class="form-control" type="number" name="cost_3_1">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_3_1">Fault:</label>
+                        <select id="fault_3_1" class="form-control" name="fault_3_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_3_1" value="Yes" required>
+                              <label class="form-check-label">Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_3_1" value="No" checked required>
+                              <label class="form-check-label">No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 3 -->
+                    <!--==========================================================================================-->
+                    <!--================|| ADDITIONAL DRIVER 1 - ACCIDENTS SECTION 4 ||==================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">4</legend>
+                      <div class="col-md-12">
+                        <label for="type_4_1">Type:</label>
+                        <select id="type_4_1" class="form-control" name="type_4_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_4_1">Date</label>
+                          <input id="date_4_1" class="form-control datepicker" type="text" name="date_4_1" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_4_1">Damage:</label>
+                          <select id="damage_4_1" class="form-control" name="damage_4_1">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_4_1">Cost(£) - if known:</label>
+                          <input id="cost_4_1" class="form-control" type="number" name="cost_4_1">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_4_1">Fault:</label>
+                        <select id="fault_4_1" class="form-control" name="fault_4_1">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_4_1" value="Yes" required>
+                              <label>Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_4_1" value="No" checked required>
+                              <label>No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 4 -->
+                    <div class="col-md-12">
+                      <hr>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!--========================================================================================-->
+                <!--========================================================================================-->
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                      <div class="col-xs-12 col-md-3">
+                        <input type="radio" name="ca_motor_offences_1" value="Yes" required>
+                        <label class="form-check-label">Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-9">
+                        <input type="radio" name="ca_motor_offences_1" value="No" checked required>
+                        <label class="form-check-label">No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <!--===============================|| ADDITIONAL 1 - OFFENCES FORM ||====================================================-->
+                <fieldset id="offences-sub-from_1" class="row" style="display:none" disabled>
+                  <div class="col-md-10 col-md-offset-1">
+                    <legend class="legend">Motor Conviction, Fixed Penalty or Disqualification Details (Additional Driver 1)</legend>
+                    <!--===============================|| ADDITIONAL 1 - SECTION 1 ||============================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">1</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_1_1">Conviction Code:</label>
+                        <select id="conviction_code_1_1" class="form-control" name="conviction_code_1_1">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option valuse="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_1_1">Date of Conviction:</label>
+                        <input id="date_conviction_1_1" class="form-control datepicker" name="date_conviction_1_1" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_1_1">Points:</label>
+                        <select id="points_1_1" class="form-control" name="points_1_1">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_1_1">Fine(£) - if any:</label>
+                        <input id="fine_libras_1_1" class="form-control" type="number" step="any" min="1" name="fine_libras_1_1">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_1_1">Ban(months) - if any:</label>
+                        <input id="ban_month_1_1" class="form-control" type="number" step="1" min="1" name="ban_month_1_1">
+                      </div>
+                    </div>
+                    <!--===================================================================================================-->
+                    <!--===============================|| ADDITIONAL 1 - SECTION 2 ||==============================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">2</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_2_1">Conviction Code:</label>
+                        <select id="mpenalties_code_2_1" class="form-control" name="conviction_code_2_1">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option value="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_2_1">Date of Conviction:</label>
+                        <input id="date_conviction_2_1" class="form-control datepicker" name="date_conviction_2_1" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_2_1">Points:</label>
+                        <select id="points_2_1" class="form-control" name="points_2_1">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_2_1">Fine(£) - if any:</label>
+                        <input id="fine_libras_2_1" class="form-control" type="number" step="any" min="1" name="fine_libras_2_1">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_2_1">Ban(months) - if any:</label>
+                        <input id="ban_month_2_1" class="form-control" type="number" step="1" min="1" name="ban_month_2_1">
+                      </div>
+                    </div>
+                    <!--===============================|| ADDITIONAL 1 - SECTION 3 ||======================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">3</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_3_1">Conviction Code:</label>
+                        <select id="mpenalties_code_3_1" class="form-control" name="conviction_code_3_1">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option value="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_3_1">Date of Conviction:</label>
+                        <input id="date_conviction_3_1" class="form-control datepicker" name="date_conviction_3_1" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_3_1">Points:</label>
+                        <select id="points_3_1" class="form-control" name="points_3_1">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_3_1">Fine(£) - if any:</label>
+                        <input id="fine_libras_3_1" class="form-control" type="number" step="any" min="1" name="fine_libras_3_1">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_3_1">Ban(months) - if any:</label>
+                        <input id="ban_month_3_1" class="form-control" type="number" step="1" min="1" name="ban_month_3_1">
+                      </div>
+                    </div>
+                    <!--===============================|| ADDITIONAL 1 - SECTION 4 ||===================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">4</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_4_1">Conviction Code:</label>
+                        <select id="mpenalties_code_4_1" class="form-control" name="conviction_code_4_1">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option value="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_4_1">Date of Conviction:</label>
+                        <input id="date_conviction_4_1" class="form-control datepicker" name="date_conviction_4_1" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_4_1">Points:</label>
+                        <select id="points_4_1" class="form-control" name="points_4_1">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_4_1">Fine(£) - if any:</label>
+                        <input id="fine_libras_4_1" class="form-control" type="number" step="any" min="1" name="fine_libras_4_1">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_4_1">Ban(months) - if any:</label>
+                        <input id="ban_month_4_1" class="form-control" type="number" step="1" min="1" name="ban_month_4_1">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <hr>
+                  </div>
+                </fieldset>
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-5">
+                    <div class="form-group">
+                      <label>Would you like to add an additional driver (2)? *</label>
+                      <div class="col-xs-12 col-md-3">
+                        <input type="radio" name="additional_driver2" value="Yes" required>
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-3">
+                        <input type="radio" name="additional_driver2" value="No" checked required>
+                        <label>No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             	</div>
+            </fieldset>
+            <!--===============================|| ADDITIONAL DRIVER FORM - 2 ||================================-->
+            <!--===============================|| ADDITIONAL DRIVER FORM - 2 ||================================-->
+            <!--===============================|| ADDITIONAL DRIVER FORM - 2 ||================================-->
+            <fieldset id="driver_2" style="display:none" disabled>
+              <div class="col-md-10 col-md-offset-1">
+                <legend class="legend">Additional Driver (2) Details</legend>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Name *</label>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <select class="form-control" id="ca_title_2" name="ca_title_2" required>
+                      <option value="Mr.">Mr.</option>
+                      <option value="Mrs.">Mrs.</option>
+                      <option value="Miss">Miss</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-2">
+                    <input id="ca_first_name_2" class="form-control" type="text" name="ca_first_name_2" placeholder="First name" required>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-2">
+                    <input id="ca_middle_name_2" class="form-control" type="text" name="ca_middle_name_2" placeholder="Middle name">
+                  </div>
+                  <div class="form-group col-xs-12 col-md-2">
+                    <input id="ca_sur_name_2" class="form-control" type="text" name="ca_sur_name_2" placeholder="Surname" required>
+                  </div>
+                </div><!--Row-->
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_relationship_2">Relationship to Proposer/Policy Holder *</label>
+                    <select id="ca_relationship_2" class="form-control" name="ca_relationship_2" required>
+                      <option value="">Please select</option>
+                      <option value="Spouse">Spouse</option>
+                      <option value="Civil Partner">Civil Partner</option>
+                      <option value="Common Law Partner/Cohabitee">Common Law Partner/Cohabitee</option>
+                      <option value="Son/Daughter">Son/Daughter</option>
+                      <option value="Parent">Parent</option>
+                      <option value="Brother/Sister">Brother/Sister</option>
+                      <option value="Other Family">Other Family</option>
+                      <option value="Employee">Employee</option>
+                      <option value="Employer">Employer</option>
+                      <option value="Business Partner">Business Partner</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_birthdate_2">Date of Birth *</label>
+                    <div class="input-group">
+                      <input id="ca_birthdate_2" class="form-control datepicker" type="date" name="ca_birthdate_2" placeholder="DD-MM-YYYY" required>
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    </div>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_marital_status_2">Marital Status *</label>
+                    <select id="ca_marital_status_2" class="form-control" name="ca_marital_status_2" required>
+                      <option value="" selected>Please Select</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                      <option value="Divorced">Divorced</option>
+                      <option value="Widow">Widow</option>
+                    </select>
+                  </div>
+                </div><!--Row-->
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_employment_status_2">What's your employment status? *</label>
+                    <select id="ca_employment_status_2" class="form-control" name="ca_employment_status_2" required>
+                      <option value="" selected>Please Select</option>
+                      <option value="Employed">Employed</option>
+                      <option value="Unemployed">Unemployed</option>
+                      <option value="Self-Employed">Self-Employed</option>
+                      <option value="House Person">House Person</option>
+                      <option value="Education">Education</option>
+                      <option value="Retired">Retired</option>
+                      <option value="Not employed due to illness/disability">Not employed due to illness/disability</option>                       
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_employed_ocupation_2">If Employed/Self Employed, what is your occupation: </label>
+                    <input id="ca_employed_ocupation_2" class="form-control" type="text" name="ca_employed_ocupation_2">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_employed_business_2">If Employed/Self Employed, what type of business: </label>
+                    <input id="ca_employed_business_2" class="form-control" type="text" name="ca_employed_business_2">
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_license_type_2">What type of license do you have? *</label>
+                    <select id="ca_license_type_2" class="form-control" name="ca_license_type_2" required>
+                      <option value="">Please Select </option>
+                      <option value="Full UK Manual">Full UK Manual</option>
+                      <option value="Full UK Automatic">Full UK Automatic</option>
+                      <option value="Provisional UK">Provisional UK</option>
+                      <option value="Full Euro EEC">Full Euro EEC</option>
+                      <option value="Full UK-Pass Plus">Full UK-Pass Plus</option>
+                      <option value="Full UK-IAM">Full UK-IAM</option>
+                      <option value="International licence (non-exchangeable)">International licence (non-exchangeable)</option>
+                      <option value="International licence (exchangeable)">International licence (exchangeable)</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_period_license_2">Period License held for *</label>
+                    <select id="ca_period_license_2" class="form-control" name="ca_period_license_2">
+                      <option value="" selected>Please Select</option>
+                      <option value="Less than 1 year">Less than 1 year</option>
+                      <option value="1 year">1 year</option><option value="2 years">2 years</option>
+                      <option value="3 years">3 years</option><option value="4 years">4 years</option>
+                      <option value="5 years">5 years</option><option value="6 years">6 years</option>
+                      <option value="7 years">7 years</option><option value="8 years">8 years</option>
+                      <option value="9 years">9 years</option><option value="10 years">10 years</option>
+                      <option value="11 years">11 years</option><option value="12 years">12 years</option>
+                      <option value="13 years">13 years</option><option value="14 years">14 years</option>
+                      <option value="15 years">15 years</option><option value="15 years">16 years</option>
+                      <option value="15 years">17 years</option><option value="15 years">18 years</option>
+                      <option value="15 years">19 years</option><option value="15 years">20 years</option>
+                      <option value="20 years +">20 years +</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-4">
+                    <label for="ca_date_provitional_license_2">Date obtained provisional licence? *</label>
+                    <div class="input-group">
+                      <input id="ca_date_provitional_license_2" class="form-control datepicker" type="text" name="ca_date_provitional_license_2" placeholder="DD-MM-YYYY" readonly>
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    </div>
+                  </div>
+                </div><!--Row-->
+                
+                <div class="row">
+                  <div class="col-xs-12 col-md-3">
+                    <fieldset class="form-group">
+                      <label>Would you like to enter your driving licence number?</label>
+                      <div class="col-xs-12 col-md-6">
+                        <input type="radio" name="ca_license_enter_2" value="Yes">
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                        <input type="radio" name="ca_license_enter_2" value="No" checked>
+                        <label>No</label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <div class="form-group">
+                      <label for="ca_license_number_2">Please enter your 16-character driving licence number.</label>
+                      <input id="ca_license_number_2" class="form-control" type="text" name="ca_license_number_2" maxlength="16" readonly>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                      <label for="dvla_medical_2">DVLA medical conditions or disabilities *</label>
+                      <select id="dvla_medical_2" class="form-control" name="dvla_medical_2" required>
+                        <option value="" selected>Please Select</option>
+                        <option value="No">No</option>
+                        <option value="DVLA aware – No restrictions">DVLA aware – No restrictions</option>
+                        <option value="DVLA aware – 1 year restricted Licence">DVLA aware – 1 year restricted Licence</option>
+                        <option value="DVLA aware – 2 year restricted Licence">DVLA aware – 2 year restricted Licence</option>
+                        <option value="DVLA aware – 3 year restricted Licence">DVLA aware – 3 year restricted Licence</option>
+                        <option value="DVLA unaware">DVLA unaware</option>
+                      </select>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-3">
+                    <div class="form-group">
+                      <label>Are you born in the UK? *</label>
+                      <div class="col-xs-6 col-md-6">
+                        <input type="radio" name="ca_born_uk_2" value="Yes" required>
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-6 col-md-6">
+                        <input type="radio" name="ca_born_uk_2" value="No" required>
+                        <label>No</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_uk_resident_2">If no, When did you became a UK resident? </label>
+                    <div class="input-group">
+                      <input id="ca_uk_resident_2" class="form-control datepicker" type="date" name="ca_uk_resident_2" placeholder="DD-MM-YYYY" readonly>
+                      <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    </div>
+                  </div>
+                </div><!---Row-->
+                <div class="row">
+                  <div class="form-group col-xs-12 col-md-3">
+                    <label for="ca_other_vehicle_2">Use any other vehicles? *</label>
+                    <select id="ca_other_vehicle_2" class="form-control" name="ca_other_vehicle_2" required>
+                      <option value="" selected>Please Select</option>
+                      <option value="No access to any other vehicle">No access to any other vehicle</option>
+                      <option value="Own another car or van">Own another car or van</option>
+                      <option value="Have use of another car">Have use of another car</option>
+                      <option value="Company car(Including personal use)">Company car(Including personal use)</option>
+                      <option value="Company car(Excluding personal use)">Company car(Excluding personal use)</option>
+                    </select>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="ca_non_motoring_convictions_2">Non motoring criminal convictions</label>
+                      <select id="ca_non_motoring_convictions_2" class="form-control" name="ca_non_motoring_convictions_2">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                      </select>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                      <label>Any motor accidents or claims in the last 5 years? *</label>
+                      <div class="col-xs-12 col-md-3">
+                        <input type="radio" name="ca_motor_accidents_2" value="Yes" required>
+                        <label>Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-9">
+                        <input type="radio" name="ca_motor_accidents_2" value="No" checked required>
+                        <label>No</label>
+                      </div>
+                     </div>
+                  </div>
+                </div><!--Row-->
+
+                <!--==========================|| ADDITIONAL DRIVER 2 - ACCIDENST FORM ||===============================-->
+                <fieldset id="accident-sub-from_2" class="row" style="display:none" disabled>
+                  <div class="col-md-10 col-md-offset-1">
+                    <legend class="legend">Motor Accidents or Claim Details (Additional Driver 2)</legend>
+                    <div class="col-md-3">
+                      <!--================|| ADDITIONAL DRIVER 2 - SECTION 1 ||======================-->
+                      <legend class="legend">1</legend>
+                      <div class="col-md-12">
+                        <label for="type_1_2">Type:</label>
+                        <select id="type_1_2" class="form-control" name="type_1_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_1_2">Date</label>
+                          <input id="date_1_2" class="form-control datepicker" type="text" name="date_1_2" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_1_2">Damage:</label>
+                          <select id="damage_1_2" class="form-control" name="damage_1_2">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_1_2">Cost(£) - if known:</label>
+                          <input id="cost_1_2" class="form-control" type="number" name="cost_1_2">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_1_2">Fault:</label>
+                        <select id="fault_1_2" class="form-control" name="fault_1_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_1_2" value="Yes" required>
+                              <label class="form-check-label">Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_1_2" value="No" checked required>
+                              <label class="form-check-label">No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 1 -->
+                    <!--===========================================================================-->
+                    <!--================|| ADDITIONAL DRIVER 1 -  SECTION 2 ||===========================-->
+                    <div class="col-md-3">
+                      <legend class="legend">2</legend>
+                      <div class="col-md-12">
+                        <label for="type_2_2">Type:</label>
+                        <select id="type_2_2" class="form-control" name="type_2_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_2_2">Date</label>
+                          <input id="date_2_2" class="form-control datepicker" type="text" name="date_2_2" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_2_2">Damage:</label>
+                          <select id="damage_2_2" class="form-control" name="damage_2_2">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_2_2">Cost(£) - if known:</label>
+                          <input id="cost_2_2" class="form-control" type="number" name="cost_2_2">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_2_2">Fault:</label>
+                        <select id="fault_2_2" class="form-control" name="fault_2_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_2_2" value="Yes" required>
+                              <label>Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_2_2" value="No" checked required>
+                              <label>No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 2 -->
+                    <!--==========================================================================================-->
+                    <!--================|| ADDITIONAL DRIVER 1 - SECTION 3 ||==================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">3</legend>
+                      <div class="col-md-12">
+                        <label for="type_3_2">Type:</label>
+                        <select id="type_3_2" class="form-control" name="type_3_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_3_2">Date</label>
+                          <input id="date_3_2" class="form-control datepicker" type="text" name="date_3_2" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_3_2">Damage:</label>
+                          <select id="damage_3_2" class="form-control" name="damage_3_2">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_3_2">Cost(£) - if known:</label>
+                          <input id="cost_3_2" class="form-control" type="number" name="cost_3_2">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_3_2">Fault:</label>
+                        <select id="fault_3_2" class="form-control" name="fault_3_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_3_2" value="Yes" required>
+                              <label class="form-check-label">Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" class="form-check-input" name="any_injuries_3_2" value="No" checked required>
+                              <label class="form-check-label">No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 3 -->
+                    <!--==========================================================================================-->
+                    <!--================|| ADDITIONAL DRIVER 1 - ACCIDENTS SECTION 4 ||==================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">4</legend>
+                      <div class="col-md-12">
+                        <label for="type_4_2">Type:</label>
+                        <select id="type_4_2" class="form-control" name="type_4_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Accident">Accident</option>
+                          <option value="Explosion">Explosion</option>
+                          <option value="Fire Damage">Fire Damage</option>
+                          <option value="Lightning Damage">Lightning Damage</option>
+                          <option value="Malicious Damage">Malicious Damage</option>
+                          <option value="Riot Damage">Riot Damage</option>
+                          <option value="Storm Damage">Storm Damage</option>
+                          <option value="Theft - Accessories">Theft - Accessories</option>
+                          <option value="Theft - Personal Effects">Theft - Personal Effects</option>
+                          <option value="Theft - Sound Equipment">Theft - Sound Equipment</option>
+                          <option value="Theft Of Vehicle">Theft Of Vehicle</option>
+                          <option value="Theft Related Damage">Theft Related Damage</option>
+                          <option value="Windscreen Only">Windscreen Only</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="date_4_2">Date</label>
+                          <input id="date_4_2" class="form-control datepicker" type="text" name="date_4_2" placeholder="DD-MM-YYYY">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="damage_4_2">Damage:</label>
+                          <select id="damage_4_2" class="form-control" name="damage_4_2">
+                            <option value="" selected>Please select</option>
+                            <option value="Damaged - Amount Known">Damaged - Amount Known</option>
+                            <option value="No Damage">No Damage</option>
+                            <option value="UnknownWrite-Off">UnknownWrite-Off</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="cost_4_2">Cost(£) - if known:</label>
+                          <input id="cost_4_2" class="form-control" type="number" name="cost_4_2">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="fault_4_2">Fault:</label>
+                        <select id="fault_4_2" class="form-control" name="fault_4_2">
+                          <option value="" selected>Please select</option>
+                          <option value="Both parties">Both parties</option>
+                          <option value="No other vehicle involved">No other vehicle involved</option>
+                          <option value="Other party">Other party</option>
+                          <option value="Our Driver">Our Driver</option>
+                          <option value="Unoccupied Vehicle">Unoccupied Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Any injuries:</label>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_4_2" value="Yes" required>
+                              <label>Yes</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <div class="col-xs-6">
+                              <input type="radio" name="any_injuries_4_2" value="No" checked required>
+                              <label>No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Col-md-3 Section 4 -->
+                    <div class="col-md-12">
+                      <hr>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!--========================================================================================-->
+                <!--========================================================================================-->
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                      <div class="col-xs-12 col-md-3">
+                        <input type="radio" name="ca_motor_offences_2" value="Yes" required>
+                        <label class="form-check-label">Yes</label>
+                      </div>
+                      <div class="col-xs-12 col-md-9">
+                        <input type="radio" name="ca_motor_offences_2" value="No" checked required>
+                        <label class="form-check-label">No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div><!--Row-->
+
+                <!--===============================|| ADDITIONAL 2 - OFFENCES FORM ||====================================================-->
+                <fieldset id="offences-sub-from_2" class="row" style="display:none" disabled>
+                  <div class="col-md-10 col-md-offset-1">
+                    <legend class="legend">Motor Conviction, Fixed Penalty or Disqualification Details (Additional Driver 2)</legend>
+                    <!--===============================|| ADDITIONAL 2 - SECTION 1 ||============================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">1</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_1_2">Conviction Code:</label>
+                        <select id="conviction_code_1_2" class="form-control" name="conviction_code_1_2">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option valuse="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_1_2">Date of Conviction:</label>
+                        <input id="date_conviction_1_2" class="form-control datepicker" name="date_conviction_1_2" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_1_2">Points:</label>
+                        <select id="points_1_2" class="form-control" name="points_1_2">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_1_2">Fine(£) - if any:</label>
+                        <input id="fine_libras_1_2" class="form-control" type="number" step="any" min="1" name="fine_libras_1_2">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_1_2">Ban(months) - if any:</label>
+                        <input id="ban_month_1_2" class="form-control" type="number" step="1" min="1" name="ban_month_1_2">
+                      </div>
+                    </div>
+                    <!--===================================================================================================-->
+                    <!--===============================|| ADDITIONAL 1 - SECTION 2 ||==============================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">2</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_2_2">Conviction Code:</label>
+                        <select id="mpenalties_code_2_2" class="form-control" name="conviction_code_2_2">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option value="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_2_2">Date of Conviction:</label>
+                        <input id="date_conviction_2_2" class="form-control datepicker" name="date_conviction_2_2" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_2_2">Points:</label>
+                        <select id="points_2_2" class="form-control" name="points_2_2">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_2_2">Fine(£) - if any:</label>
+                        <input id="fine_libras_2_2" class="form-control" type="number" step="any" min="1" name="fine_libras_2_2">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_2_2">Ban(months) - if any:</label>
+                        <input id="ban_month_2_2" class="form-control" type="number" step="1" min="1" name="ban_month_2_2">
+                      </div>
+                    </div>
+                    <!--===============================|| ADDITIONAL 1 - SECTION 3 ||======================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">3</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_3_2">Conviction Code:</label>
+                        <select id="mpenalties_code_3_2" class="form-control" name="conviction_code_3_2">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option value="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_3_2">Date of Conviction:</label>
+                        <input id="date_conviction_3_2" class="form-control datepicker" name="date_conviction_3_2" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_3_2">Points:</label>
+                        <select id="points_3_2" class="form-control" name="points_3_2">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_3_2">Fine(£) - if any:</label>
+                        <input id="fine_libras_3_2" class="form-control" type="number" step="any" min="1" name="fine_libras_3_2">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_3_2">Ban(months) - if any:</label>
+                        <input id="ban_month_3_2" class="form-control" type="number" step="1" min="1" name="ban_month_3_2">
+                      </div>
+                    </div>
+                    <!--===============================|| ADDITIONAL 1 - SECTION 4 ||===================================-->
+                    <div class="col-md-3">
+                      <legend class="legend">4</legend>
+                      <div class="form-group">
+                        <label for="conviction_code_4_2">Conviction Code:</label>
+                        <select id="mpenalties_code_4_2" class="form-control" name="conviction_code_4_2">
+                          <option value="" selected>Please select</option>
+                          <option value="AC10">AC10</option><option value="AC20">AC20</option><option value="AC30">AC30</option><option value="AC99">AC99</option>
+                          <option value="BA10">BA10</option><option value="BA20">BA20</option><option value="BA30">BA30</option><option value="BA99">BA99</option>
+                          <option value="CD10">CD10</option><option value="CD20">CD20</option><option value="CD30">CD30</option><option value="CD40">CD40</option>
+                          <option value="CD50">CD50</option><option value="CD60">CD60</option><option value="CD70">CD70</option><option value="CD80">CD80</option>
+                          <option value="CD90">CD90</option><option value="CD99">CD99</option><option value="CU10">CU10</option><option value="CU20">CU20</option>
+                          <option value="CU30">CU30</option><option value="CU40">CU40</option><option value="CU50">CU50</option><option value="CU60">CU60</option>
+                          <option value="CU80">CU80</option><option value="DD10">DD10</option><option value="DD20">DD20</option><option value="DD30">DD30</option>
+                          <option value="DD40">DD40</option><option value="DD50">DD50</option><option value="DD60">DD60</option><option value="DD70">DD70</option>
+                          <option value="DD80">DD80</option><option value="DD90">DD90</option><option value="DR10">DR10</option><option value="DR20">DR20</option>
+                          <option value="DR30">DR30</option><option value="DR40">DR40</option><option value="DR50">DR50</option><option value="DR60">DR60</option>
+                          <option value="DR70">DR70</option><option value="DR80">DR80</option><option value="DR90">DR90</option><option value="IN10">IN10</option>
+                          <option value="LC10">LC10</option><option value="LC20">LC20</option><option value="LC30">LC30</option><option value="LC40">LC40</option>
+                          <option value="LC50">LC50</option><option value="MS10">MS10</option><option value="MS20">MS20</option><option value="MS30">MS30</option>
+                          <option value="MS40">MS40</option><option value="MS50">MS50</option><option value="MS60">MS60</option><option value="MS70">MS70</option>
+                          <option value="MS80">MS80</option><option value="MS90">MS90</option><option value="MS99">MS99</option><option value="MW10">MW10</option>
+                          <option value="PC10">PC10</option><option value="PC20">PC20</option><option value="PC30">PC30</option><option value="PL10">PL10</option>
+                          <option value="PL20">PL20</option><option value="PL30">PL30</option><option value="PL40">PL40</option><option value="PL50">PL50</option>
+                          <option value="SAC">SAC</option><option value="SP10">SP10</option><option value="SP20">SP20</option><option value="SP30">SP30</option>
+                          <option value="SP40">SP40</option><option value="SP50">SP50</option><option value="SP60">SP60</option><option value="TS10">TS10</option>
+                          <option value="TS20">TS20</option><option value="TS30">TS30</option><option value="TS40">TS40</option><option value="TS50">TS50</option>
+                          <option value="TS60">TS60</option><option value="TS70">TS70</option><option value="TT99">TT99</option><option value="UT10">UT10</option>
+                          <option value="UT20">UT20</option><option value="UT30">UT30</option><option value="UT40">UT40</option><option value="UT50">UT50</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_conviction_4_2">Date of Conviction:</label>
+                        <input id="date_conviction_4_2" class="form-control datepicker" name="date_conviction_4_2" placeholder="DD-MM-YYYY">
+                      </div>
+                      <div class="form-group">
+                        <label for="points_4_2">Points:</label>
+                        <select id="points_4_2" class="form-control" name="points_4_2">
+                          <option value="" selected="">Please select</option><option value="None">None</option>
+                          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="fine_libras_4_2">Fine(£) - if any:</label>
+                        <input id="fine_libras_4_2" class="form-control" type="number" step="any" min="1" name="fine_libras_4_2">
+                      </div>
+                      <div class="form-group">
+                        <label for="ban_month_4_2">Ban(months) - if any:</label>
+                        <input id="ban_month_4_2" class="form-control" type="number" step="1" min="1" name="ban_month_4_2">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <hr>
+                  </div>
+                </fieldset>
+              </div>
             </fieldset>
             <!--===========================================================================================-->
             <!--===========================================================================================-->
@@ -1489,9 +3091,9 @@
 	    });
 
 	    //
-	    $("#dqualifications").change(function(){
+	    $("#additional_qualifications").change(function(){
 	      var bool = (this.value == "" || this.value == "No");
-	      $('#qualifications_obtained').prop({'readonly':bool,'required':(!bool)}).val('');
+	      $('#date_qualifications_obtained').prop({'readonly':bool,'required':(!bool)}).val('');
 	    });
 
 	    //Activate accidents sub form
@@ -1530,7 +3132,7 @@
 	      $('#no_claims_earned_uk,#no_claims_protect').prop({'disabled':bool,'required':!bool}).val('');
 	    })
 
-	    //Activate Offences sub form
+	    //Activate ADDITIONAL FORM 1
 	    $("input[name='additional_driver1']").click(function(){
 	      var bool = (this.value === "Yes");
 	      if(bool){
@@ -1539,6 +3141,84 @@
 	        $('#driver_1').hide().prop('disabled',!bool);
 	      }
 	    });
+
+      //=================|| ADITIONAL DRIVER 1 ||======================
+      $("#ca_license_type_1").change(function(){
+        var bool = (this.value !== "Full UK Automatic");
+        $('#ca_date_provitional_license_1').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      $("input[name='ca_license_enter_1']").click(function(){
+        var bool = (this.value !== "Yes");
+        $('#ca_license_number_1').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      $("input[name='ca_born_uk_1']").click(function(){
+        var bool = (this.value !== "No");
+        $('#ca_uk_resident_1').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      //====================================================================================
+      //Activate accidents sub form ADDITIONAL 1
+      $("input[name='ca_motor_accidents_1']").click(function(){
+        var bool = (this.value === "Yes");
+        if(bool){
+          $('#accident-sub-from_1').show().prop('disabled',!bool);
+        }else{
+          $('#accident-sub-from_1').hide().prop('disabled',!bool);
+        }
+      });
+
+      //Activate Offences sub form  ADDITIONAL 1
+      $("input[name='ca_motor_offences_1']").click(function(){
+        var bool = (this.value === "Yes");
+        if(bool){
+          $('#offences-sub-from_1 ').show().prop('disabled',!bool);
+        }else{
+          $('#offences-sub-from_1').hide().prop('disabled',!bool);
+        }
+      });
+
+      //Activate ADDITIONAL FORM 2
+      $("input[name='additional_driver2']").click(function(){
+        var bool = (this.value === "Yes");
+        if(bool){
+          $('#driver_2').show().prop('disabled',!bool);
+        }else{
+          $('#driver_2').hide().prop('disabled',!bool);
+        }
+      });
+
+      //=================|| ADITIONAL DRIVER 2 ||======================
+      $("#ca_license_type_2").change(function(){
+        var bool = (this.value !== "Full UK Automatic");
+        $('#ca_date_provitional_license_2').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      $("input[name='ca_license_enter_2']").click(function(){
+        var bool = (this.value !== "Yes");
+        $('#ca_license_number_2').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      $("input[name='ca_born_uk_2']").click(function(){
+        var bool = (this.value !== "No");
+        $('#ca_uk_resident_2').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      //====================================================================================
+      //Activate accidents sub form ADDITIONAL 2
+      $("input[name='ca_motor_accidents_2']").click(function(){
+        var bool = (this.value === "Yes");
+        if(bool){
+          $('#accident-sub-from_2').show().prop('disabled',!bool);
+        }else{
+          $('#accident-sub-from_2').hide().prop('disabled',!bool);
+        }
+      });
+
+      //Activate Offences sub form  ADDITIONAL 2
+      $("input[name='ca_motor_offences_2']").click(function(){
+        var bool = (this.value === "Yes");
+        if(bool){
+          $('#offences-sub-from_2 ').show().prop('disabled',!bool);
+        }else{
+          $('#offences-sub-from_2').hide().prop('disabled',!bool);
+        }
+      });
 	  });
 	</script>
 @endsection

@@ -56,8 +56,8 @@ class CreateCarInsuranceTable extends Migration
             $table->string('vehicle_engine_size',20)->nullable();
             $table->string('vehicle_transmission',10)->nullable();
             $table->string('vehicle_imported',3);
-            $table->string('vehile_modifications',3);
-            $table->string('vehile_dash_cam',3);
+            $table->string('vehicle_modifications',3);
+            $table->string('vehicle_dash_cam',3);
 
             //Car ownership
             $table->string('vehicle_date_purchase',10); //DD-MM-YYYY OR Not yet.
@@ -89,7 +89,6 @@ class CreateCarInsuranceTable extends Migration
             $table->string('business',100)->nullable()->comment('If own a business');
 
             //Claims & Convictions
-            $table->string('non_motoring_convictions',3);
             $table->string('non_motoring_convictions',3);
             $table->string('motor_accidents',3); //RELATION WITH CAR_MOTOR_ACCIDENTS
             $table->string('motor_offences',3); //RELATION WITH CAR_MOTOR_OFFENSES

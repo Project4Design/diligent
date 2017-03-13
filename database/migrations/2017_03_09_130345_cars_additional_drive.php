@@ -13,31 +13,32 @@ class CarsAdditionalDrive extends Migration
      */
     public function up()
     {
-        Schema::create('cars_additional_drive', function (Blueprint $table) {
-            $table->increments('id_additional_drive');
+        Schema::create('cars_additional_driver', function (Blueprint $table) {
+            $table->increments('id_additional_driver');
             $table->integer('id_cars_additional')->unsigned();
             $table->foreign('id_cars_additional')->references('id')->on('cars')->onDelete('cascade');
-            $table->string('title')->nullable();
-            $table->string('first_name')->nullable();
-            $table->string('surname')->nullable();
-            $table->string('relationship')->nullable('');
-            $table->string('date')->nullable();
-            $table->string('marital_status')->nullable();
-            $table->string('employment_status')->nullable();
-            $table->string('employed_occupation')->nullable();
-            $table->string('employed_business')->nullable();
-            $table->string('type_license')->nullable();
-            $table->string('period_license')->nullable();
-            $table->string('license_number')->nullable();
-            $table->string('dvla_medical')->nullable();
-            $table->string('born_uk')->nullable();
-            $table->string('uk_resident')->nullable();
-            $table->string('other_vehicles')->nullable();
-            $table->string('motoring_criminal_convictions')->nullable();
-            $table->integer('motor_accidents')->unsigned()->nullable();
-            $table->integer('motoring_offences')->unsigned()->nullable();
-            $table->integer('additional_driver')->unsigned()->nullable();
-            $table->string('additional_comments')->nullable();
+            $table->string('ca_title',5)->nullable();
+            $table->string('ca_first_name',50)->nullable();
+            $table->string('ca_middle_name',50)->nullable();
+            $table->string('ca_sur_name',50)->nullable();
+            $table->string('ca_relationship',30)->nullable();
+            $table->string('ca_birthdate',10)->nullable();
+            $table->string('ca_marital_status',10)->nullable();
+            $table->string('ca_employment_status',40)->nullable();
+            $table->string('ca_employed_occupation')->nullable();
+            $table->string('ca_employed_business')->nullable();
+            $table->string('ca_type_license',40)->nullable();
+            $table->string('ca_period_license',10)->nullable();
+            $table->string('ca_date_provitional_license',10)->nullable()->comment('If license_type is Full UK, Full UK Automatic');;
+            $table->string('ca_license_enter',3)->nullable();
+            $table->string('ca_license_number',16)->nullable();
+            $table->string('ca_dvla_medical',40)->nullable();
+            $table->string('ca_born_uk',3)->nullable();
+            $table->string('ca_uk_resident',10)->nullable();
+            $table->string('ca_other_vehicles',40)->nullable();
+            $table->string('ca_non_motoring_convictions',3)->nullable();
+            $table->string('ca_motor_accidents',3)->unsigned()->nullable();
+            $table->string('ca_motor_offences',3)->unsigned()->nullable();
             $table->timestamps();
         });
 
