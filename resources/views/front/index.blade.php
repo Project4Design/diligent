@@ -127,24 +127,32 @@
     <div class="container">
       <div class="record row">
         <div class="col-xs-6 col-md-2 col-md-offset-2">
-          <p class="record-badge">230</p>
-          <img src="img/diploma.svg" alt="">
-          <p>Contrats signed</p>
+          <div class="records">
+            <p class="record-badge">230</p>
+            <img src="img/diploma.svg" alt="">
+            <p>Contrats signed</p>
+          </div>
         </div>
         <div class="col-xs-6 col-md-2">
-          <p class="record-badge">230</p>
-          <img src="img/car-insurance.svg" alt="">
-          <p>Protected vehicles</p>
+          <div class="records">
+            <p class="record-badge">230</p>
+            <img src="img/car-insurance.svg" alt="">
+            <p>Protected vehicles</p>
+          </div>
         </div>
         <div class="col-xs-6 col-md-2">
-          <p class="record-badge">56</p>
-          <img src="img/house-insurance.svg" alt="">
-          <p>Protected houses</p>
+          <div class="records">
+            <p class="record-badge">56</p>
+            <img src="img/house-insurance.svg" alt="">
+            <p>Protected houses</p>
+          </div>
         </div>
         <div class="col-xs-6 col-md-2">
-          <p class="record-badge">56</p>
-          <img src="img/businessman.svg" alt="">
-          <p>Protected business</p>
+          <div class="records">
+            <p class="record-badge">56</p>
+            <img src="img/businessman.svg" alt="">
+            <p>Protected business</p>
+          </div>
         </div>
       </div>
     </div>
@@ -205,9 +213,9 @@
     //Scroll top button
     $(window).ready(function(){
 
-      var $root = $('body'),
-          $sS   = $('#services').offset().top+200;
-      console.log("Load: "+$sS);
+      var $root = $('body'),  
+          $sS   = $('#services').offset().top+250,
+          $sR   = $('.content-section-records').offset().top+250;
 
       $(window).scroll(function(){
         var wH = $root.height(),
@@ -216,11 +224,12 @@
         (wS > $('a.services'))?$('a.services').fadeOut(300):$('a.services').fadeIn(300);
 
         if(wS > ($sS-wH)){
-          console.log("Show");
           $('.menu-item').show().addClass('animated fadeInLeft'); $('.scrolltop a').fadeIn(300);
         }else{
           $('.scrolltop a').fadeOut(300);
         }
+
+        if(wS > ($sR-wH)){ $('.records').show().addClass('animated fadeInLeft'); }
       });
 
       $('.link-scroll').click(function() {

@@ -175,6 +175,10 @@ footer {
   color: #fff;
 }
 
+footer a{
+  color: #B8DDED;
+}
+
 .footer-quote-list a{
   color: #fff;
 }
@@ -201,7 +205,8 @@ p.copyright {
 }
 
 .redes a{
-  color:#fff;
+  color:#fff !important;
+  font-size: 18px;
 }
 
 .menu-item{
@@ -354,17 +359,18 @@ p.copyright {
   background-color: #f8f8f8;
   padding-bottom: 50px;
 }
-.record{
+.records{
   text-align: center;
   color:#3B3B3B;
+  display: none;
 }
 .record-badge{
   font-weight: 700;
 }
-.record p{
+.records p{
   font-size: 1.5em !important;
 }
-.record img{
+.records img{
   width: 60px;
 }
 
@@ -385,11 +391,11 @@ p.copyright {
   padding-bottom: 40px;
 }
 .legend{
+  margin-top: 15px;
   font-weight: 700;
   color: #b51235;
 }
 label{
-  margin-top: 15px;
   padding-top: 10px;
 }
 input, select{

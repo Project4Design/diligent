@@ -112,7 +112,7 @@
 	    </div><!--row-->
 	  </div>
 	  <div class="col-xs-12 quote-button">
-	    <a href="vans-quote.php">Get a quote</a>
+	    <a href="{{ url('/van-quote') }}">Get a quote</a>
 	  </div>
 	</section>
 </div>

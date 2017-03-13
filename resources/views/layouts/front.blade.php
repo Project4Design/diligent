@@ -90,13 +90,13 @@
           <div class="col-md-3 ">
             <h4>Inurance Quotes</h4>
             <ul class="list-unstyled footer-quote-list">
-              <li><a href="{{ url('/accident-quote') }}">Accident Quotoe</a></li>
-              <li><a href="{{ url('/car-quote') }}">Car Quotoe</a></li>
-              <li><a href="{{ url('/van-quote') }}">Van Quotoe</a></li>
-              <li><a href="{{ url('/taxi-quote') }}">Taxi Quotoe</a></li>
-              <li><a href="{{ url('/home-quote') }}">Home Quotoe</a></li>
-              <li><a href="{{ url('/business-quote') }}">Business Quotoe</a></li>
-              <li><a href="{{ url('/fleet-quote') }}">Fleet Quotoe</a></li>
+              <li><a href="{{ url('/accident-quote') }}">Accident Quote</a></li>
+              <li><a href="{{ url('/car-quote') }}">Car Quote</a></li>
+              <li><a href="{{ url('/van-quote') }}">Van Quote</a></li>
+              <li><a href="{{ url('/taxi-quote') }}">Taxi Quote</a></li>
+              <li><a href="{{ url('/home-quote') }}">Home Quote</a></li>
+              <li><a href="{{ url('/business-quote') }}">Business Quote</a></li>
+              <li><a href="{{ url('/fleet-quote') }}">Fleet Quote</a></li>
             </ul>
           </div>
           <div class="col-xs-12 col-md-2 pull-right">
@@ -112,7 +112,11 @@
               <p>Liverpool, UK</p>
            </div>
            <div class="col-xs-12 text-center">
-              <p class="copyright small">Copyright &copy; <b>Diligent Services</b> 2017. All Rights Reserved</p>
+              <p class="copyright small">
+                <a href="{{ url('/terms') }}">Terms and Conditions</a> |
+                <a href="{{ url('/policy') }}">Privacy Policy</a> |
+                Copyright &copy; <b>Diligent Services</b> 2017. All Rights Reserved
+              </p>
           </div>
         </div>
       </div>

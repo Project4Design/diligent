@@ -14,17 +14,20 @@
 Route::get('/','AuthController@index')->name('login');
 */
 
+Route::name('front')->get('/' , 'FrontController@index');
 
-Route::get('/','FrontController@index')->name('front');
 Route::get('/car',function(){ return view('front.car'); });
 Route::get('/van',function(){ return view('front.van'); });
 Route::get('/taxi',function(){ return view('front.taxi'); });
 Route::get('/home',function(){ return view('front.home'); });
 Route::get('/business',function(){ return view('front.business'); });
 Route::get('/fleet',function(){ return view('front.fleet'); });
+Route::get('/terms',function(){ return view('front.terms'); });
+Route::get('/policy',function(){ return view('front.policy'); });
 
 //QUOTES
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
+Route::get('/van-quote',function(){ return view('front.van_quote'); });
 Route::get('/accident-quote',function(){ return view('front.accident_quote'); });
 
 //Registrar cars insurance
@@ -33,8 +36,11 @@ Route::post('cars','CarsController@store', function() {
 
 Route::get('/login','AuthController@index')->name('login');
 //verificar rutas con permiso auth
-Route::group(['middleware' => 'auth'], function() {
-	Route::get('dashboard','HomeController@index')->name('index');
+
+
+Route::middleware('auth')->group(function () {
+			Route::get('dashboard','HomeController@index')->name('index');
+;
 });
 //fin group
 
