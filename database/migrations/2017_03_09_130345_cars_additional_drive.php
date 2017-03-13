@@ -35,10 +35,10 @@ class CarsAdditionalDrive extends Migration
             $table->string('ca_dvla_medical',40)->nullable();
             $table->string('ca_born_uk',3)->nullable();
             $table->string('ca_uk_resident',10)->nullable();
-            $table->string('ca_other_vehicles',40)->nullable();
+            $table->string('ca_other_vehicle',40)->nullable();
             $table->string('ca_non_motoring_convictions',3)->nullable();
-            $table->string('ca_motor_accidents',3)->unsigned()->nullable();
-            $table->string('ca_motor_offences',3)->unsigned()->nullable();
+            $table->string('ca_motor_accidents',3)->nullable();
+            $table->string('ca_motor_offences',3)->nullable();
             $table->timestamps();
         });
 
@@ -52,6 +52,6 @@ class CarsAdditionalDrive extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cars_additional_drive');
+        Schema::dropIfExists('cars_additional_driver');
     }
 }

@@ -19,7 +19,7 @@ class CarsMotorsOffense extends Migration
             $table->integer('id_cars_offences')->unsigned();
             $table->foreign('id_cars_offences')->references('id')->on('cars')->onDelete('cascade');
             $table->integer('id_additional_drive_offences')->unsigned()->nullable();
-            $table->foreign('id_additional_drive_offences')->references('id_additional_drive')->on('cars_additional_drive')->onDelete('cascade');
+            $table->foreign('id_additional_drive_offences')->references('id_additional_driver')->on('cars_additional_driver')->onDelete('cascade');
             $table->string('conviction_code', 195)->nullable()->comment('Code of conviction');
             $table->string('date_conviction', 195)->nullable()->comment('date of conviction'); //DD-MM-YYYY
             $table->string('points', 195)->nullable()->comment('points');
