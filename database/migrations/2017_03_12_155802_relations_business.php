@@ -16,7 +16,7 @@ class RelationsBusiness extends Migration
         Schema::create('relations_business', function (Blueprint $table) {
             $table->increments('id_relations_business');
             $table->integer('business_id')->unsigned();
-            $table->foreign('business_id')->references('id_insurance_bussiness')->on('bussiness')->onDelete('cascade');
+            $table->foreign('business_id')->references('id_insurance_bussiness')->on('business')->onDelete('cascade');
             $table->string('porcentage_collection')->nullable();
             $table->string('many_persons')->nullable();
             $table->string('often_kitchen')->nullable();

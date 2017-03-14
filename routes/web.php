@@ -30,6 +30,7 @@ Route::resource('accident' , 'AccidentsController');
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
 Route::get('/van-quote',function(){ return view('front.van_quote'); });
 Route::get('/home-quote',function(){ return view('front.home_quote'); });
+Route::get('/business-quote',function(){ return view('front.business_quote'); });
 Route::get('/accident-quote',function(){ return view('front.accident_quote'); });
 
 //VIEWS ADMIN
@@ -46,6 +47,9 @@ Route::post('cars','CarsController@store', function() {
 
 /*---------- Registrar accidents ------------ */
 Route::name('register_accidents')->post('accidents' , 'AccidentsController@store');
+
+/*---------- Registrar accidents ------------ */
+Route::name('register_business')->post('business_store' , 'BusinessController@store');
 
 //------FIN DE RUTAS PARA FORMULARIOS 
 
