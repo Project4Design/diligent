@@ -18,10 +18,10 @@ class HomeLossesDamage extends Migration
             $table->increments('id_home_losses_damage');
             $table->integer('home_insurance_id')->unsigned();
             $table->foreign('home_insurance_id')->references('id_home_insurance')->on('home_insurance')->onDelete('cascade');
-            $table->string('much_was_claim')->nullable();
-            $table->string('type_claim')->nullable();
-            $table->string('date_claim')->nullable();
-            $table->string('claim_settled')->nullable();
+            $table->string('much_was_claim',20)->nullable();
+            $table->string('type_claim',10)->nullable();
+            $table->string('date_claim',10)->nullable();
+            $table->string('claim_settled',3)->nullable();
             $table->timestamps();
         });
     }

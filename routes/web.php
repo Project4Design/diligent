@@ -29,6 +29,7 @@ Route::resource('accident' , 'AccidentsController');
 //QUOTES
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
 Route::get('/van-quote',function(){ return view('front.van_quote'); });
+Route::get('/home-quote',function(){ return view('front.home_quote'); });
 Route::get('/accident-quote',function(){ return view('front.accident_quote'); });
 
 //VIEWS ADMIN
