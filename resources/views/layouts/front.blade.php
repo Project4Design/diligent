@@ -92,12 +92,11 @@
             <ul class="list-unstyled footer-quote-list">
               <li><a href="{{ url('/accident-quote') }}">Accident Quote</a></li>
               <li><a href="{{ url('/car-quote') }}">Car Quote</a></li>
-              <li><a href="{{ url('/van-quote') }}">Van Quote</a></li>
-              <li><a href="{{ url('/taxi-quote') }}">Taxi Quote</a></li>
+              <li><a href="{{ url('/van-quote') }}">Van Quote</a></li><!--
+              <li><a href="{{ url('/taxi-quote') }}">Taxi Quote</a></li>-->
               <li><a href="{{ url('/home-quote') }}">Home Quote</a></li>
-              <li><a href="{{ url('/business-quote') }}">Business Quote</a></li>
-              <li><a href="{{ url('/fleet-quote') }}">Fleet Quote</a></li>
-              <li><a href="{{ url('/accident-quote') }}">Accidents</a></li>
+              <li><a href="{{ url('/business-quote') }}">Business Quote</a></li><!--
+              <li><a href="{{ url('/fleet-quote') }}">Fleet Quote</a></li>-->
             </ul>
           </div>
           <div class="col-xs-12 col-md-2 pull-right">

@@ -55,7 +55,7 @@
               <div class="menu-item item-index">
                 <a href="{{ url('/taxi') }}">
                   <div class="container-img">
-                    <img src="img/taxi.svg" alt="Taxi">
+                    <img src="img/taxi.png" alt="Taxi">
                   </div>
                   <h4>Taxi Insurance</h4>
                 </a>
@@ -75,7 +75,7 @@
               <div class="menu-item item-index">
                 <a href="{{ url('/business') }}">
                   <div class="container-img">
-                    <img src="img/business.svg" alt="Business">
+                    <img src="img/business.png" alt="Business">
                   </div>
                   <h4>Business Insurance</h4>
                 </a>
@@ -150,7 +150,7 @@
         <div class="col-xs-6 col-md-2">
           <div class="records">
             <p class="record-badge">56</p>
-            <img src="img/businessman.svg" alt="">
+            <img src="img/businessman.png" alt="">
             <p>Protected business</p>
           </div>
         </div>
