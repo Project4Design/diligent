@@ -25,7 +25,7 @@ Route::get('/fleet',function(){ return view('front.fleet'); });
 Route::get('/terms',function(){ return view('front.terms'); });
 Route::get('/policy',function(){ return view('front.policy'); });
 //Route::name('accidents')->get('/accident-quote', function () { return view('front.accident_quote'); });
-
+Route::resource('accident' , 'AccidentsController');
 //QUOTES
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
 Route::get('/van-quote',function(){ return view('front.van_quote'); });
