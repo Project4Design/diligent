@@ -17,7 +17,8 @@ class AccidentsController extends Controller
      */
     public function index()
     {
-        //
+        $accidents = Accidents::all();
+        return view('accidents.index' , ['accidents' => $accidents]);
     }
 
     /**
@@ -68,7 +69,7 @@ class AccidentsController extends Controller
 
                 }//fin for passengers injury
             }//fin if passenger is YE
-            return redirect("/accidents")->with(['message' => 'It has been submitted correctly']);
+            return redirect("/accident-quote")->with(['message' => 'It has been submitted correctly']);
     }
 
     /**
