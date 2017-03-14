@@ -4,7 +4,7 @@
 
 <div class="content">
 	<div class="row">
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<section class="perfil">
 			      <div class="row">
 			        <div class="col-md-12">
@@ -14,7 +14,7 @@
 			          </h1>
 			        </div>
 			        <div class="col-md-4">
-			          <h4>Datos del usuario</h4>
+			          <h4>Accidents</h4>
 			          <p><b>Name:</b> {{$accidents->title}}{{$accidents->first_name}} {{$accidents->sur_name}}</p>
 			          <p><b>Vehicle registration:</b> {{$accidents->vehicle_registration}}</p>
 			          <p><b></b></p></p>

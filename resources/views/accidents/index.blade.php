@@ -7,7 +7,7 @@
  		<div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 ">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>1</h3>
+            <h3>prueba</h3>
             <p>Accident Insurance</p>
           </div>
           <div class="icon">
