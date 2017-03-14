@@ -5,10 +5,20 @@
 @section('content')
 <div class="pad"></div>
 <div class="container">
+
   <div class="row">
-   <form action="" method="POST">
+   <form action="{{ route('register_accidents') }}" method="POST">
     {{ csrf_field() }}
       <h1 class="main-title">Accidents Insurance Quote</h1>
+      @if ( session()->has('message') )
+    <div class="col-md-5 col-md-offset-4">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong><center>{{session()->get('message') }}</center></strong>
+      </div>
+    </div>
+    @endif
+       
     	<div class="col-xs-12">
 				<div class="col-xs-12">
 	        <legend class="legend">Your Personal Information</legend>
@@ -161,7 +171,7 @@
             <div class="form-group col-xs-12 col-md-4">
               <label for="weather_condition">Weather condition (optional)</label>
               <select id="weather_condition" class="form-control" name="weather_condition">	
-								<option value="Please select">Please select</option>
+								<option value="">Please select</option>
 								<option value="Clear">Clear</option>
 								<option value="Dry">Dry</option>
 								<option value="Sunny">Sunny</option>

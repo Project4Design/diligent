@@ -8,8 +8,9 @@ class Accidents extends Model
 {
     protected $table = "accidents";
 
+    protected $primaryKey = "id_accidents_management";
+
     public $fillable = [
-    'id_accidents_management',
     'title',
     'first_name',
     'middle_name',

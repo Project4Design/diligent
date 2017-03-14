@@ -8,8 +8,9 @@ class cars_additional_driver extends Model
 {
     protected $table = "cars_additional_driver";
 
+    protected $primaryKey = "id_cars_additional";
+
     public $fillable = [
-    'id_cars_additional',
     'ca_title',
     'additional_driver1',
     'ca_first_name',

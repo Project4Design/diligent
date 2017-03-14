@@ -31,9 +31,18 @@ Route::get('/car-quote',function(){ return view('front.car_quote'); });
 Route::get('/van-quote',function(){ return view('front.van_quote'); });
 Route::get('/accident-quote',function(){ return view('front.accident_quote'); });
 
-//Registrar cars insurance
+//REGISTROS DE FORMULARIOS
+
+/*------- Registrar cars insurance -------- */
 Route::post('cars','CarsController@store', function() {
 })->name('register_cars');
+
+/*---------- Registrar accidents ------------ */
+Route::name('register_accidents')->post('accidents' , 'AccidentsController@store');
+
+//------FIN DE RUTAS PARA FORMULARIOS 
+
+
 
 Route::get('/login','AuthController@index')->name('login');
 //verificar rutas con permiso auth

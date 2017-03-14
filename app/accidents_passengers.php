@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class accidents_passengers extends Model
 {
-    protected $table = "accidents_passengers_injury";
+    protected $table = "accident_passengers_injury";
+
+    protected $primaryKey = "id_passengers_injury";
 
     public $fillable = [
-    'id_passengers_injury',
     'id_accidents_injury',
     'passenger_name',
     'passenger_address',
