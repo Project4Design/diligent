@@ -13,7 +13,7 @@ class InsuranceBussiness extends Migration
      */
     public function up()
     {
-        Schema::create('bussiness', function (Blueprint $table) {
+        Schema::create('business', function (Blueprint $table) {
             $table->increments('id_insurance_bussiness');
             //form personal information
             $table->string('title',10);
@@ -66,9 +66,9 @@ class InsuranceBussiness extends Migration
             $table->string('if_running',3)->nullable(); // RELATIONS
             //COVER DETAILS
             $table->string('premises_owned_rented')->nullable();
-            $table->string('require_building_cover')->nullable();
-            $table->string('maximum_cash')->nullable();
-            $table->string('cash_premises')->nullable();
+            $table->string('require_building_cover',3)->nullable();
+            $table->string('maximum_cash',20)->nullable();
+            $table->string('cash_premises',3)->nullable();
             //stock to be insured
             $table->string('cigarettes_insured')->nullable();
             $table->string('wines_insured')->nullable();
@@ -77,9 +77,9 @@ class InsuranceBussiness extends Migration
             $table->string('contents_insured')->nullable();
             $table->string('contents_other_insured')->nullable();
             //claim summary
-            $table->string('have_losses_accidents')->nullable();
+            $table->string('have_losses_accidents',3)->nullable();
             //employer references number details
-            $table->string('paying_paye')->nullable();
+            $table->string('paying_paye',3)->nullable();
             $table->string('employer_reference')->nullable();
             //policy start date
             $table->string('policy_start')->nullable();

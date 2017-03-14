@@ -31,11 +31,21 @@
           <h2 class="section-heading" style="color:#fff">Insurance Products</h2>
 
           <div class="col-md-12">
+            <div class="col-xs-6 col-md-2 col-md-offset-1">
+              <div class="menu-item item-index">
+                <a href="{{ url('/taxi') }}">
+                  <div class="container-img">
+                    <img src="img/car-collision.png" alt="Accidents">
+                  </div>
+                  <h4>Accidents Insurance</h4>
+                </a>
+              </div>
+            </div>
             <div class="col-xs-6 col-md-2">
               <div class="menu-item item-index">
                 <a href="{{ url('/car') }}">
                   <div class="container-img">
-                    <img src="img/car.svg" alt="Car">
+                    <img src="img/car.png" alt="Car">
                   </div>
                   <h4>Car Insurance</h4>
                 </a>
@@ -45,7 +55,7 @@
               <div class="menu-item item-index">
                 <a href="{{ url('/van') }}">
                   <div class="container-img">
-                    <img src="img/van.svg" alt="Van">
+                    <img src="img/van.png" alt="Van">
                   </div>
                   <h4>Van Insurance</h4>
                 </a>
@@ -53,19 +63,9 @@
             </div>
             <div class="col-xs-6 col-md-2">
               <div class="menu-item item-index">
-                <a href="{{ url('/taxi') }}">
-                  <div class="container-img">
-                    <img src="img/taxi.png" alt="Taxi">
-                  </div>
-                  <h4>Taxi Insurance</h4>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <div class="menu-item item-index">
                 <a href="{{ url('/home') }}">
                   <div class="container-img">
-                    <img src="img/house.svg" alt="House">
+                    <img src="img/home-insurance.png" alt="House">
                   </div>
                   <h4>Home Insurance</h4>
                 </a>
@@ -78,16 +78,6 @@
                     <img src="img/business.png" alt="Business">
                   </div>
                   <h4>Business Insurance</h4>
-                </a>
-              </div>
-            </div>
-           <div class="col-xs-6 col-md-2">
-              <div class="menu-item item-index">
-                <a href="{{ url('/fleet') }}">
-                  <div class="container-img">
-                    <img src="img/fleet.svg" alt="Fleet">
-                  </div>
-                  <h4>Fleet Insurance</h4>
                 </a>
               </div>
             </div>
@@ -129,21 +119,21 @@
         <div class="col-xs-6 col-md-2 col-md-offset-2">
           <div class="records">
             <p class="record-badge">230</p>
-            <img src="img/diploma.svg" alt="">
+            <img src="img/diploma.png" alt="">
             <p>Contrats signed</p>
           </div>
         </div>
         <div class="col-xs-6 col-md-2">
           <div class="records">
             <p class="record-badge">230</p>
-            <img src="img/car-insurance.svg" alt="">
+            <img src="img/car-insurance.png" alt="">
             <p>Protected vehicles</p>
           </div>
         </div>
         <div class="col-xs-6 col-md-2">
           <div class="records">
             <p class="record-badge">56</p>
-            <img src="img/house-insurance.svg" alt="">
+            <img src="img/house.png" alt="">
             <p>Protected houses</p>
           </div>
         </div>
@@ -183,7 +173,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-md-offset-5" style="margin-top:50px">
+          <div class="col-md-6 col-md-offset-3" style="margin-top:50px">
             <ul class="contact-info">
               <li><i class="fa fa-envelope fa-fw"></i>&nbsp;mail@example.com<br></li>
               <li><i class="fa fa-phone fa-fw"></i>&nbsp;123 456 7890<br></li>

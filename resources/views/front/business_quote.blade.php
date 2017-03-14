@@ -11,9 +11,9 @@
     <div class="col-xs-12">
       <h1 class="main-title">Business Insurance Quote</h1>
     </div>
-
+    @include('partials.flash')
     <div class="col-xs-12">
-      <form action="#" method="POST">
+      <form action="{{route('register_business')}}" method="POST">
          {{ csrf_field() }}
         <legend class="legend">Personal Information</legend>
         <br>
@@ -22,20 +22,21 @@
             <label>Name *</label>
           </div>
           <div class="form-group col-md-2">
-            <select class="form-control" id="title" name="title" >
+            <select class="form-control" id="title" name="title" required>
+              <option value="" selected></option>
               <option value="Mr.">Mr.</option>
               <option value="Mrs.">Mrs.</option>
               <option value="Miss">Miss</option>
             </select>
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name" value="Fran">
+            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name">
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name" value="Jose">
+            <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name">
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname" value="hernandez" >
+            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname">
           </div>
         </div><!--Row-->
 
@@ -53,7 +54,7 @@
 	        <div class="form-group col-xs-12 col-md-4">
 	          <label for="employment_status">What's your employment status? *</label>
 	          <select id="employment_status" class="form-control" name="employment_status" required>
-	            <option value="Employed" selected>Please Select</option>
+	            <option value="" selected>Please Select</option>
 	            <option value="Employed">Employed</option>
 	            <option value="Unemployed">Unemployed</option>
 	            <option value="Self-Employed">Self-Employed</option>
@@ -68,13 +69,13 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
             <label for="occupation">If Employed/Self Employed, what is your occupation: </label>
-            <input id="occupation" class="form-control" type="text" name="occupation" value="Engineer">
+            <input id="occupation" class="form-control" type="text" name="occupation">
           </div>
         </div>
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
             <label for="business_type">If Employed/Self Employed, what type of business: </label>
-            <input id="business_type" class="form-control" type="text" name="business_type" value="yes">
+            <input id="business_type" class="form-control" type="text" name="business_type">
           </div>
         </div><!--Row-->
 
@@ -83,14 +84,14 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="mobile_telephone">Mobile / Telephone Number *</label>
-            <input id="mobile_telephone" class="form-control" type="text" name="mobile_telephone" value="04169328863" required>
+            <input id="mobile_telephone" class="form-control" type="text" name="mobile_telephone" required>
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="email">Email address</label>
-            <input id="email" class="form-control" type="email" name="email" value="prueba@gmail.com">
+            <input id="email" class="form-control" type="email" name="email">
           </div>
         </div>
 
@@ -98,20 +99,20 @@
 
         <div class="row">
           <div class="col-md-12">
-            <label>Property Address *</label>
+            <label>Address *</label>
           </div>
           <div class="form-group col-xs-12 col-md-3">
-            <input id="house_number" class="form-control" type="text" name="house_number" placeholder="Door n#" value="AddresN">
+            <input id="house_number" class="form-control" type="text" name="house_number" placeholder="Door n#">
           </div>
         </div>
 				<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="house_first_line" class="form-control" type="text" name="house_first_line" placeholder="1st line of address" value="1st line address">
+            <input id="house_first_line" class="form-control" type="text" name="house_first_line" placeholder="1st line of address">
           </div>
         </div>
        	<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="postcode" class="form-control" type="text" name="postcode" placeholder="Postcode" value="postcode">
+            <input id="postcode" class="form-control" type="text" name="postcode" placeholder="Postcode">
           </div>
         </div><!--Row-->
 
@@ -140,20 +141,20 @@
 
         <div class="row">
           <div class="col-md-12">
-            <label>Property Address *</label>
+            <label>Address</label>
           </div>
           <div class="form-group col-xs-12 col-md-3">
-            <input id="house_number_correspondence" class="form-control" type="text" name="house_number_correspondence" placeholder="Door n#" value="AddresN">
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-xs-12 col-md-3">
-            <input id="house_address_correspondence" class="form-control" type="text" name="house_address_correspondence" placeholder="1st line of address" value="1st line address">
+            <input id="house_number_correspondence" class="form-control" type="text" name="house_number_correspondence" placeholder="Door n#">
           </div>
         </div>
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="postcode_correspondence" class="form-control" type="text" name="postcode_correspondence" placeholder="Postcode" value="postcode">
+            <input id="house_address_correspondence" class="form-control" type="text" name="house_address_correspondence" placeholder="1st line of address">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <input id="postcode_correspondence" class="form-control" type="text" name="postcode_correspondence" placeholder="Postcode">
           </div>
         </div><!--Row-->
 
@@ -561,36 +562,39 @@
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <label for="specify_business">specify_business</label>
-            <textarea id="specify_business" class="specify_business" name="specify_business"></textarea>
+            <label for="specify_business">If other please specify the business type</label>
+            <textarea id="specify_business" class="form-control" name="specify_business"></textarea>
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <label for="date_bussiness">What date Was your business established?
-            <input id="date_bussiness" class="form-control datepicker" name="date_bussiness">
+            <label for="date_bussiness">What date Was your business established?</label>
+            <div class="input-group">
+              <input id="date_bussiness" class="form-control datepicker" name="date_bussiness">
+              <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="total_employees">Total number of employees including partners, principals and directors</label>
-            <input id="total_employees" class="form-control" type="number" min="1" step="1" max="1000" name="total_employees" value="5">
+            <input id="total_employees" class="form-control" type="number" min="1" step="1" max="1000" name="total_employees">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="stimated_annual_turnover">What is your Estimated Annual Turnover?</label>
-            <input id="stimated_annual_turnover" class="form-control" type="number" min="1" step="1" name="stimated_annual_turnover" value="5">
+            <input id="stimated_annual_turnover" class="form-control" type="number" min="1" step="1" name="stimated_annual_turnover">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="stimated_annual_wages">What is your Estimated Annual Wages?</label>
-            <input id="stimated_annual_wages" class="form-control" type="number" min="1" step="1" name="stimated_annual_wages" value="5">
+            <input id="stimated_annual_wages" class="form-control" type="number" min="1" step="1" name="stimated_annual_wages">
           </div>
         </div>
 
@@ -600,7 +604,7 @@
           <div class="form-group col-xs-12 col-md-4">
             <label for="premises_located">Where is your premises located?</label>
             <select id="premises_located" class="form-control" name="premises_located" required>
-              <option value="" selected=""> Please select</option>
+              <option value="" selected> Please select</option>
               <option value="Arcade">Arcade</option>
               <option value="Business Park">Business Park</option>
               <option value="Covered Shopping centre">Covered Shopping centre</option>
@@ -628,7 +632,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Any CCTV camera inside this premises</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -636,7 +640,7 @@
                 <label>Yes</label>
               </div>
               <div class="col-xs-12 col-md-3">
-                <input type="radio" name="any_cctv" value="No" checked>
+                <input type="radio" name="any_cctv" value="No">
                 <label>No</label>
               </div>
             </div>
@@ -646,7 +650,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Is this premises entitled as a listed building</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -654,7 +658,7 @@
                 <label>Yes</label>
               </div>
               <div class="col-xs-12 col-md-3">
-                <input type="radio" name="premises_building" value="No" checked>
+                <input type="radio" name="premises_building" value="No">
                 <label>No</label>
               </div>
             </div>
@@ -698,7 +702,7 @@
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
-            <label for="premises_occupied">How many years NCB do you have buildings insurance</label>
+            <label for="premises_occupied">When is the premises occupied?</label>
             <select id="premises_occupied" class="form-control" name="premises_occupied">
               <option value="" selected> Please select</option>
               <option value="24 Hours">24 Hours</option>
@@ -711,7 +715,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Does the property have a roller shutter which covers all ground floor exposed glazing?</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -729,7 +733,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Does the property have grilles fitted which cover all ground floor exposed glazing?</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -747,7 +751,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Do you have any sort of alarm in the premises?</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -779,7 +783,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Is the alarm being checked regularly by any organization?</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -797,7 +801,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding:0">
                 <label>Do you have use of kitchen in the premises for commercial use?</label>
               </div>
               <div class="col-xs-12 col-md-3">
@@ -815,8 +819,8 @@
         <div class="row">
           <div class="col-xs-12 col-md-4">
             <div class="form-group">
-              <div class="col-md-12">
-                <label>If you are running a: Café, Take Away and Restaurant</label>
+              <div class="col-md-12" style="padding:0">
+                <label class="legend">If you are running a: Café, Take Away and Restaurant</label>
               </div>
               <div class="col-xs-12 col-md-3">
                 <input type="radio" name="if_running" value="Yes">
@@ -837,21 +841,21 @@
         			<div class="row">
 			          <div class="form-group col-xs-12 col-md-3">
 			            <label for="porcentage_collection">Percentage of collection: (Please specify in the box)</label>
-			            <input id="porcentage_collection" class="form-control" type="number" min="1" step="1" max="100" name="porcentage_collection" value="50">
+			            <input id="porcentage_collection" class="form-control" type="number" min="1" step="1" max="100" name="porcentage_collection">
 			          </div>
 			        </div>
 
               <div class="row">
                 <div class="form-group col-xs-12 col-md-3">
                   <label for="many_persons">How many persons could be dined at a time? (Please specify in the box)</label>
-                  <input id="many_persons" class="form-control" type="number" min="1" step="1" max="500" name="many_persons" value="50">
+                  <input id="many_persons" class="form-control" type="number" min="1" step="1" max="500" name="many_persons">
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-7">
                   <div class="form-group">
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="padding:0">
                       <label>How often the kitchen extractor fan is cleaned?</label>
                     </div>
                     <div class="col-xs-12 col-md-3">
@@ -884,63 +888,177 @@
               <div class="row">
                 <div class="form-group col-xs-12 col-md-3">
                   <label for="maximum_occupy">Maximum how many liters of oil the fryer can occupy?</label>
-                  <input id="maximum_occupy" class="form-control" type="number" name="maximum_occupy">
+                  <input id="maximum_occupy" class="form-control" type="number" min="1" step="any" name="maximum_occupy">
                 </div>
               </div>
-
-              <legend class="legend">Cover Details</legend>
-
-
-
-
-
-
-
-				      <div class="row">
-			          <div class="form-group col-xs-12 col-md-3">
-			            <label for="date_claim">What date was the claim?</label>
-			            <input id="date_claim" class="form-control" type="text" name="date_claim" value="fecha">
-			          </div>
-			        </div>
-
-			        <div class="row">
-			          <div class="col-xs-12 col-md-4">
-			            <div class="form-group">
-			            	<div class="col-md-12">
-			              	<label>Has the claim been settled?</label>
-			              </div>
-			              <div class="col-xs-12 col-md-3">
-			                <input type="radio" name="claim_settled" value="Yes">
-			                <label>Yes</label>
-			              </div>
-			              <div class="col-xs-12 col-md-3">
-			                <input type="radio" name="claim_settled" value="No">
-			                <label>No</label>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
 			      </div>
-        	</div>
+        	</div><br>
         </fieldset>
+        <!--==================================================================================================-->
+
+        <legend class="legend">Cover Details</legend>
 
         <div class="row">
-        	<div class="form-group col-xs-12 col-md-2">
-            <label for="like_cover_start">When would you like the cover to start </label>
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="premises_owned_rented">Is the Premises’ Owned / Leased / Rented by you?</label>
+            <input id="premises_owned_rented" class="form-control" type="text" name="premises_owned_rented">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <div class="form-group">
+              <div class="col-md-12" style="padding:0">
+                <label>Do you require buildings cover?</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="require_building_cover" value="Yes">
+                <label>Yes</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="require_building_cover" value="No">
+                <label>No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="maximum_cash">What’s the maximum cash amount to be covered during the business hours?</label>
+            <input id="maximum_cash" class="form-control" type="number" min="1" step="any" name="maximum_cash">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <div class="form-group">
+              <div class="col-md-12" style="padding:0">
+                <label>Do you want any cash sum to be covered outside the premises?</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="cash_premises" value="Yes">
+                <label>Yes</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="cash_premises" value="No">
+                <label>No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <legend class="legend">Stocks to be insured</legend>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="cigarettes_insured">Cigarettes, Cigars and tabacco sum insured amount</label>
+            <input id="cigarettes_insured" class="form-control" type="number" min="1" step="any" name="cigarettes_insured">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="wines_insured">Wines, Fortified Wines and Spirits sum insured amount</label>
+            <input id="wines_insured" class="form-control" type="number" min="1" step="any" name="wines_insured">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="frozen_insured">Frozen items to be insured</label>
+            <input id="frozen_insured" class="form-control" type="number" min="1" step="any" name="frozen_insured">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="other_stock">Other Stock (other than target stock shown above) to be insured</label>
+            <input id="other_stock" class="form-control" type="number" min="1" step="any" name="other_stock">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="contents_insured">Contents (Fixtures & Furniture’s) sum insured amount</label>
+            <input id="contents_insured" class="form-control" type="number" min="1" step="any" name="contents_insured">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="contents_other_insured">Contents (If any Till, Computers & other electrical Equipment’s) sum insured amount</label>
+            <input id="contents_other_insured" class="form-control" type="number" min="1" step="any" name="contents_other_insured">
+          </div>
+        </div>
+
+        <legend class="legend">Claim Summary</legend>
+
+
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <div class="form-group">
+              <div class="col-md-12" style="padding:0">
+                <label>Have you had any losses or incidents that have or could have given rise to claims (whether insured or not) in the past 5 years in connection with your current, or previous, business?</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="have_losses_accidents" value="Yes">
+                <label>Yes</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="have_losses_accidents" value="No">
+                <label>No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <legend class="legend">Employer Reference Number Details</legend>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <div class="form-group">
+              <div class="col-md-12" style="padding:0">
+                <label>Are you exempt from paying PAYE? </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="paying_paye" value="Yes">
+                <label>Yes</label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <input type="radio" name="paying_paye" value="No">
+                <label>No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="employer_reference">Please provide your Employer Reference Number</label>
+            <input id="employer_reference" class="form-control" type="text" name="employer_reference">
+          </div>
+        </div>
+
+        <legend class="legend">Policy Start Date</legend>
+
+        <div class="row">
+        	<div class="form-group col-xs-12 col-md-3">
+            <label for="policy_start">When would you like the cover to start </label>
             <div class="input-group">
-              <input id="like_cover_start" class="form-control datepicker" type="date" name="like_cover_start" placeholder="DD-MM-YYYY">
+              <input id="policy_start" class="form-control datepicker" type="date" name="policy_start" placeholder="DD-MM-YYYY">
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>
         </div>
 
-        <legend class="legend">Assumptions bellow are correct: (input tick boxes what would be pre-ticked)</legend>
-        <div class="row">
-        	<div class="col-md-8 col-md-offset-1">
-        		<h4>The Property</h4>
-        		<hr>
+        <hr>
 
-        	</div>
+        <div class="row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="additional_comments">Additional comments </label>
+            <textarea id="additional_comments" class="form-control" type="date" name="additional_comments"></textarea>
+          </div>
         </div>
 
       	<div class="row">

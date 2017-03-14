@@ -123,6 +123,11 @@
     </footer>
 
     @yield('scripts')
+    <script type="text/javascript">
+      $(window).ready(function(){
+        $('div.alert').not('.alert-important').delay(5000).slideUp(300);
+      });
+    </script>
 
   </body>
 </html>

@@ -48,6 +48,9 @@ Route::post('cars','CarsController@store', function() {
 /*---------- Registrar accidents ------------ */
 Route::name('register_accidents')->post('accidents' , 'AccidentsController@store');
 
+/*---------- Registrar accidents ------------ */
+Route::name('register_business')->post('business_store' , 'BusinessController@store');
+
 //------FIN DE RUTAS PARA FORMULARIOS 
 
 
