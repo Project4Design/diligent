@@ -103,6 +103,7 @@
                 <li><a href="{{ url('/car') }}"><i class="fa fa-circle-o"></i> Car</a></li>
                 <li><a href="{{ url('/van') }}"><i class="fa fa-circle-o"></i> Van</a></li>
                 <li><a href="{{ url('/home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
+                <li><a href="{{ route('accident_views') }}"><i class="fa fa-circle-o"></i> Accidents</a></li>
                 <li><a href="{{ url('/business') }}"><i class="fa fa-circle-o"></i> Business</a></li>
               </ul>
             </li>
