@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Accidents;
 use App\accidents_passengers;
 use App\accidents_witnesses;
+use DB;
 use Session;
 
 class AccidentsController extends Controller
@@ -81,12 +82,10 @@ class AccidentsController extends Controller
     public function show($id)
     {
         $accidents = Accidents::findOrFail($id);
-        //$accidents_witnesses = accidents_witnesses::findOrFail($id);
-        dd($accidents->accidents_witnesses()->where('id_management_accidents','=',$id));
+        $witness = accidents_witnesses::where('id_management_accidents',$id)->get();
+        $passengers = accidents_passengers::where('id_accidents_injury',$id)->get();
 
-        
-
-        return view('accidents.show' , ['accidents' => $accidents]);
+        return view('accidents.show' , ['accidents' => $accidents,'witness' => $witness,'passengers' => $passengers]);
     }
 
     /**

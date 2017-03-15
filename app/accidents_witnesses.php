@@ -11,7 +11,6 @@ class accidents_witnesses extends Model
     public $primaryKey = "id_witnesses";
 
     public $fillable = [
-    'id_witnesses',
     'id_management_accidents',
     'witness_name',
     'witness_address',

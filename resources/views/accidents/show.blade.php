@@ -75,19 +75,38 @@
 				      		</div>
 				      	</div>
 				      	
-				     <h2 class="text-center">Additional Detals</h2>
+				     <h2 class="text-center">Additional Details</h2>
 		      	  	  <hr class="separador">
 		      	  	    <div class="row">
-		      	  	    	<div class="col-md-4">
-		      	  	    		<strong>Witnesses details</strong> {{$accidents->witnesses_details}}
+		      	  	    	<div class="col-md-3">
+		      	  	    		<strong>Witnesses details:  </strong> {{$accidents->witnesses_details}}
 		      	  	    	</div>
-		      	  	    	  <div class="row">
-		      	  	    	  	<div class="col-md-4">
-		      	  	    	  		<strong>Witness Full Name: </strong> {{$accidents->witness_name}}<br><br> 
-		      	  	    	  		<strong>Witness Adress: </strong> {{$accidents->witness_address}}<br><br>
-		      	  	    	  		<strong>Witness Contact Number: </strong> {{$accidents->witness_contact_number}}
+		      	  	    @if($accidents->witnesses_details == "Yes")
+		      	  	    	  @foreach($witness as $witnes)
+		      	  	    	  	<div class="col-md-3">
+		      	  	    	  		<strong>Witness Full Name: </strong> {{$witnes->witness_name}}<br><br> 
+		      	  	    	  		<strong>Witness Adress: </strong> {{$witnes->witness_address}}<br><br>
+		      	  	    	  		<strong>Witness Contact Number: </strong> {{$witnes->witness_contact_number}}
 		      	  	    	  	</div>
-		      	  	    	  </div>
+		      	  	    	@endforeach
+		      	  	    @endif
+		      	  	    </div><br><br>
+		      	  	    <hr>
+		      	  	    <div class="row">
+		      	  	    	<div class="col-md-3">
+		      	  	    		<strong>Passengers Injury:  </strong> {{$accidents->passengers_injury}}
+		      	  	    	</div>
+						@if($accidents->passengers_injury == "Yes")
+							@foreach($passengers as $pas)
+								<div class="col-md-3">
+			      	  	    	  		<strong>Witness Full Name: </strong> {{$pas->passenger_name}}<br><br> 
+			      	  	    	  		<strong>Witness Adress: </strong> {{$pas->passenger_address}}<br><br>
+			      	  	    	  		<strong>Witness Contact Number: </strong> {{$pas->passenger_contact_number}}
+			      	  	    	  </div>
+							@endforeach
+
+						@endif
+		      	  	    	  
 		      	  	    </div>
 
 		      </div>
