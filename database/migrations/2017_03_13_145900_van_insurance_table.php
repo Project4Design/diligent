@@ -51,7 +51,7 @@ class VanInsuranceTable extends Migration
       $table->string('vehicle_manufacturer',50);
       $table->string('vehicle_model',50);
       $table->string('vehicle_number_seats',2);
-      $table->string('vehicle_number_doors',2);
+      $table->string('vehicle_number_doors',10);
       $table->string('vehicle_alarms',50)->nullable();
       $table->string('vehicle_engine_size',20)->nullable();
       $table->string('vehicle_transmission',10)->nullable();

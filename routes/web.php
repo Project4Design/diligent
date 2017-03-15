@@ -48,8 +48,11 @@ Route::post('cars','CarsController@store', function() {
 /*---------- Registrar accidents ------------ */
 Route::name('register_accidents')->post('accidents' , 'AccidentsController@store');
 
-/*---------- Registrar accidents ------------ */
+/*---------- Registrar Bussines ------------ */
 Route::name('register_business')->post('business_store' , 'BusinessController@store');
+
+/*-------- Registrar Vans insurance -------------*/
+Route::name('register_vans')->post('vans_store', 'VansController@store');
 
 //------FIN DE RUTAS PARA FORMULARIOS 
 

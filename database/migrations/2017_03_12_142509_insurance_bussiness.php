@@ -96,6 +96,6 @@ class InsuranceBussiness extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bussiness');
+        Schema::dropIfExists('business');
     }
 }
