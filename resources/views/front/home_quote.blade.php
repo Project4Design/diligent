@@ -11,9 +11,9 @@
     <div class="col-xs-12">
       <h1 class="main-title">Home Insurance Quote</h1>
     </div>
-
+@include('partials.flash')
     <div class="col-xs-12">
-      <form action="#" method="POST">
+      <form action="{{ route('home_register') }}" method="POST">
          {{ csrf_field() }}
         <legend class="legend">Personal Information</legend>
         <br>
@@ -29,26 +29,26 @@
             </select>
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name" value="Fran">
+            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name">
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name" value="Jose">
+            <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name">
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname" value="hernandez" >
+            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname">
           </div>
         </div><!--Row-->
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-2">
-            <label for="birthdate">Date of Birth *</label>
+            <label for="birthdate">Date of Birth <span class="required">*</span></label>
             <div class="input-group">
-              <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
+              <input id="birthdate" class="form-control datepicker" type="text" name="birthdate" placeholder="DD-MM-YYYY" required>
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <label for="marital_status">Marital Status *</label>
+            <label for="marital_status">Marital Status <span class="required">*</span></label>
             <select id="marital_status" class="form-control" name="marital_status" required>
               <option value="" selected>Please Select</option>
               <option value="Single">Single</option>
@@ -61,9 +61,9 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="employment_status">What's your employment status? *</label>
+	          <label for="employment_status">What's your employment status? <span class="required">*</span></label>
 	          <select id="employment_status" class="form-control" name="employment_status" required>
-	            <option value="Employed" selected>Please Select</option>
+	            <option value="" selected>Please Select</option>
 	            <option value="Employed">Employed</option>
 	            <option value="Unemployed">Unemployed</option>
 	            <option value="Self-Employed">Self-Employed</option>
@@ -77,13 +77,13 @@
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
-            <label for="occupation">If Employed/Self Employed, what is your occupation: </label>
-            <input id="occupation" class="form-control" type="text" name="occupation" value="Engineer" required>
+            <label for="occupation">If Employed/Self Employed, what is your occupation: <span class="required">*</span></label>
+            <input id="occupation" class="form-control" type="text" name="occupation" required>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
-            <label for="business_type">If Employed/Self Employed, what type of business: </label>
+            <label for="business_type">If Employed/Self Employed, what type of business: <span class="required">*</span></label>
             <input id="business_type" class="form-control" type="text" name="business_type" value="yes" required>
           </div>
         </div><!--Row-->
@@ -91,7 +91,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-3">
             <div class="form-group">
-              <label>Are you born in the UK? *</label>
+              <label>Are you born in the UK? <span class="required">*</span></label>
               <div class="col-xs-6 col-md-6">
                 <input type="radio" name="born_uk" value="Yes" checked required>
                 <label class="form-check-label">Yes</label>
@@ -105,7 +105,7 @@
           <div class="form-group col-xs-12 col-md-3">
             <label for="became_resident">If no, When did you became a UK resident? </label>
             <div class="input-group">
-              <input id="became_resident" class="form-control datepicker" type="date" name="became_resident" placeholder="DD-MM-YYYY" readonly>
+              <input id="became_resident" class="form-control datepicker" type="text" name="became_resident" placeholder="DD-MM-YYYY" readonly>
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>
@@ -114,38 +114,38 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="email">Email address</label>
-            <input id="email" class="form-control" type="email" name="email" value="prueba@gmail.com">
+            <input id="email" class="form-control" type="email" name="email" >
           </div>
         </div>
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <label for="contact_number">Contact Number *</label>
-            <input id="contact_number" class="form-control" type="text" name="contact_number" value="04169328863" required>
+            <label for="contact_number">Contact Number <span class="required">*</span></label>
+            <input id="contact_number" class="form-control" type="text" name="contact_number"  required>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <label>Property Address *</label>
+            <label>Property Address <span class="required">*</span></label>
           </div>
           <div class="form-group col-xs-12 col-md-3">
-            <input id="property_number" class="form-control" type="text" name="property_number" placeholder="Door n#" value="AddresN">
+            <input id="property_number" class="form-control" type="text" name="property_number" placeholder="Door n#" required>
           </div>
         </div>
 				<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="property_first_line" class="form-control" type="text" name="property_first_line" placeholder="1st line of address" value="1st line address">
+            <input id="property_first_line" class="form-control" type="text" name="property_first_line" placeholder="1st line of address" >
           </div>
         </div>
        	<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="property_postcode" class="form-control" type="text" name="property_postcode" placeholder="Postcode" value="postcode">
+            <input id="property_postcode" class="form-control" type="text" name="property_postcode" placeholder="Postcode" >
           </div>
         </div><!--Row-->
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="type_property">Type of property *</label>
+	          <label for="type_property">Type of property <span class="required">*</span></label>
 	          <select id="type_property" class="form-control" name="type_property" required>
               <option value="" selected>Please Select</option>
               <option value="Semi Detached">Semi Detached</option>
@@ -163,35 +163,35 @@
 	      <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="stimate_built">Estimated year property built</label>
-            <input id="stimate_built" class="form-control" type="number" min="1" step="1" max="9999" name="stimate_built" value="2902">
+            <input id="stimate_built" class="form-control" type="number" min="1" step="1" max="9999" name="stimate_built" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="number_living_rooms">Number of living rooms</label>
-            <input id="number_living_rooms" class="form-control" type="number" min="1" step="1" max="20" name="number_living_rooms" value="5">
+            <input id="number_living_rooms" class="form-control" type="number" min="1" step="1" max="20" name="number_living_rooms" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="number_kitchens">Number of Kitchens</label>
-            <input id="number_kitchens" class="form-control" type="number" min="1" step="1" max="20" name="number_kitchens" value="5">
+            <input id="number_kitchens" class="form-control" type="number" min="1" step="1" max="20" name="number_kitchens" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="number_bathrooms">Number of Bathrooms</label>
-            <input id="number_bathrooms" class="form-control" type="number" min="1" step="1" max="20" name="number_bathrooms" value="5">
+            <input id="number_bathrooms" class="form-control" type="number" min="1" step="1" max="20" name="number_bathrooms" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="number_bedrooms">Number of Bedrooms</label>
-            <input id="number_bedrooms" class="form-control" type="number" min="1" step="1" max="20" name="number_bedrooms" value="5">
+            <input id="number_bedrooms" class="form-control" type="number" min="1" step="1" max="20" name="number_bedrooms" >
           </div>
         </div>
 
@@ -213,7 +213,7 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="approximate_roof">Approximate % of flat roof *</label>
+	          <label for="approximate_roof">Approximate % of flat roof <span class="required">*</span></label>
 	          <select id="approximate_roof" class="form-control" name="approximate_roof" required>
               <option value="" selected>Please Select</option>
               <option value="None">None</option>
@@ -227,7 +227,7 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="own_property">Do you own this property </label>
+	          <label for="own_property">Do you own this property <span class="required">*</span></label>
 	          <select id="own_property" class="form-control" name="own_property" required>
               <option value="" selected>Please Select</option>
               <option value="Yes(mortgaged)">Yes (mortgaged)</option>
@@ -241,7 +241,7 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="lives_property">Who lives in the property *</label>
+	          <label for="lives_property">Who lives in the property <span class="required">*</span></label>
 	          <select id="lives_property" class="form-control" name="lives_property" required>
               <option value="" selected>Please Select</option>
               <option value="Unoccupied">Unoccupied</option>
@@ -255,21 +255,21 @@
 	      <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="many_years_property">How many years have they lived at the property</label>
-            <input id="many_years_property" class="form-control" type="number" min="1" step="1" max="500" name="many_years_property" value="8">
+            <input id="many_years_property" class="form-control" type="number" min="1" step="1" max="500" name="many_years_property" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="many_adults_property">How many adults live in the property</label>
-            <input id="many_adults_property" class="form-control" type="number" min="1" step="1" max="99" name="many_adults_property" value="3">
+            <input id="many_adults_property" class="form-control" type="number" min="1" step="1" max="99" name="many_adults_property" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="many_children_property">How many children under the age of 18 live in the property</label>
-            <input id="many_children_property" class="form-control" type="number" min="1" step="1" max="99" name="many_children_property" value="3">
+            <input id="many_children_property" class="form-control" type="number" min="1" step="1" max="99" name="many_children_property">
           </div>
         </div>
 
@@ -336,7 +336,7 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="property_alarm">Does the property have an alarm</label>
+	          <label for="property_alarm">Does the property have an alarm <span class="required">*</span></label>
 	          <select id="property_alarm" class="form-control" name="property_alarm" required>
               <option value="" selected="">Please Select</option>
               <option value="Yes  bells only">Yes  bells only</option>
@@ -348,7 +348,7 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="lock_main_door">What lock is fitted to your main door</label>
+	          <label for="lock_main_door">What lock is fitted to your main door <span class="required">*</span></label>
 	          <select id="lock_main_door" class="form-control" name="lock_main_door" required>
               <option value="" selected="">Please Select</option>
               <option value="5 lever mortice deadlock">5 lever mortice deadlock</option>
@@ -361,7 +361,7 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="lock_external_doors">For how many days in a row is the property left empty (e.g. holidays)</label>
+	          <label for="lock_external_doors">For how many days in a row is the property left empty (e.g. holidays) <span class="required">*</span></label>
 	          <select id="lock_external_doors" class="form-control" name="lock_external_doors" required>
               <option value="" selected="">Please Select</option>
               <option value="No other external doors">No other external doors</option>
@@ -392,14 +392,14 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="smoke_alarms_property">How many working smoke alarms are there in the property</label>
-            <input id="smoke_alarms_property" class="form-control" type="number" min="1" step="1" max="99" name="smoke_alarms_property" value="3">
+            <input id="smoke_alarms_property" class="form-control" type="number" min="1" step="1" max="99" name="smoke_alarms_property" >
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="rebuild_property">Rebuild value of the property</label>
-            <input id="rebuild_property" class="form-control" type="number" min="1" step="1" max="99" name="rebuild_property" value="3">
+            <input id="rebuild_property" class="form-control" type="number" min="1" step="1" max="99" name="rebuild_property" >
           </div>
         </div>
 
@@ -421,7 +421,7 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="ncb_buildings_insurance">How many years NCB do you have buildings insurance</label>
+	          <label for="ncb_buildings_insurance">How many years NCB do you have buildings insurance <span class="required">*</span></label>
 	          <select id="ncb_buildings_insurance" class="form-control" name="ncb_buildings_insurance" required>
               <option value="" selected>Please Select</option>
               <option value="Never had building insurance">Never had building insurance</option>
@@ -499,7 +499,7 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="ncb_content_insurance">How many years NCB do you have buildings insurance</label>
+	          <label for="ncb_content_insurance">How many years NCB do you have buildings insurance <span class="required">*</span></label>
 	          <select id="ncb_content_insurance" class="form-control" name="ncb_content_insurance" required>
               <option value="" selected="">Please Select</option>
               <option value="Never had building insurance">Never had building insurance</option>
@@ -541,13 +541,13 @@
         			<div class="row">
 			          <div class="form-group col-xs-12 col-md-3">
 			            <label for="much_was_claim">How much was the claim for?</label>
-			            <input id="much_was_claim" class="form-control" type="number" min="1" step="1" name="much_was_claim" value="5000">
+			            <input id="much_was_claim" class="form-control" type="number" min="1" step="1" name="much_was_claim">
 			          </div>
 			        </div>
 
 			        <div class="row">
 				        <div class="form-group col-xs-12 col-md-4">
-				          <label for="type_claim">How many years NCB do you have buildings insurance</label>
+				          <label for="type_claim">How many years NCB do you have buildings insurance <span class="required">*</span></label>
 				          <select id="type_claim" class="form-control" name="type_claim" required>
                     <option value="" selected="">Please Select</option>
                     <option value="Buildings">Buildings</option>
@@ -588,7 +588,7 @@
         	<div class="form-group col-xs-12 col-md-2">
             <label for="like_cover_start">When would you like the cover to start </label>
             <div class="input-group">
-              <input id="like_cover_start" class="form-control datepicker" type="date" name="like_cover_start" placeholder="DD-MM-YYYY">
+              <input id="like_cover_start" class="form-control datepicker" type="text" name="like_cover_start" placeholder="DD-MM-YYYY">
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>

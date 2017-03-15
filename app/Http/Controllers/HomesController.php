@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Homes;
+use App\home_losses;
 
 class HomesController extends Controller
 {
@@ -36,7 +37,43 @@ class HomesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $homes = new Homes;
+        $homes->fill($request->all());
+        if($homes->save())
+        {
+
+            if ($request->input('property_losses_damage') == "Yes") 
+            {
+
+                $home_losses = new Home_losses;
+                $home_losses->home_insurance_id = $homes->id_home_insurance;
+                $home_losses->much_was_claim = $request->input('much_was_claim');
+                $home_losses->type_claim = $request->input('type_claim');
+                $home_losses->date_claim = $request->input('date_claim');
+                $home_losses->claim_settled = $request->input('claim_settled');
+                $home_losses->save();
+
+                
+                
+            }//fin property == YES
+
+            $with = [
+            'flash_message' => 'Home quote submitted successfully!',
+            'flash_class' => 'alert-success'
+            ];
+
+        }else{
+
+            $with = [
+            'flash_message' => 'An error has ocurred.',
+            'flash_class' => 'alert-danger',
+            'alert-important' => true
+            ];
+        }//fin save de home
+
+        return redirect("/home-quote")->with($with);
+
+            
     }
 
     /**
