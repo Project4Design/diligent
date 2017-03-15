@@ -5,7 +5,7 @@
 	<section class="content">
 		<!-- Info boxes -->
     <div class="row">
-      <div class="col-md-2 col-sm-6 col-xs-12">
+      <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($cars) }}</h3>
@@ -14,7 +14,7 @@
           <div class="icon">
             <i class="fa fa-car"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{ url('admin/cars') }}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -29,7 +29,7 @@
           <div class="icon">
             <i class="fa fa-bus"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{ url('admin/vans') }}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -44,7 +44,7 @@
           <div class="icon">
             <i class="fa fa-home"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{ url('admin/homes') }}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -59,7 +59,7 @@
           <div class="icon">
             <i class="fa fa-building"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{ url('admin/business') }}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -74,7 +74,7 @@
           <div class="icon">
             <i class="fa fa-wheelchair"></i>
           </div>
-          <a href="{{url('/accidents')}}" class="small-box-footer">
+          <a href="{{ url('admin/accidents') }} " class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>

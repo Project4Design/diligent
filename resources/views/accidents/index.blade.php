@@ -1,28 +1,36 @@
 @extends('layouts.app')
 
+@section('title','Accidents - '.config('app.name'))
+@section('header','Accidents Quotes')
+@section('breadcrumb')
+	<ol class="breadcrumb">
+	  <li><a href="{{ route('index') }}"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a></li>
+	  <li class="active"> Accidents </li>
+	</ol>
+@endsection
 @section('content')
-<div class="content">
- <div class="row">
- 	<div class="col-md-12">
- 		<div class="col-md-3 col-sm-6 col-xs-12 col-lg-2 ">
+<!-- Main content -->
+	<div class="content">
+	  <!-- Info boxes -->
+	 	<div class="row">
+ 			<div class="col-md-3 col-sm-6 col-xs-12 col-lg-3">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>prueba</h3>
-            <p>Accident Insurance</p>
+            <h3>{{ count($accidents) }}</h3>
+            <p>Accident Quotes</p>
           </div>
           <div class="icon">
             <i class="fa fa-wheelchair"></i>
           </div>
-          
         </div>
       </div>
- 	</div>
- </div>
-	<div class="row">
-		<div class="col-md-12">
-		 <div class="box box-warning color-palette-box">
+	 	</div>
+
+		<div class="row">
+			<div class="col-md-12">
+		 		<div class="box box-warning">
 		      <div class="box-header with-border">
-		        <h3 class="box-title"><i class="fa fa-window-close"></i> Accidents</h3>
+		        <h3 class="box-title"><i class="fa fa-file-text-o"></i> Accidents</h3>
 		      </div>
 		      <div class="box-body">
 		      	<div class="table-responsive">

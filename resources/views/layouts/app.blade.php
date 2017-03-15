@@ -98,32 +98,40 @@
             <li class="header">MENU</li>
 
             <li>
-              <a href="{{ url('/') }}">
+              <a href="{{ route('index') }}">
                 <i class="fa fa-home"></i> <span>Home</span>
               </a>
-            </li> 
-            
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-clipboard"></i>
-                <span>Insurances</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{ route('accident_views') }}"><i class="fa fa-circle-o"></i> Accidents</a></li>
-                <li><a href="{{ url('admin/cars') }}"><i class="fa fa-circle-o"></i> Cars</a></li>
-                <li><a href="{{ url('admin/vans') }}"><i class="fa fa-circle-o"></i> Vans</a></li>
-                <li><a href="{{ url('admin/homes') }}"><i class="fa fa-circle-o"></i> Homes</a></li>
-                <li><a href="{{ url('admin/business') }}"><i class="fa fa-circle-o"></i> Business</a></li>
-              </ul>
             </li>
-            
+
              <li>
-              <a href="#">
-                <i class="fa fa-file-pdf-o"></i> <span>Reports</span>
-                <small class="label pull-right bg-red">PDF</small>
+              <a href="{{ url('admin/accidents') }}">
+                <i class="fa fa-wheelchair"></i> <span> Accidents</span>
               </a>
-            </li> 
+            </li>
+
+             <li>
+              <a href="{{ url('admin/cars') }}">
+                <i class="fa fa-car"></i> <span> Cars</span>
+              </a>
+            </li>
+
+             <li>
+              <a href="{{ url('admin/vans') }}">
+                <i class="fa fa-bus"></i> <span> Vans</span>
+              </a>
+            </li>
+
+             <li>
+              <a href="{{ url('admin/homes') }}">
+                <i class="fa fa-home"></i> <span> Homes</span>
+              </a>
+            </li>
+
+             <li>
+              <a href="{{ url('admin/business') }}">
+                <i class="fa fa-building"></i> <span> Business</span>
+              </a>
+            </li>
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -134,6 +142,12 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Main content -->
+        <section class="content-header">
+          <h1 class="text-center">
+            @yield('header')
+          </h1>
+          @yield('breadcrumb')
+        </section>
         @yield('content')
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->

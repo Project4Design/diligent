@@ -17,7 +17,8 @@ class VansController extends Controller
      */
     public function index()
     {
-        //
+        $vans = Vans::all();
+        return view('vans.index' , ['vans' => $vans]);
     }
 
     /**

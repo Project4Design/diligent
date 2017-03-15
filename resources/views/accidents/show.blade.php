@@ -1,34 +1,30 @@
 @extends('layouts.app')
 
+@section('title','Accidents - '.config('app.name'))
+@section('header','Accidents Quotes')
+@section('breadcrumb')
+	<ol class="breadcrumb">
+	  <li><a href="{{ route('index') }}"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a></li>
+	  <li><a href="{{ url('admin/accidents') }}"> Cars</a></li>
+	  <li class="active"> Details</li>
+	</ol>
+@endsection
+
 @section('content')
-
-<div class="content">
-	<div class="row">
-		<div class="col-md-12">
-			<section class="perfil">
-			      <div class="row">
-			        <div class="col-md-12">
-			          <h1 class="page-header" >
-			            <i class="fa fa-wheelchair" aria-hidden="true"></i> 
-			            <small class="pull-right">Accident insurer details</small>
-			          </h1>
-			        </div>
-			        <div class="col-md-4">
-			          <h4>Accidents</h4>
-			          <p><b>Name:</b> {{$accidents->title}}{{$accidents->first_name}} {{$accidents->sur_name}}</p>
-			          <p><b>Vehicle registration:</b> {{$accidents->vehicle_registration}}</p>
-			          <p><b></b></p></p>
-			          <p><b></b></p></p>
-			          <p><b></b></p></p>
-			          <p><b></b></p></p>
-			          <p><b></b></p></p>
-			          <p><b></b></p></p>
-			         
-			        </div>
-			      </div>
-    	</section>
-		</div>
-	</div>
-</div>
-
-@stop
+<!-- Main content -->
+  <div class="content">
+    <!-- Info boxes -->
+    <div class="row">
+    	<div class="col-md-12">
+	    	<div class="box box-danger">
+		      <div class="box-header with-border">
+		        <h3 class="box-title"><i class="fa fa-file-text-o"></i> {{$accidents->title." ".$accidents->first_name." ".$accidents->surname}}</h3>
+		        <span class="pull-right">{{ $accidents->created_at }}</span>
+		      </div>
+		      <div class="box-body">
+		      </div>
+		    </div>
+		  </div>
+    </div>
+  </div>
+@endsection
