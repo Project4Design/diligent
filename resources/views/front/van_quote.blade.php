@@ -11,10 +11,11 @@
     <div class="col-xs-12">
       <h1 class="main-title">Van Insurance Quote</h1>
     </div>
-
+@include('partials.flash')
     <div class="col-xs-12">
-      <form action="{{route('register_cars')}}" method="POST">
+      <form action="{{route('register_vans')}}" method="POST">
          {{ csrf_field() }}
+
         <legend class="legend">Personal Information</legend>
           <div class="row">
             <div class="col-md-12">
@@ -263,7 +264,7 @@
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
               <label for="vehicle_manufacturer">Manufacturer *</label>
-              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" >                
+              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" required>                
                 <option value="" selected="selected">Please select</option>
                 <option value="Abarth">Abarth</option><option value="AC">AC</option><option value="Aixam">Aixam</option><option value="Alfa Romeo">Alfa Romeo</option>
                 <option value="Asia">Asia</option><option value="Aston Martin">Aston Martin</option><option value="Audi">Audi</option><option value="Austin">Austin</option>
@@ -310,7 +311,7 @@
             <div class="form-group col-xs-12 col-md-2">
               <label for="vehicle_number_doors">Number of Doors: *</label>
               <select id="vehicle_number_doors" class="form-control" name="vehicle_number_doors">
-                <option value="" selected>Please select</option>
+                <option value="10 doors" selected>Please select</option>
                 <option value="3 Door">3 Door</option>
                 <option value="5 Door">5 Door</option>
               </select>                            
@@ -798,7 +799,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="policy_start">When would you like the policy to start? *</label>
-                  <input id="policy_start" class="form-control" type="text" name="policy_start" placeholder="DD-MM-YYYY" value="12-03-2017">
+                  <input id="policy_start" class="form-control" type="text" name="policy_start" placeholder="DD-MM-YYYY" value="12-03-2017" required>
                 </div>
               </div>
             </div>

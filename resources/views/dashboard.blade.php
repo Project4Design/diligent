@@ -5,7 +5,7 @@
 	<section class="content">
 		<!-- Info boxes -->
     <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($cars) }}</h3>
@@ -20,7 +20,7 @@
         </div>
       </div>
 			
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($vans) }}</h3>
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($homes) }}</h3>
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($business) }}</h3>
@@ -60,6 +60,21 @@
             <i class="fa fa-building"></i>
           </div>
           <a href="#" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-6 col-xs-12">
+        <div class="small-box bg-blue">
+          <div class="inner">
+            <h3>{{ $accidents }}</h3>
+            <p>Accident Insurance</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-wheelchair"></i>
+          </div>
+          <a href="{{url('/accidents')}}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>

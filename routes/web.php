@@ -25,6 +25,9 @@ Route::get('/fleet',function(){ return view('front.fleet'); });
 Route::get('/terms',function(){ return view('front.terms'); });
 Route::get('/policy',function(){ return view('front.policy'); });
 
+
+Route::resource('accident' , 'AccidentsController');
+
 //QUOTES
 Route::get('/car-quote',function(){ return view('front.car_quote'); });
 Route::get('/van-quote',function(){ return view('front.van_quote'); });
@@ -46,6 +49,7 @@ Route::group(['prefix' => 'admin'],function(){
 Route::name('accident_views')->get('/accidents' , 'AccidentsController@index');
 
 
+
 //REGISTROS DE FORMULARIOS
 
 /*------- Registrar cars insurance -------- */
@@ -55,8 +59,11 @@ Route::post('cars','CarsController@store', function() {
 /*---------- Registrar accidents ------------ */
 Route::name('register_accidents')->post('accidents' , 'AccidentsController@store');
 
-/*---------- Registrar accidents ------------ */
+/*---------- Registrar Bussines ------------ */
 Route::name('register_business')->post('business_store' , 'BusinessController@store');
+
+/*-------- Registrar Vans insurance -------------*/
+Route::name('register_vans')->post('vans_store', 'VansController@store');
 
 //------FIN DE RUTAS PARA FORMULARIOS 
 
@@ -67,7 +74,7 @@ Route::get('/login','AuthController@index')->name('login');
 //verificar rutas con permiso auth
 Route::middleware('auth')->group(function () {
 			Route::get('dashboard','HomeController@index')->name('index');
-;
+
 });
 //fin group
 

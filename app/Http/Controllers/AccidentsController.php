@@ -80,7 +80,9 @@ class AccidentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $accidents = Accidents::findOrFail($id);
+
+        return view('accidents.show' , ['accidents' => $accidents]);
     }
 
     /**
