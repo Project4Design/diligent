@@ -17,7 +17,8 @@ class CarsController extends Controller
      */
     public function index()
     {
-        //
+        $cars = Cars::all();
+        return view('cars.index' , ['cars' => $cars]);
     }
 
     /**
@@ -233,7 +234,9 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $car = Cars::findOrFail($id);
+        return view("cars.show", ["car" => $car]);
     }
 
     /**

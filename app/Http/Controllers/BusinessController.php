@@ -15,7 +15,8 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        //
+        $business = Business::all();
+        return view('business.index' , ['business' => $business]);
     }
 
     /**
@@ -73,7 +74,6 @@ class BusinessController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

@@ -64,7 +64,7 @@
                     <div class="pull-right">
                       <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
-                        <input type="submit" name="logout" class="btn btn-default" value="Logout">
+                        <input type="submit" name="logout" class="btn btn-flat btn-default" value="Logout">
                       </form>
                     </div>
                   </li>
@@ -99,12 +99,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ route('index') }}"><i class="fa fa-circle-o"></i> Show All</a></li>
-                <li><a href="{{ url('/car') }}"><i class="fa fa-circle-o"></i> Car</a></li>
-                <li><a href="{{ url('/van') }}"><i class="fa fa-circle-o"></i> Van</a></li>
-                <li><a href="{{ url('/home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
                 <li><a href="{{ route('accident_views') }}"><i class="fa fa-circle-o"></i> Accidents</a></li>
-                <li><a href="{{ url('/business') }}"><i class="fa fa-circle-o"></i> Business</a></li>
+                <li><a href="{{ url('admin/cars') }}"><i class="fa fa-circle-o"></i> Cars</a></li>
+                <li><a href="{{ url('admin/vans') }}"><i class="fa fa-circle-o"></i> Vans</a></li>
+                <li><a href="{{ url('admin/homes') }}"><i class="fa fa-circle-o"></i> Homes</a></li>
+                <li><a href="{{ url('admin/business') }}"><i class="fa fa-circle-o"></i> Business</a></li>
               </ul>
             </li>
             
