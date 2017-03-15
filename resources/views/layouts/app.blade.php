@@ -29,6 +29,13 @@
   padding: 20px;
   margin: 10px 25px;
 }
+
+.separador{ 
+   border: 0.3px solid #dd4b39; 
+   border-radius: 200px /8px; 
+   height: 0px; 
+   text-align: center; 
+ } 
   </style>
   <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">

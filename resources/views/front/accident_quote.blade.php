@@ -46,16 +46,16 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="vehicle_registration">Your Vehicle registration *</label>
+              <label for="vehicle_registration">Your Vehicle registration <span class="required">*</span></label>
               <input id="vehicle_registration" class="form-control" type="text" name="vehicle_registration" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
-              <label for="birthdate">Date of Birth *</label>
+              <label for="birthdate">Date of Birth <span class="required">*</span></label>
               <div class="input-group">
-                <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
+                <input id="birthdate" class="form-control datepicker" type="text" name="birthdate" placeholder="DD-MM-YYYY" required>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
               </div>
             </div>
@@ -63,28 +63,28 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="house_number_name">Your House Number/Name *</label>
+              <label for="house_number_name">Your House Number/Name <span class="required">*</span></label>
               <input id="house_number_name" class="form-control" type="text" name="house_number_name" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="first_line_address">Your First Line Address *</label>
+              <label for="first_line_address">Your First Line Address <span class="required">*</span></label>
               <input id="first_line_address" class="form-control" type="text" name="first_line_address" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="postcode">Your Postcode *</label>
+              <label for="postcode">Your Postcode <span class="required">*</span></label>
               <input id="postcode" class="form-control" type="text" name="postcode" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="phone">Your Phone *</label>
+              <label for="phone">Your Phone <span class="required">*</span></label>
               <input id="phone" class="form-control" type="text" name="phone" required>
             </div>
           </div>
@@ -99,14 +99,14 @@
           <legend class="legend">Other Driver Details</legend>
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="other_name">Other Driver's Full Name *</label>
+              <label for="other_name">Other Driver's Full Name <span class="required">*</span></label>
               <input id="other_name" class="form-control" type="text" name="other_name" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="other_driver_vehicle">Other Driver's Vehicle Registration *</label>
+              <label for="other_driver_vehicle">Other Driver's Vehicle Registration <span class="required">*</span></label>
               <input id="other_driver_vehicle" class="form-control" type="text" name="other_driver_vehicle" required>
             </div>
           </div>
@@ -145,7 +145,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="date_incident">Date of Incident *</label>
+              <label for="date_incident">Date of Incident <span class="required">*</span></label>
               <div class="input-group">
                 <input id="date_incident" class="form-control datepicker" type="text" name="date_incident" required>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -154,7 +154,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-	            <label for="time_incident">Time of Incident *</label>
+	            <label for="time_incident">Time of Incident <span class="required">*</span></label>
 	            <div class="input-group bootstrap-timepicker timepicker">
 	              <input id="time_incident" class="form-control timepicker" type="text" name="time_incident" required>
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
@@ -163,7 +163,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="location_incident">Location of the Incident (street, area, city, etc) *</label>
+              <label for="location_incident">Location of the Incident (street, area, city, etc) <span class="required">*</span></label>
               <textarea id="location_incident" class="form-control" type="text" name="location_incident" required></textarea>
             </div>
           </div>
@@ -185,7 +185,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="brief_description_happened">Brief description of what happened *</label>
+              <label for="brief_description_happened">Brief description of what happened <span class="required">*</span></label>
               <textarea id="brief_description_happened" class="form-control" type="text" name="brief_description_happened" required></textarea>
             </div>
           </div>

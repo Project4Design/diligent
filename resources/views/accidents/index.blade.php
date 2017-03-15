@@ -64,7 +64,7 @@
 								<td class="text-center">{{$a->postcode}}</td>
 								<td class="text-center">{{$a->phone}}</td>
 								<td class="text-center">
-									<a href="{{url('accident/'.$a->id_accidents_management.'')}}" class="btn btn-success btn-flat"><i class="fa fa-search "></i></a>
+									<a href="{{url('admin/accidents/'.$a->id_accidents_management.'')}}" class="btn btn-success btn-flat"><i class="fa fa-search "></i></a>
 								</td>
 							 </tr>
 						</tbody>
