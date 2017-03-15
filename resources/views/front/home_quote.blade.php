@@ -11,9 +11,9 @@
     <div class="col-xs-12">
       <h1 class="main-title">Home Insurance Quote</h1>
     </div>
-
+@include('partials.flash')
     <div class="col-xs-12">
-      <form action="#" method="POST">
+      <form action="{{ route('home_register') }}" method="POST">
          {{ csrf_field() }}
         <legend class="legend">Personal Information</legend>
         <br>
@@ -43,7 +43,7 @@
           <div class="form-group col-xs-12 col-md-2">
             <label for="birthdate">Date of Birth *</label>
             <div class="input-group">
-              <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
+              <input id="birthdate" class="form-control datepicker" type="text" name="birthdate" placeholder="DD-MM-YYYY" required>
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>
@@ -105,7 +105,7 @@
           <div class="form-group col-xs-12 col-md-3">
             <label for="became_resident">If no, When did you became a UK resident? </label>
             <div class="input-group">
-              <input id="became_resident" class="form-control datepicker" type="date" name="became_resident" placeholder="DD-MM-YYYY" readonly>
+              <input id="became_resident" class="form-control datepicker" type="text" name="became_resident" placeholder="DD-MM-YYYY" readonly>
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>
@@ -588,7 +588,7 @@
         	<div class="form-group col-xs-12 col-md-2">
             <label for="like_cover_start">When would you like the cover to start </label>
             <div class="input-group">
-              <input id="like_cover_start" class="form-control datepicker" type="date" name="like_cover_start" placeholder="DD-MM-YYYY">
+              <input id="like_cover_start" class="form-control datepicker" type="text" name="like_cover_start" placeholder="DD-MM-YYYY">
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>

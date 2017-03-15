@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Home extends Model
+class Homes extends Model
 {
     protected $table = "home_insurance";
 
@@ -56,8 +56,8 @@ class Home extends Model
     'specific_items',
     'like_away_home',
     'accidentals_damage_contents',
-    'ncb_content_insurance'
-    'property_losses_damage'
+    'ncb_content_insurance',
+    'property_losses_damage',
     'like_cover_start',
     'built_blick_walls',
     'meter_from_water',

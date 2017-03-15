@@ -31,6 +31,7 @@ Route::get('/van-quote',function(){ return view('front.van_quote'); });
 Route::get('/home-quote',function(){ return view('front.home_quote'); });
 Route::get('/business-quote',function(){ return view('front.business_quote'); });
 Route::get('/accident-quote',function(){ return view('front.accident_quote'); });
+Route::name('home_register')->post('homes','HomesController@store');
 
 //VIEWS ADMIN
 //verificar rutas con permiso auth
