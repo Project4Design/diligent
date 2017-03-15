@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Vans;
 use App\vans_motors_accidents;
 use App\vans_motors_fixed;
+use App\vans_additional_driver;
 
 class VansController extends Controller
 {
@@ -70,8 +71,6 @@ class VansController extends Controller
                     $vans_offences->ban_month = $request->input('ban_month_'.$i);
                     $vans_offences->save();
 
-                    echo $vans->id_vans;
-
                     //echo $request->input('points_'.$i);
                 }//fin for
 
@@ -79,8 +78,8 @@ class VansController extends Controller
 
              if($request->input('additional_driver1') == "Yes")
              {
-                $additional_driver = new cars_additional_driver;
-                $additional_driver->id_cars_additional = $cars->id;
+                $additional_driver = new vans_additional_driver;
+                $additional_driver->id_vans_add = $vans->id_vans;
                 $additional_driver->ca_title = $request->input('ca_title_1');
                 $additional_driver->ca_first_name = $request->input('ca_first_name_1');
                 $additional_driver->ca_middle_name = $request->input('ca_middle_name_1');
@@ -105,13 +104,16 @@ class VansController extends Controller
                 $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_1');
                 $additional_driver->save();
 
+                
+
+
                     if ($request->input('ca_motor_accidents_1') == "Yes")
                      {
 
                             for($i = 1; $i < 5 ; $i++){
-                                $cars_accidents = new Cars_motors_accidents;
-                                $cars_accidents->id_cars = $cars->id;
-                                $cars_accidents->id_additional_driver = $additional_driver->id_cars_additional;
+                                $cars_accidents = new vans_motors_accidents;
+                                $cars_accidents->vans_id = $vans->id_vans;
+                                $cars_accidents->id_additional_driver = $additional_driver->id_vans_additional;
                                 $cars_accidents->type = $request->input('type_'.$i.'_1');
                                 $cars_accidents->date = $request->input('date_'.$i.'_1');
                                 $cars_accidents->damage = $request->input('damage_'.$i.'_1');
@@ -120,16 +122,18 @@ class VansController extends Controller
                                 $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_1');
                                 $cars_accidents->save();
 
+                                
+
                             }//fin for cars_accidents              
                         
                     }// fin if motor accidentes additional driver
 
-                    if ($request->input('motor_offences_1') == 'Yes')
+                    if ($request->input('ca_motor_offences_1') == 'Yes')
                      {
                         for($i = 1; $i < 5 ; $i++){
-                            $cars_offences = new Cars_motors_offences;
-                            $cars_offences->id_cars_offences = $cars->id;
-                            $cars_offences->id_additional_drive_offences = $additional_driver->id_additional_drive_offences;
+                            $cars_offences = new vans_motors_fixed;
+                            $cars_offences->id_vans_fixed = $vans->id_vans;
+                            $cars_offences->id_additional_drive_fixed = $additional_driver->id_vans_additional;
                             $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_1');
                             $cars_offences->date_conviction = $request->input('date_conviction_'.$i.'_1');
                             $cars_offences->points = $request->input('points_'.$i.'_1');
@@ -137,14 +141,16 @@ class VansController extends Controller
                             $cars_offences->ban_month = $request->input('ban_month_'.$i.'_1');
                             $cars_offences->save();
 
+                            
+
                        }//fin for
                     } //fin if motor offence yes
 
                     //Additional driver 2
                     if ($request->input('additional_driver2') == 'Yes') {
 
-                        $additional_driver = new cars_additional_driver;
-                        $additional_driver->id_cars_additional = $cars->id;
+                        $additional_driver = new vans_additional_driver;
+                        $additional_driver->id_vans_add = $vans->id_vans;
                         $additional_driver->ca_title = $request->input('ca_title_2');
                         $additional_driver->ca_first_name = $request->input('ca_first_name_2');
                         $additional_driver->ca_middle_name = $request->input('ca_middle_name_2');
@@ -169,13 +175,15 @@ class VansController extends Controller
                         $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_2');
                         $additional_driver->save();
 
+                        echo $vans->id_vans;
+
                             if ($request->input('ca_motor_accidents_2') == "Yes")
                              {
 
                                 for($i = 1; $i < 5 ; $i++){
-                                    $cars_accidents = new Cars_motors_accidents;
-                                    $cars_accidents->id_cars = $cars->id;
-                                    $cars_accidents->id_additional_driver = $additional_driver->id;
+                                    $cars_accidents = new vans_motors_accidents;
+                                    $cars_accidents->vans_id = $vans->id_vans;
+                                    $cars_accidents->id_additional_driver = $additional_driver->id_vans_additional;
                                     $cars_accidents->type = $request->input('type_'.$i.'_2');
                                     $cars_accidents->date = $request->input('date_'.$i.'_2');
                                     $cars_accidents->damage = $request->input('damage_'.$i.'_2');
@@ -184,6 +192,8 @@ class VansController extends Controller
                                     $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_2');
                                     $cars_accidents->save();
 
+                                    
+
                             }//fin for cars_accidents              
                         
                          }// fin if motor accidentes additional driver
@@ -191,9 +201,9 @@ class VansController extends Controller
                          if ($request->input('ca_motor_offences_2') == 'Yes')
                          {
                             for($i = 1; $i < 5 ; $i++){
-                                $cars_offences = new Cars_motors_offences;
-                                $cars_offences->id_cars_offences = $cars->id;
-                                $cars_offences->id_additional_drive_offences = $additional_driver->id_cars_additional;
+                                $cars_offences = new vans_motors_fixed;
+                                $cars_offences->id_vans_fixed = $vans->id_vans;
+                                $cars_offences->id_additional_drive_fixed = $additional_driver->id_vans_additional;
                                 $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_2');
                                 $cars_offences->date_conviction = $request->input('date_conviction_'.$i.'_2');
                                 $cars_offences->points = $request->input('points_'.$i.'_2');
@@ -202,22 +212,19 @@ class VansController extends Controller
                                 $cars_offences->save();
                             }//fin for
 
-
-
                          } //fin if motor offence yes
 
                     }
 
             }//fin YES additional driver 1
 
-
             $with = [
-            'flash_message' => 'Cars quote submitted successfully!',
-            'flash_class' => 'alert-danger',
+            'flash_message' => 'Vans quote submitted successfully!',
+            'flash_class' => 'alert-success',
             'alert-important' => true
             ];
 
-        }//Fin save PRINCIPAL CARS
+        }//Fin save PRINCIPAL VANS
         else{
             $with = [
             'flash_message' => 'An error has ocurred.',
@@ -225,6 +232,8 @@ class VansController extends Controller
             'alert-important' => true
             ];
         }
+
+         return redirect("/van-quote")->with($with);
     }
 
     /**

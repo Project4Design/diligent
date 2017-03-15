@@ -39,6 +39,7 @@ Route::get('/accident-quote',function(){ return view('front.accident_quote'); })
 Route::name('accident_views')->get('/accidents' , 'AccidentsController@index');
 
 
+
 //REGISTROS DE FORMULARIOS
 
 /*------- Registrar cars insurance -------- */

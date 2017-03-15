@@ -11,10 +11,11 @@
     <div class="col-xs-12">
       <h1 class="main-title">Van Insurance Quote</h1>
     </div>
-
+@include('partials.flash')
     <div class="col-xs-12">
       <form action="{{route('register_vans')}}" method="POST">
          {{ csrf_field() }}
+
         <legend class="legend">Personal Information</legend>
           <div class="row">
             <div class="col-md-12">
@@ -263,7 +264,7 @@
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
               <label for="vehicle_manufacturer">Manufacturer *</label>
-              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" >                
+              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" required>                
                 <option value="" selected="selected">Please select</option>
                 <option value="Abarth">Abarth</option><option value="AC">AC</option><option value="Aixam">Aixam</option><option value="Alfa Romeo">Alfa Romeo</option>
                 <option value="Asia">Asia</option><option value="Aston Martin">Aston Martin</option><option value="Audi">Audi</option><option value="Austin">Austin</option>
