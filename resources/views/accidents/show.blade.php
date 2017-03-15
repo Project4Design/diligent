@@ -25,7 +25,7 @@
 		      <h2 class="text-center">Personal info</h2>
 		      <hr class="separador">
 		      <div class="content">
-		      	<div class="row" style="font-size: 18px">
+		      	<div class="row">
 		      		<div class="col-md-4">
 		      			<strong>First name:</strong>  {{$accidents->first_name}}<br><br>
 		      			<strong>Surname: </strong>   {{$accidents->sur_name}}<br><br>
@@ -45,7 +45,7 @@
 		      	</div>
 		      	<h2 class="text-center">Other Driver Details</h2>
 		      	  <hr class="separador">
-			      	<div class="row" style="font-size: 18px">
+			      	<div class="row">
 			      		<div class="col-md-4">
 			      			<strong>Other Driver's Full Name: </strong> {{$accidents->other_name}}<br><br>
 			      			<strong>Other Driver's Vehicle Registration: </strong>  {{$accidents->other_driver_vehicle}}
@@ -60,7 +60,7 @@
 			      	</div>
 			      	<h2 class="text-center">Accident Details</h2>
 		      	  	 <hr class="separador">
-				      	<div class="row" style="font-size: 18px">
+				      	<div class="row">
 				      		<div class="col-md-4">
 					      		<strong>Valid insurance policy in force at the time of accident: </strong>{{$accidents->valid_insurance}}<br><br>
 					      		<strong>Date of Incident: </strong> {{$accidents->date_incident}}
@@ -74,6 +74,21 @@
 					      		<strong>Brief description of what happened: </strong> {{$accidents->brief_description_happened}}
 				      		</div>
 				      	</div>
+				      	
+				     <h2 class="text-center">Additional Detals</h2>
+		      	  	  <hr class="separador">
+		      	  	    <div class="row">
+		      	  	    	<div class="col-md-4">
+		      	  	    		<strong>Witnesses details</strong> {{$accidents->witnesses_details}}
+		      	  	    	</div>
+		      	  	    	  <div class="row">
+		      	  	    	  	<div class="col-md-4">
+		      	  	    	  		<strong>Witness Full Name: </strong> {{$accidents->witness_name}}<br><br> 
+		      	  	    	  		<strong>Witness Adress: </strong> {{$accidents->witness_address}}<br><br>
+		      	  	    	  		<strong>Witness Contact Number: </strong> {{$accidents->witness_contact_number}}
+		      	  	    	  	</div>
+		      	  	    	  </div>
+		      	  	    </div>
 
 		      </div>
 		      	

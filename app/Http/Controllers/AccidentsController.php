@@ -81,6 +81,10 @@ class AccidentsController extends Controller
     public function show($id)
     {
         $accidents = Accidents::findOrFail($id);
+        //$accidents_witnesses = accidents_witnesses::findOrFail($id);
+        dd($accidents->accidents_witnesses()->where('id_management_accidents','=',$id));
+
+        
 
         return view('accidents.show' , ['accidents' => $accidents]);
     }
