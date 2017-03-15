@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('title','Cars - '.config('app.name'))
-
+@section('header','Cars Quotes')
+@section('breadcrumb')
+	<ol class="breadcrumb">
+	  <li><a href="{{ route('index') }}"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a></li>
+	  <li class="active"> Cars </li>
+	</ol>
+@endsection
 @section('content')
 <!-- Main content -->
   <div class="content">
@@ -11,7 +17,7 @@
         <div class="small-box bg-blue">
           <div class="inner">
             <h3>{{ count($cars) }}</h3>
-            <p>Cars Insurance</p>
+            <p>Cars Quotes</p>
           </div>
           <div class="icon">
             <i class="fa fa-car"></i>
