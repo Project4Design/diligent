@@ -22,6 +22,7 @@ class vans extends Model
    'postcode',
    'marital_status',
    'address_line1',
+   'address_line2',
    'address_city',
    'address_postcode',
    'employment_status',
@@ -41,10 +42,12 @@ class vans extends Model
    'license_via',
    'date_obtained',
    'license_period_held',
+   'date_provitional_license',
    'license_enter',
    'license_number',
    'dvla_medical_condition',
    'additional_qualifications',
+   'date_qualifications_obtained',
    'qualifications_obtained',
    'born_uk',
    'became_resident',
@@ -85,6 +88,7 @@ class vans extends Model
    'type_business',
    'type_coverage',
    'no_claims',
+   'how_earn_ncd',
    'no_claims_earned_uk',
    'no_claims_protect',
    'any_other_ncd',
@@ -95,6 +99,7 @@ class vans extends Model
    'additional_driver2',
    'heard_from_us',
    'referrer',
-   'comments'];
+   'comments'
+   ];
 
 }

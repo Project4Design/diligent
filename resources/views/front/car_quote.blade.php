@@ -180,7 +180,7 @@
             </div>
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label for="license_number">Please enter your 16-character driving licence number.</label>
+                <label for="license_number">Please enter your 16 character driving licence number</label>
                 <input id="license_number" class="form-control" type="text" name="license_number" maxlength="16" readonly>
               </div>
             </div>
@@ -1092,16 +1092,16 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                  <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="motor_offences" value="Yes" >
+                      <input type="radio" class="form-check-input" name="motor_offences" value="Yes" required>
                       <label class="form-check-label">Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-9">
-                      <input type="radio" class="form-check-input" name="motor_offences" value="No" checked >
+                      <input type="radio" class="form-check-input" name="motor_offences" value="No" checked required>
                       <label class="form-check-label">No</label>
                     </div>
                   </div>
@@ -1952,7 +1952,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years? <span class="required">*</span></label>
                       <div class="col-xs-12 col-md-3">
                         <input type="radio" name="ca_motor_offences_1" value="Yes" required>
                         <label class="form-check-label">Yes</label>

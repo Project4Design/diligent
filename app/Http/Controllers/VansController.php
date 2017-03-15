@@ -53,7 +53,7 @@ class VansController extends Controller
                     $vans_accidents->damage = $request->input('damage_'.$i);
                     $vans_accidents->cost = $request->input('cost_'.$i);
                     $vans_accidents->fault = $request->input('fault_'.$i);
-                    $vans_accidents->any_injuries = $request->input('any_injuries'.$i);
+                    $vans_accidents->any_injuries = $request->input('any_injuries_'.$i);
                     $vans_accidents->save();
                       
 
@@ -105,7 +105,7 @@ class VansController extends Controller
                 $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_1');
                 $additional_driver->save();
 
-                
+                  echo $request->input('ca_employed_occupation_1')."-1";
 
 
                     if ($request->input('ca_motor_accidents_1') == "Yes")
@@ -120,7 +120,7 @@ class VansController extends Controller
                                 $cars_accidents->damage = $request->input('damage_'.$i.'_1');
                                 $cars_accidents->cost = $request->input('cost_'.$i.'_1');
                                 $cars_accidents->fault = $request->input('fault_'.$i.'_1');
-                                $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_1');
+                                $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_1');
                                 $cars_accidents->save();
 
                                 
@@ -176,7 +176,7 @@ class VansController extends Controller
                         $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_2');
                         $additional_driver->save();
 
-                        echo $vans->id_vans;
+                        echo $request->input('ca_employed_occupation_2');
 
                             if ($request->input('ca_motor_accidents_2') == "Yes")
                              {
@@ -190,7 +190,7 @@ class VansController extends Controller
                                     $cars_accidents->damage = $request->input('damage_'.$i.'_2');
                                     $cars_accidents->cost = $request->input('cost_'.$i.'_2');
                                     $cars_accidents->fault = $request->input('fault_'.$i.'_2');
-                                    $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_2');
+                                    $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_2');
                                     $cars_accidents->save();
 
                                     
@@ -233,8 +233,8 @@ class VansController extends Controller
             'alert-important' => true
             ];
         }
-
-         return redirect("/van-quote")->with($with);
+        
+        return redirect("/van-quote")->with($with);
     }
 
     /**
