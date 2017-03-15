@@ -58,10 +58,21 @@
 			      			<strong>Other Driver's Contact Insurer: </strong> {{$accidents->other_driver_contact_insurer}}
 			      		</div>
 			      	</div>
-			      	<h2 class="text-center">Other Driver Details</h2>
+			      	<h2 class="text-center">Accident Details</h2>
 		      	  	 <hr class="separador">
 				      	<div class="row" style="font-size: 18px">
-				      		
+				      		<div class="col-md-4">
+					      		<strong>Valid insurance policy in force at the time of accident: </strong>{{$accidents->valid_insurance}}<br><br>
+					      		<strong>Date of Incident: </strong> {{$accidents->date_incident}}
+				      		</div>
+				      		<div class="col-md-4">
+					      		<strong>Time of Incident: </strong> {{$accidents->time_incident}}<br><br>
+					      		<strong>Location of the Incident: </strong> {{$accidents->location_incident}}
+				      		</div>
+				      		<div class="col-md-4">
+					      		<strong>Weather condition: </strong> {{$accidents->weather_condition}}<br><br>
+					      		<strong>Brief description of what happened: </strong> {{$accidents->brief_description_happened}}
+				      		</div>
 				      	</div>
 
 		      </div>
