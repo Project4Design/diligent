@@ -87,7 +87,7 @@ class Cars extends Model
    'additional_driver2',
    'heard_from_us',
    'referrer',
-   'additional_comments'];
+   'comments'];
 
 
    public function cars_motors_accidents()

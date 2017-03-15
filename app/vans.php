@@ -95,6 +95,6 @@ class vans extends Model
    'additional_driver2',
    'heard_from_us',
    'referrer',
-   'additional_comments'];
+   'comments'];
 
 }
