@@ -16,7 +16,7 @@ class VanInsuranceTable extends Migration
     Schema::create('vans', function (Blueprint $table) {
 
       $table->engine = 'InnoDB';
-      $table->increments('id');
+      $table->increments('id_vans');
 
       //Personal info
       $table->string('title',5);
