@@ -16,7 +16,8 @@ class Cars_motors_accidents extends Model
 		'damage',
 		'cost',
 		'fault',
-		'any_injuries'];
+		'any_injuries'
+		];
 
     public function cars()
     {

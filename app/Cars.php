@@ -21,6 +21,7 @@ class Cars extends Model
    'postcode',
    'marital_status',
    'address_line1',
+   'address_line2',
    'address_city',
    'address_postcode',
    'employment_status',
@@ -40,6 +41,7 @@ class Cars extends Model
    'license_via',
    'date_obtained',
    'license_period_held',
+   'date_provitional_license',
    'license_enter',
    'license_number',
    'dvla_medical_condition',
@@ -47,6 +49,7 @@ class Cars extends Model
    'qualifications_obtained',
    'born_uk',
    'became_resident',
+   'date_qualifications_obtained',
    'use_other_vehicle',
    'monitoring_criminal_convictions',
    'motor_accidents',
@@ -87,7 +90,7 @@ class Cars extends Model
    'additional_driver2',
    'heard_from_us',
    'referrer',
-   'additional_comments'];
+   'comments'];
 
 
    public function cars_motors_accidents()

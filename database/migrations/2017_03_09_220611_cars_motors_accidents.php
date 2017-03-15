@@ -26,7 +26,7 @@ class CarsMotorsAccidents extends Migration
             $table->string('damage',195)->nullable()->comment('Damage of accident');
             $table->string('cost',195)->nullable()->comment('cost of accident'); //Cost (Libras) -if know
             $table->string('fault',195)->nullable()->comment('Fault of the accident');
-            $table->string('any_injuries',195)->nullable()->comment('any injuries of accidents'); //Yes or not
+            $table->string('any_injuries',3)->nullable()->comment('any injuries of accidents'); //Yes or not
             $table->timestamps();
         });
 

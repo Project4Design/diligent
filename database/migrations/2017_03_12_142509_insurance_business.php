@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class InsuranceBussiness extends Migration
+class InsuranceBusiness extends Migration
 {
     /**
      * Run the migrations.
@@ -96,6 +96,6 @@ class InsuranceBussiness extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bussiness');
+        Schema::dropIfExists('business');
     }
 }

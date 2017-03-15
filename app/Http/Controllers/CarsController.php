@@ -51,7 +51,7 @@ class CarsController extends Controller
                     $cars_accidents->damage = $request->input('damage_'.$i);
                     $cars_accidents->cost = $request->input('cost_'.$i);
                     $cars_accidents->fault = $request->input('fault_'.$i);
-                    $cars_accidents->any_injuries = $request->input('any_injuries'.$i);
+                    $cars_accidents->any_injuries = $request->input('any_injuries_'.$i);
                     $cars_accidents->save();
 
                 }//fin for cars_accidents              
@@ -114,19 +114,19 @@ class CarsController extends Controller
                                 $cars_accidents->damage = $request->input('damage_'.$i.'_1');
                                 $cars_accidents->cost = $request->input('cost_'.$i.'_1');
                                 $cars_accidents->fault = $request->input('fault_'.$i.'_1');
-                                $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_1');
+                                $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_1');
                                 $cars_accidents->save();
 
                             }//fin for cars_accidents              
                         
                     }// fin if motor accidentes additional driver
 
-                    if ($request->input('motor_offences_1') == 'Yes')
+                    if ($request->input('ca_motor_offences_1') == 'Yes')
                      {
                         for($i = 1; $i < 5 ; $i++){
                             $cars_offences = new Cars_motors_offences;
                             $cars_offences->id_cars_offences = $cars->id;
-                            $cars_offences->id_additional_drive_offences = $additional_driver->id_additional_drive_offences;
+                            $cars_offences->id_additional_drive_offences = $additional_driver->id_cars_additional;
                             $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_1');
                             $cars_offences->date_conviction = $request->input('date_conviction_'.$i.'_1');
                             $cars_offences->points = $request->input('points_'.$i.'_1');
@@ -178,7 +178,7 @@ class CarsController extends Controller
                                     $cars_accidents->damage = $request->input('damage_'.$i.'_2');
                                     $cars_accidents->cost = $request->input('cost_'.$i.'_2');
                                     $cars_accidents->fault = $request->input('fault_'.$i.'_2');
-                                    $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_2');
+                                    $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_2');
                                     $cars_accidents->save();
 
                             }//fin for cars_accidents              
@@ -210,8 +210,7 @@ class CarsController extends Controller
 
             $with = [
             'flash_message' => 'Cars quote submitted successfully!',
-            'flash_class' => 'alert-danger',
-            'alert-important' => true
+            'flash_class' => 'alert-success'
             ];
 
         }//Fin save PRINCIPAL CARS
@@ -222,7 +221,7 @@ class CarsController extends Controller
             'alert-important' => true
             ];
         }
-
+        //dd($with);
         return redirect("/car-quote")->with($with);
     }
 

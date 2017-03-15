@@ -11,43 +11,43 @@
     <div class="col-xs-12">
       <h1 class="main-title">Car Insurance Quote</h1>
     </div>
-
+    @include('partials.flash')
     <div class="col-xs-12">
       <form action="{{route('register_cars')}}" method="POST">
          {{ csrf_field() }}
         <legend class="legend">Personal Information</legend>
           <div class="row">
             <div class="col-md-12">
-              <label>Name *</label>
+              <label>Name <span class="required">*</span></label>
             </div>
             <div class="form-group col-md-2">
-              <select class="form-control" id="title" name="title" >
+              <select class="form-control" id="title" name="title" required>
                 <option value="Mr.">Mr.</option>
                 <option value="Mrs.">Mrs.</option>
                 <option value="Miss">Miss</option>
               </select>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name" value="Fran">
+              <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name">
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name" value="Jose">
+              <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name">
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname" value="hernandez" >
+              <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname">
             </div>
           </div><!--Row-->
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
-              <label for="birthdate">Date of Birth *</label>
+              <label for="birthdate">Date of Birth <span class="required">*</span></label>
               <div class="input-group">
                 <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
               </div>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <label for="marital_status">Marital Status *</label>
+              <label for="marital_status">Marital Status <span class="required">*</span></label>
               <select id="marital_status" class="form-control" name="marital_status" required>
                 <option value="" selected>Please Select</option>
                 <option value="Single">Single</option>
@@ -60,24 +60,24 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="address_line1">Address *</label>
-              <input id="address_line1" class="form-control" type="text" name="address_line1" placeholder="Address line 1" value="Cagua">
-              <input id="address_line2" class="form-control" type="text" name="address_line2" placeholder="Address line 2" value="Cagua">
-              <input id="address_city" class="form-control" type="text" name="address_city" placeholder="City" value="Cagua">
-              <input id="address_postcode" class="form-control" type="text" name="address_postcode" placeholder="Postal/ Zip code" value="Cagua" >
+              <label for="address_line1">Address <span class="required">*</span></label>
+              <input id="address_line1" class="form-control" type="text" name="address_line1" placeholder="Address line 1">
+              <input id="address_line2" class="form-control" type="text" name="address_line2" placeholder="Address line 2">
+              <input id="address_city" class="form-control" type="text" name="address_city" placeholder="City">
+              <input id="address_postcode" class="form-control" type="text" name="address_postcode" placeholder="Postal/ Zip code">
             </div>
           </div><!--Row-->
 
           <div class="row">
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label>Are you born in the UK? *</label>
+                <label>Are you born in the UK? <span class="required">*</span></label>
                 <div class="col-xs-6 col-md-6">
-                  <input type="radio" name="born_uk" value="Yes"  checked>
+                  <input type="radio" name="born_uk" value="Yes" checked>
                   <label class="form-check-label">Yes</label>
                 </div>
                 <div class="col-xs-6 col-md-6">
-                  <input type="radio" name="born_uk" value="No" >
+                  <input type="radio" name="born_uk" value="No">
                   <label class="form-check-label">No</label>
                 </div>
               </div>
@@ -93,9 +93,9 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="employment_status">What's your employment status? *</label>
-              <select id="employment_status" class="form-control" name="employment_status" >
-                <option value="Employed" selected>Please Select</option>
+              <label for="employment_status">What's your employment status? <span class="required">*</span></label>
+              <select id="employment_status" class="form-control" name="employment_status" required>
+                <option value="" selected>Please Select</option>
                 <option value="Employed">Employed</option>
                 <option value="Unemployed">Unemployed</option>
                 <option value="Self-Employed">Self-Employed</option>
@@ -110,21 +110,21 @@
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
               <label for="occupation">If Employed/Self Employed, what is your occupation: </label>
-              <input id="occupation" class="form-control" type="text" name="occupation" value="Engineer">
+              <input id="occupation" class="form-control" type="text" name="occupation">
             </div>
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
               <label for="business_type">If Employed/Self Employed, what type of business: </label>
-              <input id="business_type" class="form-control" type="text" name="business_type" value="yes">
+              <input id="business_type" class="form-control" type="text" name="business_type">
             </div>
           </div><!--Row-->
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="license_type">What type of license do you have? *</label>
-              <select id="license_type" class="form-control" name="license_type" >
-                <option value="Full UK Manual">Please Select </option>
+              <label for="license_type">What type of license do you have? <span class="required">*</span></label>
+              <select id="license_type" class="form-control" name="license_type" required>
+                <option value="">Please Select </option>
                 <option value="Full UK Manual">Full UK Manual</option>
                 <option value="Full UK Automatic">Full UK Automatic</option>
                 <option value="Provisional UK">Provisional UK</option>
@@ -136,9 +136,9 @@
               </select>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <label for="license_type">Period License held for *</label>
-              <select id="license_period_held" class="form-control" name="license_period_held">
-                <option value="1 years" selected>Please Select</option>
+              <label for="license_type">Period License held for <span class="required">*</span></label>
+              <select id="license_period_held" class="form-control" name="license_period_held" required>
+                <option value="" selected>Please Select</option>
                 <option value="Less than 1 year">Less than 1 year</option>
                 <option value="1 year">1 year</option><option value="2 years">2 years</option>
                 <option value="3 years">3 years</option><option value="4 years">4 years</option>
@@ -156,7 +156,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="date_provitional_license">Date obtained provisional licence? *</label>
+              <label for="date_provitional_license">Date obtained provisional licence?</label>
               <div class="input-group">
                 <input id="date_provitional_license" class="form-control datepicker" type="text" name="date_provitional_license" placeholder="DD-MM-YYYY" readonly>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -189,9 +189,9 @@
           <div class="row">
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label for="dvla_medical_condition">DVLA medical conditions or disabilities *</label>
-                <select id="dvla_medical_condition" class="form-control" name="dvla_medical_condition" >
-                  <option value="No" selected>Please Select</option>
+                <label for="dvla_medical_condition">DVLA medical conditions or disabilities <span class="required">*</span></label>
+                <select id="dvla_medical_condition" class="form-control" name="dvla_medical_condition" required>
+                  <option value="" selected>Please Select</option>
                   <option value="No">No</option>
                   <option value="DVLA aware – No restrictions">DVLA aware – No restrictions</option>
                   <option value="DVLA aware – 1 year restricted Licence">DVLA aware – 1 year restricted Licence</option>
@@ -206,9 +206,9 @@
           <div class="row">
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label for="additional_qualifications">Any additional driving qualifications *</label>
-                <select id="additional_qualifications" class="form-control" name="additional_qualifications" >
-                  <option value="No" selected>Please Select</option>
+                <label for="additional_qualifications">Any additional driving qualifications <span class="required">*</span></label>
+                <select id="additional_qualifications" class="form-control" name="additional_qualifications" required>
+                  <option value="" selected>Please Select</option>
                   <option value="No">No</option>
                   <option value="AA Proficiency">AA Proficiency</option>
                   <option value="Institute of Advance Motorists">Institute of Advance Motorists</option>
@@ -228,9 +228,9 @@
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="use_other_vehicle">Use any other vehicles? *</label>
-              <select id="use_other_vehicle" class="form-control" name="use_other_vehicle" >
-                <option value="No access" selected>Please Select</option>
+              <label for="use_other_vehicle">Use any other vehicles? <span class="required">*</span></label>
+              <select id="use_other_vehicle" class="form-control" name="use_other_vehicle" required>
+                <option value="" selected>Please Select</option>
                 <option value="No access to any other vehicle">No access to any other vehicle</option>
                 <option value="Own another car or van">Own another car or van</option>
                 <option value="Have use of another car">Have use of another car</option>
@@ -245,26 +245,26 @@
           <legend class="legend">Car Details</legend>
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
-              <label for="vehicle_registration">Registration *</label>
-              <input id="vehicle_registration" class="form-control" type="text" name="vehicle_registration" value="Cagua" >
+              <label for="vehicle_registration">Registration <span class="required">*</span></label>
+              <input id="vehicle_registration" class="form-control" type="text" name="vehicle_registration" required>
             </div>
             <div class="form-group col-xs-12 col-md-2">
               <label for="vehicle_registration_year">Registration year </label>
-              <input id="vehicle_registration_year" class="form-control datepicker" type="text" name="vehicle_registration_year" placeholder="DD-MM-YYYY" value="03-03-2017">
+              <input id="vehicle_registration_year" class="form-control datepicker" type="text" name="vehicle_registration_year" placeholder="DD-MM-YYYY">
             </div>
           </div><!--Row-->
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="vehicle_aprox_value">How much is the car worth? *</label>
-              <input id="vehicle_aprox_value" class="form-control" type="number" name="vehicle_aprox_value" value="1">
+              <label for="vehicle_aprox_value">How much is the car worth? <span class="required">*</span></label>
+              <input id="vehicle_aprox_value" class="form-control" type="number" name="vehicle_aprox_value" required>
             </div>
           </div><!--Row-->
 
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
-              <label for="vehicle_manufacturer">Manufacturer *</label>
-              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" >
-                <option value="Asia" selected="">Please select</option>
+              <label for="vehicle_manufacturer">Manufacturer <span class="required">*</span></label>
+              <select id="vehicle_manufacturer" class="form-control" name="vehicle_manufacturer" required>
+                <option value="" selected>Please select</option>
                 <option value="Abarth">Abarth</option><option value="AC">AC</option><option value="Aixam">Aixam</option><option value="Alfa Romeo">Alfa Romeo</option>
                 <option value="Asia">Asia</option><option value="Aston Martin">Aston Martin</option><option value="Audi">Audi</option><option value="Austin">Austin</option>
                 <option value="Bentley">Bentley</option><option value="BMW">BMW</option><option value="Bristol">Bristol</option><option value="Cadillac">Cadillac</option>
@@ -289,16 +289,16 @@
               </select>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <label for="vehicle_model">Model *</label>
-              <input id="vehicle_model" class="form-control" type="text" name="vehicle_model" value="3">
+              <label for="vehicle_model">Model <span class="required">*</span></label>
+              <input id="vehicle_model" class="form-control" type="text" name="vehicle_model" required>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <label for="vehicle_number_seats">Number of Seats *</label>
-              <input id="vehicle_number_seats" class="form-control" type="number" name="vehicle_number_seats" style="width:65px" min="1" value="2">
+              <label for="vehicle_number_seats">Number of Seats <span class="required">*</span></label>
+              <input id="vehicle_number_seats" class="form-control" type="number" name="vehicle_number_seats" style="width:65px" min="1" required>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <label for="vehicle_number_doors">Number of Doors: *</label>
-              <input id="vehicle_number_doors" class="form-control" type="number" name="vehicle_number_doors" style="width:65px" min="1" max="6" value="4">
+              <label for="vehicle_number_doors">Number of Doors: <span class="required">*</span></label>
+              <input id="vehicle_number_doors" class="form-control" type="number" name="vehicle_number_doors" style="width:65px" min="1" max="6" required>
             </div>
           </div><!--Row-->
 
@@ -307,7 +307,7 @@
               <div class="form-group">
                 <label id="vehicle_alarms">Alarms - Immobiliser:</label>
                 <select id="vehicle_alarms" class="form-control" name="vehicle_alarms">
-                  <option value="Factory" selected>Please select</option>
+                  <option value="" selected>Please select</option>
                   <option value="Factory Fitted Thatcham Approved Alarm/Immobiliser">Factory Fitted Thatcham Approved Alarm/Immobiliser</option>
                   <option value="Factory Fitted Thatcham Approved Alarm">Factory Fitted Thatcham Approved Alarm</option>
                   <option value="Factory Fitted Non-Thatcham Alarm/Immobiliser">Factory Fitted Non-Thatcham Alarm/Immobiliser</option>
@@ -323,7 +323,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="vehicle_engine_size">Engine Size (CC)</label>
-                <input id="vehicle_engine_size" class="form-control" type="text" name="vehicle_engine_size" value="45">
+                <input id="vehicle_engine_size" class="form-control" type="text" name="vehicle_engine_size">
               </div>
             </div>
           </div><!--Row-->
@@ -331,17 +331,17 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
-                <label for="vehicle_transmission">Transmission</label>
+                <label for="vehicle_transmission">Transmission <span class="required">*</span></label>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-6">
-                    <input type="radio" class="form-check-input" name="vehicle_transmission" value="Manual" checked>
-                    <label class="form-check-label">Manual</label>
+                    <input type="radio" name="vehicle_transmission" value="Manual" required>
+                    <label>Manual</label>
                   </div>
                 </div>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-6">
-                    <input type="radio" class="form-check-input" name="vehicle_transmission" value="Automatic">
-                    <label class="form-check-label">Automatic</label>
+                    <input type="radio" name="vehicle_transmission" value="Automatic" required>
+                    <label>Automatic</label>
                   </div>
                 </div>
               </div>
@@ -351,17 +351,17 @@
           <div class="row">
             <div class="col-xs-12 col-md-4">
               <fieldset class="form-group">
-                <label>Has the car been imported? *</label>
+                <label>Has the car been imported? <span class="required">*</span></label>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-3">
-                    <input id="yes-born" type="radio" class="form-check-input" name="vehicle_imported" value="Yes" >
-                    <label class="form-check-label">Yes</label>
+                    <input id="yes-born" type="radio" name="vehicle_imported" value="Yes" required>
+                    <label>Yes</label>
                   </div>
                 </div>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" class="form-check-input" name="vehicle_imported" id="no-born" value="No" checked >
-                    <label class="form-check-label">No</label>
+                    <input type="radio" name="vehicle_imported" value="No" required>
+                    <label>No</label>
                   </div>
                 </div>
                 <div class="col-xs-12">
@@ -374,13 +374,13 @@
           <div class="row">
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label>Does this car have any modifications? *</label>
+                <label>Does this car have any modifications? <span class="required">*</span></label>
                 <div class="col-xs-12 col-md-4">
-                  <input type="radio" name="vehicle_modifications" value="Yes" >
+                  <input type="radio" name="vehicle_modifications" value="Yes" required>
                   <label>Yes</label>
                 </div>
                 <div class="col-xs-12 col-md-4">
-                  <input type="radio" name="vehicle_modifications" value="No" checked >
+                  <input type="radio" name="vehicle_modifications" value="No" checked required>
                   <label>No</label>
                 </div>
               </div>
@@ -407,9 +407,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-3">
                 <div class="form-group">
-                  <label for="vehicle_date_purchase">When did you buy this car? *</label>
+                  <label for="vehicle_date_purchase">When did you buy this car? <span class="required">*</span></label>
                   <div class="input-group">
-                    <input id="vehicle_date_purchase" class="form-control datepicker" type="text" name="vehicle_date_purchase" placeholder="DD-MM-YYYY" value="12-03-2017">
+                    <input id="vehicle_date_purchase" class="form-control datepicker" type="text" name="vehicle_date_purchase" placeholder="DD-MM-YYYY" required>
                     <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
                   </div>
                 </div>
@@ -427,9 +427,9 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-12 col-md-3">
-                  <label for="vehicle_registered_keeper">Registered keeper *</label>
-                  <select id="vehicle_registered_keeper" class="form-control" name="vehicle_registered_keeper" >
-                    <option value="Policy" selected>Please select</option>
+                  <label for="vehicle_registered_keeper">Registered keeper <span class="required">*</span></label>
+                  <select id="vehicle_registered_keeper" class="form-control" name="vehicle_registered_keeper" required>
+                    <option value="" selected>Please select</option>
                     <option value="Policy Holder">Policy Holder</option>
                     <option value="Spouse">Spouse</option>
                     <option value="Other Driver">Other Driver</option>
@@ -449,8 +449,8 @@
             <div class="row">
               <div class="col-xs-12 col-md-3">
                 <div class="form-group">
-                  <label for="vehicle_legal_owner">Legal Owner *</label>
-                  <select id="vehicle_legal_owner" class="form-control" name="vehicle_legal_owner" >
+                  <label for="vehicle_legal_owner">Legal Owner <span class="required">*</span></label>
+                  <select id="vehicle_legal_owner" class="form-control" name="vehicle_legal_owner" required>
                     <option value="Spouse" selected>Please select</option>
                     <option value="Policy Holder">Policy Holder</option>
                     <option value="Spouse">Spouse</option>
@@ -471,17 +471,17 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>Is the car impounded with the police? *</label>
+                  <label>Is the car impounded with the police? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-6">
-                      <input type="radio" class="form-check-input" name="vehicle_inpounded" value="Yes" >
-                      <label class="form-check-label">Yes</label>
+                      <input type="radio" name="vehicle_inpounded" value="Yes" required>
+                      <label>Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-6">
-                      <input type="radio" class="form-check-input" name="vehicle_inpounded" value="No" checked >
-                      <label class="form-check-label">No</label>
+                      <input type="radio" name="vehicle_inpounded" value="No" required>
+                      <label>No</label>
                     </div>
                   </div>
                 </div>
@@ -493,9 +493,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="usage_kept_day">Where is the vehicle kept during the day *</label>
-                  <select id="usage_kept_day" class="form-control" name="usage_kept_day" >
-                    <option value="At home" selected="selected">Please select</option>
+                  <label for="usage_kept_day">Where is the vehicle kept during the day <span class="required">*</span></label>
+                  <select id="usage_kept_day" class="form-control" name="usage_kept_day" required>
+                    <option value="" selected>Please select</option>
                     <option value="At Home">At Home</option>
                     <option value="Office or Factory Car Park">Office or Factory Car Park</option>
                     <option value="Open public car park">Open public car park</option>
@@ -508,9 +508,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="usage_kept_night">Where is the vehicle kept overnight *</label>
-                  <select id="usage_kept_night" class="form-control" name="usage_kept_night" >
-                    <option value="Garaged" selected>Please select</option>
+                  <label for="usage_kept_night">Where is the vehicle kept overnight <span class="required">*</span></label>
+                  <select id="usage_kept_night" class="form-control" name="usage_kept_night" required>
+                    <option value="" selected>Please select</option>
                     <option value="Garaged">Garaged</option>
                     <option value="Public Road">Public Road</option>
                     <option value="Drive">Drive</option>
@@ -525,9 +525,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="usage_kept_same_address">Is the vehicle kept at the same address *</label>
-                  <select id="usage_kept_same_address" class="form-control" name="usage_kept_same_address" >
-                    <option value="Yes" selected>Please select</option>
+                  <label for="usage_kept_same_address">Is the vehicle kept at the same address <span class="required">*</span></label>
+                  <select id="usage_kept_same_address" class="form-control" name="usage_kept_same_address" required>
+                    <option value="" selected>Please select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                   </select>
@@ -545,17 +545,17 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label>Have you or any of the drivers ever had insurance declined, cancelled or special terms imposed? *</label>
+                  <label>Have you or any of the drivers ever had insurance declined, cancelled or special terms imposed? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="drivers_insurance_imposed" value="Yes" >
-                      <label class="form-check-label">Yes</label>
+                      <input type="radio" name="drivers_insurance_imposed" value="Yes" required>
+                      <label>Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-9">
-                      <input type="radio" class="form-check-input" name="drivers_insurance_imposed" value="No" checked >
-                      <label class="form-check-label">No</label>
+                      <input type="radio" name="drivers_insurance_imposed" value="No" checked required>
+                      <label>No</label>
                     </div>
                   </div>
                 </div>
@@ -564,9 +564,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="usage">Use of vehicle *</label>
-                  <select id="usage" class="form-control" name="usage" >
-                    <option value="Social test" selected">Please select</option>
+                  <label for="usage">Use of vehicle <span class="required">*</span></label>
+                  <select id="usage" class="form-control" name="usage" required>
+                    <option value="" selected">Please select</option>
                     <option value="Social, domestic, pleasure, commuting (SDPC)">Social, domestic, pleasure, commuting (SDPC)</option>
                     <option value="Social, domestic and pleasure only (SDP)">Social, domestic and pleasure only (SDP)</option>
                     <option value="SDPC and business use (proposer/spouse only)">SDPC and business use (proposer/spouse only)</option>
@@ -589,7 +589,7 @@
                 <div class="form-group">
                   <label for="type_coverage">Type of Cover</label>
                   <select id="type_coverage" class="form-control" name="type_coverage">
-                    <option selected value="Comprehensive">Please select</option>
+                    <option selected value="">Please select</option>
                     <option value="Comprehensive">Comprehensive</option>
                     <option value="Third party fire &amp; theft">Third party fire &amp; theft</option>
                     <option value="Third party only">Third party only</option>
@@ -600,9 +600,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="no_claims">Any no claims discount *</label>
-                  <select id="no_claims" class="form-control" name="no_claims" >
-                    <option value="1 year" selected>Please select</option><option value="No NCD">No NCD</option>
+                  <label for="no_claims">Any no claims discount <span class="required">*</span></label>
+                  <select id="no_claims" class="form-control" name="no_claims" required>
+                    <option value="" selected>Please select</option><option value="No NCD">No NCD</option>
                     <option value="1 Year">1 Year</option><option value="2 Years">2 Years</option><option value="3 Years">3 Years</option>
                     <option value="4 Years">4 Years</option><option value="5 Years">5 Years</option><option value="6 Years">6 Years</option>
                     <option value="7 Years">7 Years</option><option value="8 Years">8 Years</option><option value="9 Years">9 Years</option>
@@ -617,7 +617,7 @@
                 <div class="form-group">
                   <label for="no_claims_earned_uk">Was this NCD earned in the UK?</label>
                   <select id="no_claims_earned_uk" class="form-control" name="no_claims_earned_uk" disabled>
-                    <option value="Yes" selected>Please select</option>
+                    <option value="" selected>Please select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No, earned in the European Union</option>
                     <option value="No">No, earned in the Rest of the World </option> 
@@ -630,7 +630,7 @@
                 <div class="form-group">
                   <label for="no_claims_protect">Would you like to protect your NCD</label>
                   <select id="no_claims_protect" class="form-control" name="no_claims_protect" disabled>
-                    <option value="Yes" selected>Please select</option>
+                    <option value="" selected>Please select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option> 
                   </select>
@@ -640,9 +640,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="voluntary_excess">What voluntary excess would you like? *</label>
-                  <select id="voluntary_excess" class="form-control" name="voluntary_excess" >
-                    <option value="$40" selected>Please select</option><option value="None">None</option>
+                  <label for="voluntary_excess">What voluntary excess would you like? <span class="required">*</span></label>
+                  <select id="voluntary_excess" class="form-control" name="voluntary_excess" required>
+                    <option value="" selected>Please select</option><option value="None">None</option>
                     <option value="£50">£50</option><option value="£100">£100</option><option value="£150">£150</option>
                     <option value="£200">£200</option><option value="£250">£250</option><option value="£300">£300</option>
                     <option value="£350">£350</option><option value="£400">£400</option><option value="£450">£450</option>
@@ -654,9 +654,9 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="pay_insurance">How do you normally pay for insurance? *</label>
-                  <select id="pay_insurance" class="form-control" name="pay_insurance" >
-                    <option value="Monthly" selected>Please select</option>
+                  <label for="pay_insurance">How do you normally pay for insurance? <span class="required">*</span></label>
+                  <select id="pay_insurance" class="form-control" name="pay_insurance" required>
+                    <option value="" selected>Please select</option>
                     <option value="Monthly">Monthly</option>
                     <option value="In Full">In Full</option>
                   </select>
@@ -666,8 +666,8 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="policy_start">When would you like the policy to start? *</label>
-                  <input id="policy_start" class="form-control" type="text" name="policy_start" placeholder="DD-MM-YYYY" value="12-03-2017">
+                  <label for="policy_start">When would you like the policy to start? <span class="required">*</span></label>
+                  <input id="policy_start" class="form-control" type="text" name="policy_start" placeholder="DD-MM-YYYY" required>
                 </div>
               </div>
             </div>
@@ -678,16 +678,16 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label>Do you have any childer under 16 years old? *</label>
+                  <label>Do you have any childer under 16 years old? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="children" value="Yes" >
+                      <input type="radio" class="form-check-input" name="children" value="Yes" required>
                       <label class="form-check-label">Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-9">
-                      <input type="radio" class="form-check-input" name="children" value="No" checked >
+                      <input type="radio" class="form-check-input" name="children" value="No" checked required>
                       <label class="form-check-label">No</label>
                     </div>
                   </div>
@@ -697,8 +697,8 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label for="vehicles_how_many">How many cars are at your home? *</label>
-                  <input id="vehicles_how_many" class="form-control" type="number" name="vehicles_how_many" step="1" min="0" style="width: 65px"  value="1">
+                  <label for="vehicles_how_many">How many cars are at your home? <span class="required">*</span></label>
+                  <input id="vehicles_how_many" class="form-control" type="number" name="vehicles_how_many" step="1" min="0" style="width: 65px" required>
                 </div>
               </div>
             </div>
@@ -708,14 +708,14 @@
                   <label>Are you a homeowner?</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="home_owner" value="Yes" checked >
-                      <label class="form-check-label">Yes</label>
+                      <input type="radio" name="home_owner" value="Yes">
+                      <label>Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="home_owner" value="No" >
-                      <label class="form-check-label">No</label>
+                      <input type="radio" name="home_owner" value="No">
+                      <label>No</label>
                     </div>
                   </div>
                 </div>
@@ -728,14 +728,14 @@
                   <label>Do you own a business?</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="business_owner" value="Yes" >
-                      <label class="form-check-label">Yes</label>
+                      <input type="radio" name="business_owner" value="Yes">
+                      <label>Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="business_owner" value="No" checked >
-                      <label class="form-check-label">No</label>
+                      <input type="radio" name="business_owner" value="No" checked >
+                      <label>No</label>
                     </div>
                   </div>
                 </div>
@@ -762,16 +762,16 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <fieldset class="form-group">
-                  <label>Any motor accidents or claims in the last 5 years? *</label>
+                  <label>Any motor accidents or claims in the last 5 years? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="motor_accidents" value="Yes" >
+                      <input type="radio" class="form-check-input" name="motor_accidents" value="Yes" required>
                       <label class="form-check-label">Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-9">
-                      <input type="radio" class="form-check-input" name="motor_accidents" value="No" checked >
+                      <input type="radio" class="form-check-input" name="motor_accidents" value="No" checked required>
                       <label class="form-check-label">No</label>
                     </div>
                   </div>
@@ -844,14 +844,14 @@
                       <label>Any injuries:</label>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_1" value="Yes" >
-                          <label class="form-check-label">Yes</label>
+                          <input type="radio" name="any_injuries_1" value="Yes" >
+                          <label>Yes</label>
                         </div>
                       </div>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_1" value="No" checked >
-                          <label class="form-check-label">No</label>
+                          <input type="radio" name="any_injuries_1" value="No" checked >
+                          <label>No</label>
                         </div>
                       </div>
                     </div>
@@ -919,14 +919,14 @@
                       <label>Any injuries:</label>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_2" value="Yes" >
-                          <label class="form-check-label">Yes</label>
+                          <input type="radio" name="any_injuries_2" value="Yes" >
+                          <label>Yes</label>
                         </div>
                       </div>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_2" value="No" checked >
-                          <label class="form-check-label">No</label>
+                          <input type="radio" name="any_injuries_2" value="No" checked >
+                          <label>No</label>
                         </div>
                       </div>
                     </div>
@@ -994,14 +994,14 @@
                       <label>Any injuries:</label>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_3" value="Yes" >
-                          <label class="form-check-label">Yes</label>
+                          <input type="radio" name="any_injuries_3" value="Yes" >
+                          <label>Yes</label>
                         </div>
                       </div>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_3" value="No" checked >
-                          <label class="form-check-label">No</label>
+                          <input type="radio" name="any_injuries_3" value="No" checked >
+                          <label>No</label>
                         </div>
                       </div>
                     </div>
@@ -1069,14 +1069,14 @@
                       <label>Any injuries:</label>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_4" value="Yes" >
-                          <label class="form-check-label">Yes</label>
+                          <input type="radio" name="any_injuries_4" value="Yes" >
+                          <label>Yes</label>
                         </div>
                       </div>
                       <div class="form-check">
                         <div class="col-xs-6">
-                          <input type="radio" class="form-check-input" name="any_injuries_4" value="No" checked >
-                          <label class="form-check-label">No</label>
+                          <input type="radio" name="any_injuries_4" value="No" checked >
+                          <label>No</label>
                         </div>
                       </div>
                     </div>
@@ -1340,19 +1340,19 @@
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
                 <label for="email">Email address</label>
-                <input id="email" class="form-control" type="email" name="email" value="prueba@gmail.com">
+                <input id="email" class="form-control" type="email" name="email">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
                 <label for="phone">Phone</label>
-                <input id="phone" class="form-control" type="text" name="phone" value="04169328863">
+                <input id="phone" class="form-control" type="text" name="phone">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
-                <label for="mobile">Movile *</label>
-                <input id="mobile" class="form-control" type="text" name="mobile" value="04125879854">
+                <label for="mobile">Movile <span class="required">*</span></label>
+                <input id="mobile" class="form-control" type="text" name="mobile" required>
               </div>
             </div>
             <div class="row">
@@ -1361,19 +1361,19 @@
                   <label>Please contact me via</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="contact_via" value="Phone" value="0416-9325587">
+                      <input type="radio" class="form-check-input" name="contact_via" value="Phone">
                       <label class="form-check-label">Phone</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="contact_via" value="Text" value="prueba">
+                      <input type="radio" class="form-check-input" name="contact_via" value="Text">
                       <label class="form-check-label">Text</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="contact_via" value="Email" value="francisco20990@gmail.com">
+                      <input type="radio" class="form-check-input" name="contact_via" value="Email">
                       <label class="form-check-label">Email</label>
                     </div>
                   </div>
@@ -1385,13 +1385,13 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label>Would you like to add an additional driver? *</label>
+                  <label>Would you like to add an additional driver? <span class="required">*</span></label>
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" name="additional_driver1" value="Yes" >
+                    <input type="radio" name="additional_driver1" value="Yes" required>
                     <label>Yes</label>
                   </div>
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" name="additional_driver1" value="No" checked>
+                    <input type="radio" name="additional_driver1" value="No" checked required>
                     <label>No</label>
                   </div>
                 </div>
@@ -1405,7 +1405,7 @@
             		<legend class="legend">Additional Driver (1) Details</legend>
             		<div class="row">
 			            <div class="col-md-12">
-			              <label>Name *</label>
+			              <label>Name <span class="required">*</span></label>
 			            </div>
 			            <div class="form-group col-md-2">
 			              <select class="form-control" id="ca_title_1" name="ca_title_1" required>
@@ -1426,7 +1426,7 @@
 			          </div><!--Row-->
 			          <div class="row">
 			            <div class="form-group col-xs-12 col-md-4">
-			              <label for="ca_relationship_1">Relationship to Proposer/Policy Holder *</label>
+			              <label for="ca_relationship_1">Relationship to Proposer/Policy Holder <span class="required">*</span></label>
 			              <select id="ca_relationship_1" class="form-control" name="ca_relationship_1" required>
                       <option value="">Please select</option>
                       <option value="Spouse">Spouse</option>
@@ -1445,14 +1445,14 @@
 			          </div>
 			          <div class="row">
 			            <div class="form-group col-xs-12 col-md-3">
-			              <label for="ca_birthdate_1">Date of Birth *</label>
+			              <label for="ca_birthdate_1">Date of Birth <span class="required">*</span></label>
 			              <div class="input-group">
 			                <input id="ca_birthdate_1" class="form-control datepicker" type="date" name="ca_birthdate_1" placeholder="DD-MM-YYYY" required>
 			                <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
 			              </div>
 			            </div>
 			            <div class="form-group col-xs-12 col-md-3">
-			              <label for="ca_marital_status_1">Marital Status *</label>
+			              <label for="ca_marital_status_1">Marital Status <span class="required">*</span></label>
 			              <select id="ca_marital_status_1" class="form-control" name="ca_marital_status_1" required>
 			                <option value="" selected>Please Select</option>
 			                <option value="Single">Single</option>
@@ -1464,7 +1464,7 @@
 			          </div><!--Row-->
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_employment_status_1">What's your employment status? *</label>
+                    <label for="ca_employment_status_1">What's your employment status? <span class="required">*</span></label>
                     <select id="ca_employment_status_1" class="form-control" name="ca_employment_status_1" required>
                       <option value="" selected>Please Select</option>
                       <option value="Employed">Employed</option>
@@ -1493,8 +1493,8 @@
 
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_license_type_1">What type of license do you have? *</label>
-                    <select id="ca_license_type_1" class="form-control" name="ca_license_type_1" required>
+                    <label for="ca_type_license_1">What type of license do you have? <span class="required">*</span></label>
+                    <select id="ca_type_license_1" class="form-control" name="ca_type_license_1" required>
                       <option value="">Please Select </option>
                       <option value="Full UK Manual">Full UK Manual</option>
                       <option value="Full UK Automatic">Full UK Automatic</option>
@@ -1507,8 +1507,8 @@
                     </select>
                   </div>
                   <div class="form-group col-xs-12 col-md-3">
-                    <label for="ca_period_license_1">Period License held for *</label>
-                    <select id="ca_period_license_1" class="form-control" name="ca_period_license_1">
+                    <label for="ca_period_license_1">Period License held for <span class="required">*</span></label>
+                    <select id="ca_period_license_1" class="form-control" name="ca_period_license_1" required>
                       <option value="" selected>Please Select</option>
                       <option value="Less than 1 year">Less than 1 year</option>
                       <option value="1 year">1 year</option><option value="2 years">2 years</option>
@@ -1527,7 +1527,7 @@
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_date_provitional_license_1">Date obtained provisional licence? *</label>
+                    <label for="ca_date_provitional_license_1">Date obtained provisional licence? </label>
                     <div class="input-group">
                       <input id="ca_date_provitional_license_1" class="form-control datepicker" type="text" name="ca_date_provitional_license_1" placeholder="DD-MM-YYYY" readonly>
                       <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -1560,7 +1560,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label for="dvla_medical_1">DVLA medical conditions or disabilities *</label>
+                      <label for="dvla_medical_1">DVLA medical conditions or disabilities <span class="required">*</span></label>
                       <select id="dvla_medical_1" class="form-control" name="ca_dvla_medical_1" required>
                         <option value="" selected>Please Select</option>
                         <option value="No">No</option>
@@ -1577,7 +1577,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-3">
                     <div class="form-group">
-                      <label>Are you born in the UK? *</label>
+                      <label>Are you born in the UK? <span class="required">*</span></label>
                       <div class="col-xs-6 col-md-6">
                         <input type="radio" name="ca_born_uk_1" value="Yes" required>
                         <label>Yes</label>
@@ -1598,7 +1598,7 @@
                 </div><!---Row-->
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-3">
-                    <label for="ca_other_vehicle_1">Use any other vehicles? *</label>
+                    <label for="ca_other_vehicle_1">Use any other vehicles? <span class="required">*</span></label>
                     <select id="ca_other_vehicle_1" class="form-control" name="ca_other_vehicle_1" required>
                       <option value="" selected>Please Select</option>
                       <option value="No access to any other vehicle">No access to any other vehicle</option>
@@ -1625,7 +1625,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label>Any motor accidents or claims in the last 5 years? *</label>
+                      <label>Any motor accidents or claims in the last 5 years? <span class="required">*</span></label>
                       <div class="col-xs-12 col-md-3">
                         <input type="radio" name="ca_motor_accidents_1" value="Yes" required>
                         <label>Yes</label>
@@ -1703,14 +1703,14 @@
                           <label>Any injuries:</label>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_1_1" value="Yes" required>
-                              <label class="form-check-label">Yes</label>
+                              <input type="radio" name="any_injuries_1_1" value="Yes" required>
+                              <label>Yes</label>
                             </div>
                           </div>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_1_1" value="No" checked required>
-                              <label class="form-check-label">No</label>
+                              <input type="radio" name="any_injuries_1_1" value="No" checked required>
+                              <label>No</label>
                             </div>
                           </div>
                         </div>
@@ -1853,14 +1853,14 @@
                           <label>Any injuries:</label>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_3_1" value="Yes" required>
-                              <label class="form-check-label">Yes</label>
+                              <input type="radio" name="any_injuries_3_1" value="Yes" required>
+                              <label>Yes</label>
                             </div>
                           </div>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_3_1" value="No" checked required>
-                              <label class="form-check-label">No</label>
+                              <input type="radio" name="any_injuries_3_1" value="No" checked required>
+                              <label>No</label>
                             </div>
                           </div>
                         </div>
@@ -2195,7 +2195,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label>Would you like to add an additional driver (2)? *</label>
+                      <label>Would you like to add an additional driver (2)? <span class="required">*</span></label>
                       <div class="col-xs-12 col-md-3">
                         <input type="radio" name="additional_driver2" value="Yes" required>
                         <label>Yes</label>
@@ -2217,7 +2217,7 @@
                 <legend class="legend">Additional Driver (2) Details</legend>
                 <div class="row">
                   <div class="col-md-12">
-                    <label>Name *</label>
+                    <label>Name <span class="required">*</span></label>
                   </div>
                   <div class="form-group col-md-2">
                     <select class="form-control" id="ca_title_2" name="ca_title_2" required>
@@ -2238,7 +2238,7 @@
                 </div><!--Row-->
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_relationship_2">Relationship to Proposer/Policy Holder *</label>
+                    <label for="ca_relationship_2">Relationship to Proposer/Policy Holder <span class="required">*</span></label>
                     <select id="ca_relationship_2" class="form-control" name="ca_relationship_2" required>
                       <option value="">Please select</option>
                       <option value="Spouse">Spouse</option>
@@ -2257,14 +2257,14 @@
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-3">
-                    <label for="ca_birthdate_2">Date of Birth *</label>
+                    <label for="ca_birthdate_2">Date of Birth <span class="required">*</span></label>
                     <div class="input-group">
                       <input id="ca_birthdate_2" class="form-control datepicker" type="date" name="ca_birthdate_2" placeholder="DD-MM-YYYY" required>
                       <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
                     </div>
                   </div>
                   <div class="form-group col-xs-12 col-md-3">
-                    <label for="ca_marital_status_2">Marital Status *</label>
+                    <label for="ca_marital_status_2">Marital Status <span class="required">*</span></label>
                     <select id="ca_marital_status_2" class="form-control" name="ca_marital_status_2" required>
                       <option value="" selected>Please Select</option>
                       <option value="Single">Single</option>
@@ -2276,7 +2276,7 @@
                 </div><!--Row-->
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_employment_status_2">What's your employment status? *</label>
+                    <label for="ca_employment_status_2">What's your employment status? <span class="required">*</span></label>
                     <select id="ca_employment_status_2" class="form-control" name="ca_employment_status_2" required>
                       <option value="" selected>Please Select</option>
                       <option value="Employed">Employed</option>
@@ -2305,8 +2305,8 @@
 
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_license_type_2">What type of license do you have? *</label>
-                    <select id="ca_license_type_2" class="form-control" name="ca_license_type_2" required>
+                    <label for="ca_type_license_2">What type of license do you have? <span class="required">*</span></label>
+                    <select id="ca_type_license_2" class="form-control" name="ca_type_license_2" required>
                       <option value="">Please Select </option>
                       <option value="Full UK Manual">Full UK Manual</option>
                       <option value="Full UK Automatic">Full UK Automatic</option>
@@ -2319,8 +2319,8 @@
                     </select>
                   </div>
                   <div class="form-group col-xs-12 col-md-3">
-                    <label for="ca_period_license_2">Period License held for *</label>
-                    <select id="ca_period_license_2" class="form-control" name="ca_period_license_2">
+                    <label for="ca_period_license_2">Period License held for <span class="required">*</span></label>
+                    <select id="ca_period_license_2" class="form-control" name="ca_period_license_2" required>
                       <option value="" selected>Please Select</option>
                       <option value="Less than 1 year">Less than 1 year</option>
                       <option value="1 year">1 year</option><option value="2 years">2 years</option>
@@ -2339,7 +2339,7 @@
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_date_provitional_license_2">Date obtained provisional licence? *</label>
+                    <label for="ca_date_provitional_license_2">Date obtained provisional licence? </label>
                     <div class="input-group">
                       <input id="ca_date_provitional_license_2" class="form-control datepicker" type="text" name="ca_date_provitional_license_2" placeholder="DD-MM-YYYY" readonly>
                       <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -2372,7 +2372,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label for="dvla_medical_2">DVLA medical conditions or disabilities *</label>
+                      <label for="dvla_medical_2">DVLA medical conditions or disabilities <span class="required">*</span></label>
                       <select id="dvla_medical_2" class="form-control" name="dvla_medical_2" required>
                         <option value="" selected>Please Select</option>
                         <option value="No">No</option>
@@ -2389,7 +2389,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-3">
                     <div class="form-group">
-                      <label>Are you born in the UK? *</label>
+                      <label>Are you born in the UK? <span class="required">*</span></label>
                       <div class="col-xs-6 col-md-6">
                         <input type="radio" name="ca_born_uk_2" value="Yes" required>
                         <label>Yes</label>
@@ -2410,7 +2410,7 @@
                 </div><!---Row-->
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-3">
-                    <label for="ca_other_vehicle_2">Use any other vehicles? *</label>
+                    <label for="ca_other_vehicle_2">Use any other vehicles? <span class="required">*</span></label>
                     <select id="ca_other_vehicle_2" class="form-control" name="ca_other_vehicle_2" required>
                       <option value="" selected>Please Select</option>
                       <option value="No access to any other vehicle">No access to any other vehicle</option>
@@ -2437,7 +2437,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label>Any motor accidents or claims in the last 5 years? *</label>
+                      <label>Any motor accidents or claims in the last 5 years? <span class="required">*</span></label>
                       <div class="col-xs-12 col-md-3">
                         <input type="radio" name="ca_motor_accidents_2" value="Yes" required>
                         <label>Yes</label>
@@ -2515,14 +2515,14 @@
                           <label>Any injuries:</label>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_1_2" value="Yes" required>
-                              <label class="form-check-label">Yes</label>
+                              <input type="radio" name="any_injuries_1_2" value="Yes" required>
+                              <label>Yes</label>
                             </div>
                           </div>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_1_2" value="No" checked required>
-                              <label class="form-check-label">No</label>
+                              <input type="radio" name="any_injuries_1_2" value="No" checked required>
+                              <label>No</label>
                             </div>
                           </div>
                         </div>
@@ -2665,14 +2665,14 @@
                           <label>Any injuries:</label>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_3_2" value="Yes" required>
-                              <label class="form-check-label">Yes</label>
+                              <input type="radio" name="any_injuries_3_2" value="Yes" required>
+                              <label>Yes</label>
                             </div>
                           </div>
                           <div class="form-check">
                             <div class="col-xs-6">
-                              <input type="radio" class="form-check-input" name="any_injuries_3_2" value="No" checked required>
-                              <label class="form-check-label">No</label>
+                              <input type="radio" name="any_injuries_3_2" value="No" checked required>
+                              <label>No</label>
                             </div>
                           </div>
                         </div>
@@ -2764,7 +2764,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years? <span class="required">*</span></label>
                       <div class="col-xs-12 col-md-3">
                         <input type="radio" name="ca_motor_offences_2" value="Yes" required>
                         <label class="form-check-label">Yes</label>
@@ -3013,7 +3013,7 @@
               <div class="form-group col-xs-12 col-md-3">
                 <label for="heard_from_us">How did you hear about us?</label>
                 <select id="heard_from_us" class="form-control" name="heard_from_us">
-                  <option value="Walk in" selected>Please select</option> 
+                  <option value="" selected>Please select</option> 
                   <option value="Walk In">Walk In</option>
                   <option value="Word of Mouth">Word of Mouth</option> 
                   <option value="Leaflet">Leaflet</option> 
@@ -3027,7 +3027,7 @@
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
                 <label for="referrer">If by a friend, family or referrer pelase state their name</label>
-                <input id="referrer" class="form-control" type="text" name="referrer" value="No prueba">
+                <input id="referrer" class="form-control" type="text" name="referrer">
                 <small class="help-text">This information is solely for our marketing purpose.</small>
               </div>
             </div><!--Row-->
@@ -3035,7 +3035,7 @@
             <div class="row">
               <div class="form-group col-xs-12 col-md-3">
                 <label for="comments">Additional comments</label>
-                <textarea id="comments" class="form-control" type="text" name="comments">Prueba</textarea>
+                <textarea id="comments" class="form-control" type="text" name="comments"></textarea>
               </div>
             </div><!--Row-->
             
@@ -3145,7 +3145,7 @@
 	    });
 
       //=================|| ADITIONAL DRIVER 1 ||======================
-      $("#ca_license_type_1").change(function(){
+      $("#ca_type_license_1").change(function(){
         var bool = (this.value !== "Full UK Automatic");
         $('#ca_date_provitional_license_1').prop({'readonly':bool,'required':(!bool)}).val('');
       });
@@ -3189,7 +3189,7 @@
       });
 
       //=================|| ADITIONAL DRIVER 2 ||======================
-      $("#ca_license_type_2").change(function(){
+      $("#ca_type_license_2").change(function(){
         var bool = (this.value !== "Full UK Automatic");
         $('#ca_date_provitional_license_2').prop({'readonly':bool,'required':(!bool)}).val('');
       });

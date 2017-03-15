@@ -395,6 +395,11 @@ p.copyright {
   font-weight: 700;
   color: #b51235;
 }
+
+.required{
+  color: red;
+}
+
 label{
   padding-top: 10px;
 }
