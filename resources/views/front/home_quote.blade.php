@@ -84,7 +84,7 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
             <label for="business_type">If Employed/Self Employed, what type of business: <span class="required">*</span></label>
-            <input id="business_type" class="form-control" type="text" name="business_type" value="yes" required>
+            <input id="business_type" class="form-control" type="text" name="business_type"  required>
           </div>
         </div><!--Row-->
 

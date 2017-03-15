@@ -44,7 +44,7 @@
           <div class="icon">
             <i class="fa fa-home"></i>
           </div>
-          <a href="{{ url('admin/homes') }}" class="small-box-footer">
+          <a href="{{ route('homes.index') }}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>

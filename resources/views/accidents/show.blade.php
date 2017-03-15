@@ -84,9 +84,9 @@
 		      	  	    @if($accidents->witnesses_details == "Yes")
 		      	  	    	  @foreach($witness as $witnes)
 		      	  	    	  	<div class="col-md-3">
-		      	  	    	  		<strong>Witness Full Name: </strong> {{$witnes->witness_name}}<br><br> 
-		      	  	    	  		<strong>Witness Adress: </strong> {{$witnes->witness_address}}<br><br>
-		      	  	    	  		<strong>Witness Contact Number: </strong> {{$witnes->witness_contact_number}}
+		      	  	    	  		<strong>Witness Full Name: </strong> {{$witnes->witness_name?$witnes->witness_name:'N/A'}}<br><br> 
+		      	  	    	  		<strong>Witness Adress: </strong> {{$witnes->witness_address?$witnes->witness_address:'N/A'}}<br><br>
+		      	  	    	  		<strong>Witness Contact Number: </strong> {{$witnes->witness_contact_number?$witnes->witness_contact_number:'N/A'}}
 		      	  	    	  	</div>
 		      	  	    	@endforeach
 		      	  	    @endif
@@ -99,9 +99,9 @@
 						@if($accidents->passengers_injury == "Yes")
 							@foreach($passengers as $pas)
 								<div class="col-md-3">
-			      	  	    	  		<strong>Witness Full Name: </strong> {{$pas->passenger_name}}<br><br> 
-			      	  	    	  		<strong>Witness Adress: </strong> {{$pas->passenger_address}}<br><br>
-			      	  	    	  		<strong>Witness Contact Number: </strong> {{$pas->passenger_contact_number}}
+			      	  	    	  		<strong>Witness Full Name: </strong> {{$pas->passenger_name?$pas->passenger_name:'N/A'}}<br><br> 
+			      	  	    	  		<strong>Witness Adress: </strong> {{$pas->passenger_address?$pas->passenger_address:'N/A'}}<br><br>
+			      	  	    	  		<strong>Witness Contact Number: </strong> {{$pas->passenger_contact_number?$pas->passenger_contact_number:'N/A'}}
 			      	  	    	  </div>
 							@endforeach
 
