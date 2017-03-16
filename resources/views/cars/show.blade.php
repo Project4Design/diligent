@@ -58,7 +58,7 @@
           <p><b>Became resident: </b> {{ $car->became_resident?$car->became_resident:'N/A' }}</p>
           <br>
           <h4 class="view-subtitle">Other vehicle</h4>
-          <p><b>Use other vehicle: </b> {{ $car->use_other_vehicle?$van->use_other_vehicle:'N/A' }}</p>
+          <p><b>Use other vehicle: </b> {{ $car->use_other_vehicle?$car->use_other_vehicle:'N/A' }}</p>
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Address</h4>
@@ -95,7 +95,7 @@
         	<p><b>Date of purchase:</b> {{ $car->vehicle_date_purchase?$car->vehicle_date_purchase:'N/A' }}</p>
         	<p><b>Regitered keeper:</b> {{ $car->vehicle_registered_keeper?$car->vehicle_registered_keeper:'N/A' }}</p>
         	<p><b>Legal owner:</b> {{ $car->vehicle_legal_owner?$car->vehicle_legal_owner:'N/A' }}</p>
-        	<p><b>Impounded with the police:</b> {{ $car->vehicle_inpounded?$car->vehicle_inpounded:'N/A' }}</p>
+        	<p><b>Impounded with the police:</b> {{ $car->vehicle_impounded?$car->vehicle_impounded:'N/A' }}</p>
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Manufacturer</h4>

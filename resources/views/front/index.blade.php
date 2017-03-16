@@ -33,7 +33,7 @@
           <div class="col-md-12">
             <div class="col-xs-6 col-md-2 col-md-offset-1">
               <div class="menu-item item-index">
-                <a href="{{ url('/taxi') }}">
+                <a href="{{ url('/accident-quote') }}">
                   <div class="container-img">
                     <img src="img/car-collision.png" alt="Accidents">
                   </div>

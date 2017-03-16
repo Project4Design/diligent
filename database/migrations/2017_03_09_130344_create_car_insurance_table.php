@@ -55,7 +55,7 @@ class CreateCarInsuranceTable extends Migration
             $table->string('vehicle_alarms',50)->nullable();
             $table->string('vehicle_engine_size',20)->nullable();
             $table->string('vehicle_transmission',10)->nullable();
-            $table->string('vehicle_imported',3);
+            $table->string('vehicle_imported',3)->nullable();
             $table->string('vehicle_modifications',3);
             $table->string('vehicle_dash_cam',3);
 
@@ -63,7 +63,7 @@ class CreateCarInsuranceTable extends Migration
             $table->string('vehicle_date_purchase',10); //DD-MM-YYYY OR Not yet.
             $table->string('vehicle_registered_keeper',20);
             $table->string('vehicle_legal_owner',20);
-            $table->string('vehicle_inpounded',3); //Is the car impounded with the police?
+            $table->string('vehicle_impounded',3)->nullable(); //Is the car impounded with the police?
 
             //Vehicle Usage
             $table->string('usage_kept_day',30); //Kept during day

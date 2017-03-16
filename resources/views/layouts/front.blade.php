@@ -62,12 +62,14 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Motor <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a href="#">Accident Insurance</a></li>
                 <li><a href="{{ url('/car') }}">Car Insurance</a></li>
                 <li><a href="{{ url('/van') }}">Van Insurance</a></li>
-                <li><a href="#">Commercial Vehicle Insurance</a></li>
-                <li><a href="#">Traders Insurance</a></li>
+                <!--
+                <li><a href="#">Traders Insurance</a></li>                
                 <li><a href="{{ url('/taxi') }}">Taxi Insurance</a></li>
                 <li><a href="{{ url('/fleet') }}">Fleet Insurance</a></li>
+                -->
               </ul>
             </li>
             <li><a href="{{url('/home') }}">Home &amp; Landlord</a></li>

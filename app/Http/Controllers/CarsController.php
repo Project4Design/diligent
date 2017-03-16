@@ -236,6 +236,7 @@ class CarsController extends Controller
     {
         
         //$car = Cars::motor_accidents()->with('Cars')->findOrFail($id);
+        //$car = Cars::where('id',$id)->with('accidents')->first(); =============|| FUNCIONA
         $car = Cars::findOrFail($id);
         //Accidentes 
         if($car->motor_accidents==="Yes"){ $acc = Cars::find($id)->accidents->where('id_additional_driver',"=",NULL); }else{ $acc = NULL; }

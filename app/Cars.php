@@ -71,7 +71,7 @@ class Cars extends Model
    'vehicle_date_purchase',
    'vehicle_registered_keeper',
    'vehicle_legal_owner',
-   'vehicle_inpounded',
+   'vehicle_impounded',
    'usage_kept_day',
    'usage_kept_night',
    'usage_kept_same_address',

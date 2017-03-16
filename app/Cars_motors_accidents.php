@@ -21,7 +21,7 @@ class Cars_motors_accidents extends Model
 		'any_injuries'
 		];
 
-    public function car()
+    public function Cars()
     {
     	return $this->belongsTo('App\Cars','id_cars');
     }

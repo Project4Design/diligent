@@ -28,13 +28,13 @@
               </select>
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name">
+              <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name" required>
             </div>
             <div class="form-group col-xs-12 col-md-2">
               <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name">
             </div>
             <div class="form-group col-xs-12 col-md-2">
-              <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname">
+              <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname" required>
             </div>
           </div><!--Row-->
 
@@ -59,12 +59,18 @@
           </div><!--Row-->
 
           <div class="row">
-            <div class="form-group col-xs-12 col-md-3">
-              <label for="address_line1">Address <span class="required">*</span></label>
-              <input id="address_line1" class="form-control" type="text" name="address_line1" placeholder="Address line 1">
-              <input id="address_line2" class="form-control" type="text" name="address_line2" placeholder="Address line 2">
-              <input id="address_city" class="form-control" type="text" name="address_city" placeholder="City">
-              <input id="address_postcode" class="form-control" type="text" name="address_postcode" placeholder="Postal/ Zip code">
+            <div class="col-xs-12 col-md-3">
+              <div class="form-group" style="margin-bottom:0px;">
+                <label for="address_line1">Address <span class="required">*</span></label>
+                <input id="address_line1" class="form-control" type="text" name="address_line1" placeholder="Address line 1" required>
+              </div>
+              <div class="form-group" style="margin-bottom:0px;">
+                <input id="address_line2" class="form-control" type="text" name="address_line2" placeholder="Address line 2">
+              </div>
+              <div class="form-group">
+                <input id="address_city" class="form-control" type="text" name="address_city" placeholder="City" required>
+                <input id="address_postcode" class="form-control" type="text" name="address_postcode" placeholder="Postal/ Zip code" required>
+              </div>
             </div>
           </div><!--Row-->
 
@@ -73,11 +79,11 @@
               <div class="form-group">
                 <label>Are you born in the UK? <span class="required">*</span></label>
                 <div class="col-xs-6 col-md-6">
-                  <input type="radio" name="born_uk" value="Yes" checked>
+                  <input type="radio" name="born_uk" value="Yes" checked required>
                   <label class="form-check-label">Yes</label>
                 </div>
                 <div class="col-xs-6 col-md-6">
-                  <input type="radio" name="born_uk" value="No">
+                  <input type="radio" name="born_uk" value="No" required>
                   <label class="form-check-label">No</label>
                 </div>
               </div>
@@ -110,13 +116,13 @@
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
               <label for="occupation">If Employed/Self Employed, what is your occupation: </label>
-              <input id="occupation" class="form-control" type="text" name="occupation">
+              <input id="occupation" class="form-control" type="text" name="occupation" readonly>
             </div>
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
               <label for="business_type">If Employed/Self Employed, what type of business: </label>
-              <input id="business_type" class="form-control" type="text" name="business_type">
+              <input id="business_type" class="form-control" type="text" name="business_type" readonly>
             </div>
           </div><!--Row-->
 
@@ -340,7 +346,7 @@
                 </div>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-6">
-                    <input type="radio" name="vehicle_transmission" value="Automatic" required>
+                    <input type="radio" name="vehicle_transmission" value="Automatic" checked required>
                     <label>Automatic</label>
                   </div>
                 </div>
@@ -360,7 +366,7 @@
                 </div>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" name="vehicle_imported" value="No" required>
+                    <input type="radio" name="vehicle_imported" value="No" checked required>
                     <label>No</label>
                   </div>
                 </div>
@@ -425,24 +431,22 @@
             </div><!--Row-->
 
             <div class="row">
-              <div class="form-group">
-                <div class="col-xs-12 col-md-3">
-                  <label for="vehicle_registered_keeper">Registered keeper <span class="required">*</span></label>
-                  <select id="vehicle_registered_keeper" class="form-control" name="vehicle_registered_keeper" required>
-                    <option value="" selected>Please select</option>
-                    <option value="Policy Holder">Policy Holder</option>
-                    <option value="Spouse">Spouse</option>
-                    <option value="Other Driver">Other Driver</option>
-                    <option value="Parent">Parent</option>
-                    <option value="Common Law Partner">Common Law Partner</option>
-                    <option value="Private Leased">Private Leased</option>
-                    <option value="Company">Company</option>
-                    <option value="Company (Leased)">Company (Leased)</option>
-                    <option value="Limited Company">Limited Company</option>
-                    <option value="Civil Partner">Civil Partner</option>
-                    <option value="Society/Club">Society/Club</option>
-                  </select>
-                </div>
+              <div class="form-group col-xs-12 col-md-3">
+                <label for="vehicle_registered_keeper">Registered keeper <span class="required">*</span></label>
+                <select id="vehicle_registered_keeper" class="form-control" name="vehicle_registered_keeper" required>
+                  <option value="" selected>Please select</option>
+                  <option value="Policy Holder">Policy Holder</option>
+                  <option value="Spouse">Spouse</option>
+                  <option value="Other Driver">Other Driver</option>
+                  <option value="Parent">Parent</option>
+                  <option value="Common Law Partner">Common Law Partner</option>
+                  <option value="Private Leased">Private Leased</option>
+                  <option value="Company">Company</option>
+                  <option value="Company (Leased)">Company (Leased)</option>
+                  <option value="Limited Company">Limited Company</option>
+                  <option value="Civil Partner">Civil Partner</option>
+                  <option value="Society/Club">Society/Club</option>
+                </select>
               </div>
             </div><!--Row-->
 
@@ -451,7 +455,7 @@
                 <div class="form-group">
                   <label for="vehicle_legal_owner">Legal Owner <span class="required">*</span></label>
                   <select id="vehicle_legal_owner" class="form-control" name="vehicle_legal_owner" required>
-                    <option value="Spouse" selected>Please select</option>
+                    <option value="" selected>Please select</option>
                     <option value="Policy Holder">Policy Holder</option>
                     <option value="Spouse">Spouse</option>
                     <option value="Other Driver">Other Driver</option>
@@ -474,13 +478,13 @@
                   <label>Is the car impounded with the police? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-6">
-                      <input type="radio" name="vehicle_inpounded" value="Yes" required>
+                      <input type="radio" name="vehicle_impounded" value="Yes" required>
                       <label>Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-6">
-                      <input type="radio" name="vehicle_inpounded" value="No" required>
+                      <input type="radio" name="vehicle_impounded" value="No" checked required>
                       <label>No</label>
                     </div>
                   </div>
@@ -708,7 +712,7 @@
                   <label>Are you a homeowner?</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" name="home_owner" value="Yes">
+                      <input type="radio" name="home_owner" value="Yes" checked>
                       <label>Yes</label>
                     </div>
                   </div>
@@ -1579,7 +1583,7 @@
                     <div class="form-group">
                       <label>Are you born in the UK? <span class="required">*</span></label>
                       <div class="col-xs-6 col-md-6">
-                        <input type="radio" name="ca_born_uk_1" value="Yes" required>
+                        <input type="radio" name="ca_born_uk_1" value="Yes" checked required>
                         <label>Yes</label>
                       </div>
                       <div class="col-xs-6 col-md-6">
@@ -2391,7 +2395,7 @@
                     <div class="form-group">
                       <label>Are you born in the UK? <span class="required">*</span></label>
                       <div class="col-xs-6 col-md-6">
-                        <input type="radio" name="ca_born_uk_2" value="Yes" required>
+                        <input type="radio" name="ca_born_uk_2" value="Yes" checked required>
                         <label>Yes</label>
                       </div>
                       <div class="col-xs-6 col-md-6">
@@ -3042,8 +3046,13 @@
             
             <div class="row">
               <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-danger" style="display:none">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong class="text-center">You must complete all required fields</strong> 
+                </div>
+              
                 <br>
-                <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
+                <button type="submit" class="btn btn-block btn-submit b-submit">Submit Quote</button>
               </div>
             </div>
           </form>
@@ -3227,6 +3236,56 @@
           $('#offences-sub-from_2').hide().prop('disabled',!bool);
         }
       });
+
+
+      //VALIDAR
+      $('.b-submit').click(function(e){
+        e.preventDefault();
+        var btn    = $(this);
+        var form   = btn.closest('form');
+        var action = form.attr('action');
+        var bar    = form.find('.progress');
+        var alert  = form.find('.alert');
+
+        alert.hide();
+        btn.button('loading');
+        bar.show();
+
+        //Validacion
+        var fields = form.find('input:visible,select:visible').filter('[required]').length;
+        form.find('input:visible,select:visible').filter('[required]').each(function(){
+          var regex = $(this).attr('pattern');
+          var val   = $(this).val();
+          if(val == ""){
+            $(this).closest('.form-group').addClass('has-error');
+            if(!$(this).closest('.form-group').find('.help-block').length){
+              $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+            }
+          }
+          else{
+            if(val.match(regex)){
+              $(this).closest('.form-group').removeClass('has-error');
+              $(this).closest('.form-group').find('.help-block').remove();
+              fields = fields-1;
+            }else{
+              $(this).closest('.form-group').addClass('has-error');
+              if(!$(this).closest('.form-group').find('.help-block').length){
+                $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+              }
+            }
+          }
+        });
+
+        if(fields!=0){
+          alert.removeClass('alert-success').addClass('alert-danger');
+          alert.find('#msj').text('You must complete all required fields.');
+          bar.hide();
+          btn.button('reset');
+          alert.show().delay(7000).hide('slow');
+        }else{
+          form.submit();
+        }
+      })
 	  });
 	</script>
 @endsection

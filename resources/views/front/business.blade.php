@@ -57,56 +57,8 @@
           </div>
 
           <div class="col-md-12">
-            <div class="col-xs-12 col-md-2">
-              <div class="menu-item">
-                <a href="{{ url('/car') }}">
-                  <div class="container-img">
-                    <img src="img/car.svg" alt="Car">
-                  </div>
-                  <h4>Car Insurance</h4>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-2">
-              <div class="menu-item">
-                <a href="{{ url('/van') }}">
-                  <div class="container-img">
-                    <img src="img/van.svg" alt="Van">
-                  </div>
-                  <h4>Van Insurance</h4>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-2">
-              <div class="menu-item">
-                <a href="{{ url('/taxi') }}">
-                  <div class="container-img">
-                    <img src="img/taxi.svg" alt="Taxi">
-                  </div>
-                  <h4>Taxi Insurance</h4>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-2">
-              <div class="menu-item">
-                <a href="{{ url('/home') }}">
-                  <div class="container-img">
-                    <img src="img/house.svg" alt="House">
-                  </div>
-                  <h4>Home Insurance</h4>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-2">
-              <div class="menu-item">
-                <a href="{{ url('/fleet') }}">
-                  <div class="container-img">
-                    <img src="img/fleet.svg" alt="Fleet">
-                  </div>
-                  <h4>Fleet Insurance</h4>
-                </a>
-              </div>
-            </div>
+            
+            @include('front.insurances')
 
           </div>
         </div>
