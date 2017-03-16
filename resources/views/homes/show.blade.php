@@ -128,6 +128,28 @@
 					      		@endforeach
 					      	@endif
 					      </div>
+					      <h2 class="text-center">Assumptions property</h2>
+					       <hr class="separador">
+					       <div class="row">
+					       	<div class="col-md-4">
+					       		<strong>Is built with brick walls?: </strong>  {{$homes->built_blick_walls?$homes->built_blick_walls:'N/A'}}<br><br>
+					       		<strong>Is more than 400 meters away from water: </strong>  {{$homes->meter_from_water?'Yes':'N/A'}}<br><br>
+					       		<strong>Has a roof made of slate or tile: </strong>  {{$homes->roof_made_slate?'Yes':'N/A'}}<br><br>
+					       		<strong>Is not a listed property: </strong>  {{$homes->listed_property?'Yes':'N/A'}}
+					       	</div>
+					       	<div class="col-md-4">
+					       		<strong>Is not for sale: </strong>  {{$homes->not_for_sale?'Yes':'N/A'}}<br><br>
+					       		<strong>Has never shown signs of heave, landslip or subsidence: </strong>  {{$homes->shown_subsidence?'Yes':'N/A'}}<br><br>
+					       		<strong>Is your main residence: </strong>  {{$homes->main_residence?'Yes':'N/A'}}<br><br>
+					       		<strong>Has not had underpinning or structural support: </strong>  {{$homes->underpinning_structural_support?'Yes':'N/A'}}
+					       	</div>
+					       	<div class="col-md-4">
+					       		<strong>Is not currently undergoing building work</strong>  {{$homes->undergoing_building?'Yes':'N/A'}}<br><br>
+					       		<strong>Has never suffered from flooding</strong>  {{$homes->suffered_from_flooding?'Yes':'N/A'}}<br><br>
+					       		<strong>Has no significant cracks on the external walls</strong>  {{$homes->significant_external_walls?'Yes':'N/A'}}
+					   
+					       	</div>
+					       </div>
 
 				</div>
 
