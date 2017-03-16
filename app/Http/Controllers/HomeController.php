@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Accidents;
-
+use App\Homes;
 class HomeController extends Controller
 {
     /**
@@ -27,6 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $accidents = Accidents::count();
-        return view('dashboard',['cars'=>array(),'vans'=>array(),'homes'=>array(),'business'=>array(),'accidents' =>  $accidents]);
+        $homes = Homes::count();
+        return view('dashboard',['cars'=>array(),'vans'=>array(),'homes'=>$homes,'business'=>array(),'accidents' =>  $accidents]);
     }
 }

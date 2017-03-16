@@ -44,7 +44,7 @@
           <div class="form-group col-xs-12 col-md-2">
             <label for="birthdate">Date of Birth *</label>
             <div class="input-group">
-              <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
+              <input id="birthdate" class="form-control datepicker" type="text" name="birthdate" placeholder="DD-MM-YYYY" required>
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>
@@ -1046,7 +1046,7 @@
         	<div class="form-group col-xs-12 col-md-3">
             <label for="policy_start">When would you like the cover to start </label>
             <div class="input-group">
-              <input id="policy_start" class="form-control datepicker" type="date" name="policy_start" placeholder="DD-MM-YYYY">
+              <input id="policy_start" class="form-control datepicker" type="text" name="policy_start" placeholder="DD-MM-YYYY">
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
             </div>
           </div>

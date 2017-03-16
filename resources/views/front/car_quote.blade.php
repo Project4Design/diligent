@@ -42,7 +42,7 @@
             <div class="form-group col-xs-12 col-md-2">
               <label for="birthdate">Date of Birth <span class="required">*</span></label>
               <div class="input-group">
-                <input id="birthdate" class="form-control datepicker" type="date" name="birthdate" placeholder="DD-MM-YYYY" required>
+                <input id="birthdate" class="form-control datepicker" type="text" name="birthdate" placeholder="DD-MM-YYYY" required>
                 <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
               </div>
             </div>

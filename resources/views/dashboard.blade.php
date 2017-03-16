@@ -38,7 +38,7 @@
       <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>{{ count($homes) }}</h3>
+            <h3>{{ $homes }}</h3>
             <p>Home Insurances</p>
           </div>
           <div class="icon">
