@@ -21,7 +21,6 @@ class cars_additional_driver extends Model
     'ca_marital_status',
     'ca_employment_status',
     'ca_employed_occupation',
-    'ca_employed_occupation',
     'ca_employed_business',
     'ca_type_license',
     'ca_period_license',

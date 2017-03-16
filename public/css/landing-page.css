@@ -195,6 +195,11 @@ p.copyright {
   color: #fff;
   background-color: #B61238;
 }
+.btn-submit:hover,
+.btn-submit:active,
+.btn-submit:focus{
+  color: #fff;
+}
 
 .intro-social-buttons img{
   width: 150px;

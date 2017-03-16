@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class vans extends Model
+class Vans extends Model
 {
     
 	protected $table = "vans";
@@ -101,5 +101,20 @@ class vans extends Model
    'referrer',
    'comments'
    ];
+
+   public function additional()
+   {
+      return $this->hasMany('App\Vans_additional_driver','id_vans_add');
+   }
+
+   public function accidents()
+   {
+      return $this->hasMany('App\Vans_motors_accidents','vans_id');
+   }
+
+   public function offences()
+   {
+      return $this->hasMany('App\Vans_motors_fixed','id_cars_offences');
+   }
 
 }

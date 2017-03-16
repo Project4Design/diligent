@@ -111,13 +111,13 @@
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
               <label for="occupation">If Employed/Self Employed, what is your occupation: </label>
-              <input id="occupation" class="form-control" type="text" name="occupation">
+              <input id="occupation" class="form-control" type="text" name="occupation" readonly>
             </div>
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-4">
               <label for="business_type">If Employed/Self Employed, what type of business: </label>
-              <input id="business_type" class="form-control" type="text" name="business_type">
+              <input id="business_type" class="form-control" type="text" name="business_type" readonly>
             </div>
           </div><!--Row-->
 
@@ -241,9 +241,9 @@
             </div>
           </div><!--Row-->
 
-          <!--================================|| CAR DETAILS ||=========================================-->
+          <!--================================|| VAN DETAILS ||=========================================-->
 
-          <legend class="legend">Car Details</legend>
+          <legend class="legend">Vehicle Details</legend>
           <div class="row">
             <div class="form-group col-xs-12 col-md-2">
               <label for="vehicle_registration">Registration <span class="required">*</span></label>
@@ -484,7 +484,7 @@
             </div>
           </div><!--Row-->
 
-            <legend class="legend">Car ownership</legend>
+            <legend class="legend">Van ownership</legend>
             <div class="row">
               <div class="col-xs-12 col-md-3">
                 <div class="form-group">
@@ -3223,6 +3223,11 @@
 	      $('#became_resident').prop({'readonly':bool,'required':(!bool)}).val('');
 	    });
 
+      $('#employment_status').change(function(){
+        var bool = (this.value == "Employed" || this.value == "Self-Employed");
+        $('#business_type,#occupation').prop({'readonly':!bool,'required':bool}).val('');
+      });
+
 	    //Activar si Do you own a business = Yes
 	    $("input[name='business_owner']").click(function(){
 	      var bool = (this.value !== "Yes");
@@ -3230,8 +3235,8 @@
 	    });
 
 	    $("#license_type").change(function(){
-	      var bool = (this.value !== "Full UK Automatic");
-	      $('#date_provitional_license').prop({'readonly':bool,'required':(!bool)}).val('');
+	      var bool = (this.value == "Full UK Automatic" || this.value == "Full UK Manual");
+	      $('#date_provitional_license').prop({'readonly':!bool,'required':bool}).val('');
 	    });
 
 	    $("input[name='license_enter']").click(function(){

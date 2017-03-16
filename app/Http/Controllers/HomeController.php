@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Accidents;
+use App\Vans;
+use App\Cars;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,8 @@ class HomeController extends Controller
     public function index()
     {
         $accidents = Accidents::count();
-        return view('dashboard',['cars'=>array(),'vans'=>array(),'homes'=>array(),'business'=>array(),'accidents' =>  $accidents]);
+        $cars = Cars::count();
+        $vans = Vans::count();
+        return view('dashboard',['cars'=>$cars,'vans'=>$vans,'homes'=>array(),'business'=>array(),'accidents' =>  $accidents]);
     }
 }

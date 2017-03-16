@@ -20,7 +20,7 @@
             <p>Vans Quotes</p>
           </div>
           <div class="icon">
-            <i class="fa fa-car"></i>
+            <i class="fa fa-bus"></i>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
 									<td>{{ $d->type_coverage }}</td>
 									<td>{{ $d->policy_start }}</td>
 									<td class="text-center">
-										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/cars/'.$d->id) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
+										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/vans/'.$d->id_vans) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
 									</td>
 								</tr>
 								@php $i++; @endphp

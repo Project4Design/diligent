@@ -92,15 +92,18 @@ class Cars extends Model
    'referrer',
    'comments'];
 
-
-   public function cars_motors_accidents()
+   public function additional()
    {
-
-   	return $this->hasMany(Cars_motors_accidents::class);
+      return $this->hasMany('App\Cars_additional_driver','id_cars_additional');
    }
 
-   public function cars_motors_offenses()
+   public function accidents()
    {
-      return $this->hasMany(Cars_motors_offenses::class);
+   	return $this->hasMany('App\Cars_motors_accidents','id_cars');
+   }
+
+   public function offences()
+   {
+      return $this->hasMany('App\Cars_motors_offences','id_cars_offences');
    }
 }

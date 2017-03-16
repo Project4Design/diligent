@@ -8,6 +8,8 @@ class Cars_motors_accidents extends Model
 {
     protected $table = "cars_motors_accidents";
 
+    public $primaryKey = "id_accidents";
+
 		public $fillable = [
 		'id_cars',
 		'id_additional_driver',
@@ -19,8 +21,8 @@ class Cars_motors_accidents extends Model
 		'any_injuries'
 		];
 
-    public function cars()
+    public function car()
     {
-    	return $this->belongsTo(Cars::class);
+    	return $this->belongsTo('App\Cars','id_cars');
     }
 }

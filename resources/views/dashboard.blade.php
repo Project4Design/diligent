@@ -8,7 +8,7 @@
       <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>{{ count($cars) }}</h3>
+            <h3>{{ $cars }}</h3>
             <p>Car Insurances</p>
           </div>
           <div class="icon">
@@ -23,7 +23,7 @@
       <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>{{ count($vans) }}</h3>
+            <h3>{{ $vans }}</h3>
             <p>Van Insurances</p>
           </div>
           <div class="icon">
