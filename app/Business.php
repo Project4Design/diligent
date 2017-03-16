@@ -54,7 +54,7 @@ class Business extends Model
    'alarm_notify',
    'checked_organization',
    'premises_comercial',
-   'if_running',
+   'if_running', //Relations
    'premises_owned_rented',
    'require_building_cover',
    'maximum_cash',
