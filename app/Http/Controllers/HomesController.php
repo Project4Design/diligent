@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Homes;
-use App\home_losses;
+use App\Home_losses;
 
 class HomesController extends Controller
 {
@@ -84,7 +84,12 @@ class HomesController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $homes = Homes::findOrFail($id);
+        $home_losses = Home_losses::where('home_insurance_id',$id)->get();
+        return view('homes.show', ['homes' => $homes,'losses' => $home_losses]);
+
+        
     }
 
     /**

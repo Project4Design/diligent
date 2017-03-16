@@ -559,7 +559,7 @@
 				      <div class="row">
 			          <div class="form-group col-xs-12 col-md-3">
 			            <label for="date_claim">What date was the claim?</label>
-			            <input id="date_claim" class="form-control" type="text" name="date_claim" value="fecha">
+			            <input id="date_claim" class="form-control" type="text" name="date_claim" >
 			          </div>
 			        </div>
 

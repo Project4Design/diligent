@@ -30,7 +30,7 @@
 			<div class="col-md-12">
 		 		<div class="box box-warning">
 		      <div class="box-header with-border">
-		        <h3 class="box-title"><i class="fa fa-file-text-o"></i> Accidents</h3>
+		        <h3 class="box-title"><i class="fa fa-wheelchair"></i> Accidents</h3>
 		      </div>
 		      <div class="box-body">
 		      	<div class="table-responsive">

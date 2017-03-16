@@ -35,7 +35,7 @@
 		      </div>
 		      <div class="box-body">
 		        <table class="table tabe-bordered">
-							<thead>
+							<thead style="background-color: skyblue">
 								<tr>
 									<th class="text-center">#</th>
 									<th class="text-center">Name</th>
@@ -51,12 +51,12 @@
 								@foreach ($homes AS $d )
 								<tr>
 									<td class="text-center">{{ $i }}</td>
-									<td>{{ $d->title." ".$d->first_name." ".$d->sur_name }}</td>
-									<td>{{ $d->email }}</td>
-									<td>{{ $d->property_number }}</td>
-									<td>{{ $d->type_property }}</td>
-									<td>{{ $d->stimate_built }}</td>
-									<td class="text-center">
+									<td class="text-center">{{ $d->title." ".$d->first_name." ".$d->sur_name }}</td>
+									<td class="text-center">{{ $d->email }}</td>
+									<td class="text-center">{{ $d->property_number }}</td>
+									<td class="text-center">{{ $d->type_property }}</td>
+									<td class="text-center">{{ $d->stimate_built }}</td>
+									<td>
 										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/homes/'.$d->id_home_insurance) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
 									</td>
 								</tr>
