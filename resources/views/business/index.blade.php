@@ -50,7 +50,7 @@
 								@foreach ($business AS $d )
 								<tr>
 									<td class="text-center">{{ $i }}</td>
-									<td class="text-center">{{ $d->title.''.$d->first_name.''.$d->sur_name }}</td>
+									<td class="text-center">{{ $d->title.' '.$d->first_name.' '.$d->sur_name }}</td>
 									<td class="text-center">{{ $d->mobile_telephone }}</td>
 									<td class="text-right">{{ $d->email }}</td>
 									<td class="text-center">{{ $d->bussiness_name }}</td>

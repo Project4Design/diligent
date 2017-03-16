@@ -74,6 +74,11 @@ class BusinessController extends Controller
      */
     public function show($id)
     {
+
+        $business = Business::findOrFail($id);
+        $business_details = Business_details::where('business_id',$id)->get();
+
+        return view('business.show' , ['business' => $business, 'business_details' => $business_details]);
     }
 
     /**
