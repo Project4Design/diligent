@@ -22,7 +22,6 @@ class vans_additional_driver extends Model
     'ca_marital_status',
     'ca_employment_status',
     'ca_employed_occupation',
-    'ca_employed_occupation',
     'ca_employed_business',
     'ca_type_license',
     'ca_period_license',
@@ -36,6 +35,4 @@ class vans_additional_driver extends Model
     'ca_non_motoring_convictions',
     'ca_motor_accidents',
     'ca_motor_offences'];
-
-    public $timestamps = false;
 }

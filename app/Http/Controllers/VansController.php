@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vans;
-use App\vans_motors_accidents;
-use App\vans_motors_fixed;
-use App\vans_additional_driver;
+use App\Vans_motors_accidents;
+use App\Vans_motors_fixed;
+use App\Vans_additional_driver;
 
 class VansController extends Controller
 {
@@ -53,7 +53,7 @@ class VansController extends Controller
                     $vans_accidents->damage = $request->input('damage_'.$i);
                     $vans_accidents->cost = $request->input('cost_'.$i);
                     $vans_accidents->fault = $request->input('fault_'.$i);
-                    $vans_accidents->any_injuries = $request->input('any_injuries'.$i);
+                    $vans_accidents->any_injuries = $request->input('any_injuries_'.$i);
                     $vans_accidents->save();
                       
 
@@ -105,7 +105,7 @@ class VansController extends Controller
                 $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_1');
                 $additional_driver->save();
 
-                
+                  echo $request->input('ca_employed_occupation_1')."-1";
 
 
                     if ($request->input('ca_motor_accidents_1') == "Yes")
@@ -120,7 +120,7 @@ class VansController extends Controller
                                 $cars_accidents->damage = $request->input('damage_'.$i.'_1');
                                 $cars_accidents->cost = $request->input('cost_'.$i.'_1');
                                 $cars_accidents->fault = $request->input('fault_'.$i.'_1');
-                                $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_1');
+                                $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_1');
                                 $cars_accidents->save();
 
                                 
@@ -176,7 +176,7 @@ class VansController extends Controller
                         $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_2');
                         $additional_driver->save();
 
-                        echo $vans->id_vans;
+                        echo $request->input('ca_employed_occupation_2');
 
                             if ($request->input('ca_motor_accidents_2') == "Yes")
                              {
@@ -190,7 +190,7 @@ class VansController extends Controller
                                     $cars_accidents->damage = $request->input('damage_'.$i.'_2');
                                     $cars_accidents->cost = $request->input('cost_'.$i.'_2');
                                     $cars_accidents->fault = $request->input('fault_'.$i.'_2');
-                                    $cars_accidents->any_injuries = $request->input('any_injuries'.$i.'_2');
+                                    $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_2');
                                     $cars_accidents->save();
 
                                     
@@ -233,8 +233,8 @@ class VansController extends Controller
             'alert-important' => true
             ];
         }
-
-         return redirect("/van-quote")->with($with);
+        
+        return redirect("/van-quote")->with($with);
     }
 
     /**
@@ -245,7 +245,39 @@ class VansController extends Controller
      */
     public function show($id)
     {
-        //
+        //$car = Cars::motor_accidents()->with('Cars')->findOrFail($id);
+        $van = Vans::findOrFail($id);
+        //Accidentes 
+        if($van->motor_accidents==="Yes"){ $acc = Vans::find($id)->accidents->where('id_additional_driver',"=",NULL); }else{ $acc = NULL; }
+        //Offences
+        if($van->motor_offences==="Yes"){ $ofe = Vans::find($id)->offences->where('id_additional_drive_fixed',"=",NULL); }else{ $ofe = NULL; }
+        if($van->additional_driver1==="Yes"){
+            $adt1 = Vans::find($id)->additional->first();
+            if($adt1->ca_motor_accidents==="Yes"){
+                $acc1 = Vans::find($id)->accidents->where('id_additional_driver',$adt1->id_additional_driver);
+            }else{ $acc1 = NULL; }
+
+            if($adt1->ca_motor_offences==="Yes"){
+                $ofe1 = Vans::find($id)->offences->where('id_additional_drive_fixed',$adt1->id_additional_driver);
+            }else{ $ofe1 = NULL; }
+
+            if($van->additional_driver2==="Yes"){
+                $adt2 = Vans::find($id)->additional->first();
+                if($adt2->ca_motor_accidents==="Yes"){
+                    $acc2 = Vans::find($id)->accidents->where('id_additional_driver',$adt1->id_additional_driver);
+                }else{ $acc2 = NULL; }
+                if($adt2->ca_motor_offences==="Yes"){
+                    $ofe2 = Vans::find($id)->offences->where('id_additional_drive_fixed',$adt1->id_additional_driver);
+                }else{ $ofe2 = NULL; }
+            }else{ $adt2 = NULL; $acc2 = NULL; $ofe2 = NULL; }
+        }else{
+            $adt1 = NULL;$acc1 = NULL;$ofe1 = NULL;
+            $adt2 = NULL;$acc2 = NULL;$ofe2 = NULL;
+        }
+        $adt1 = (object) array('data'=>$adt1,'acc'=>$acc1,'ofe'=>$ofe1);
+        $adt2 = (object) array('data'=>$adt2,'acc'=>$acc2,'ofe'=>$ofe2);
+        //dd($ofe);
+        return view("vans.show", ["van"=>$van,"acc"=>$acc,"ofe"=>$ofe,"adt1"=>$adt1,"adt2"=>$adt2]);
     }
 
     /**

@@ -180,7 +180,7 @@
             </div>
             <div class="col-xs-12 col-md-3">
               <div class="form-group">
-                <label for="license_number">Please enter your 16-character driving licence number.</label>
+                <label for="license_number">Please enter your 16 character driving licence number</label>
                 <input id="license_number" class="form-control" type="text" name="license_number" maxlength="16" readonly>
               </div>
             </div>
@@ -1092,16 +1092,16 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                  <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years? <span class="required">*</span></label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="motor_offences" value="Yes" >
+                      <input type="radio" class="form-check-input" name="motor_offences" value="Yes" required>
                       <label class="form-check-label">Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-9">
-                      <input type="radio" class="form-check-input" name="motor_offences" value="No" checked >
+                      <input type="radio" class="form-check-input" name="motor_offences" value="No" checked required>
                       <label class="form-check-label">No</label>
                     </div>
                   </div>
@@ -1361,7 +1361,7 @@
                   <label>Please contact me via</label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
-                      <input type="radio" class="form-check-input" name="contact_via" value="Phone">
+                      <input type="radio" class="form-check-input" name="contact_via" value="Phone" checked>
                       <label class="form-check-label">Phone</label>
                     </div>
                   </div>
@@ -1480,8 +1480,8 @@
 
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_employed_ocupation_1">If Employed/Self Employed, what is your occupation: </label>
-                    <input id="ca_employed_ocupation_1" class="form-control" type="text" name="ca_employed_ocupation_1">
+                    <label for="ca_employed_occupation_1">If Employed/Self Employed, what is your occupation: </label>
+                    <input id="ca_employed_occupation_1" class="form-control" type="text" name="ca_employed_occupation_1">
                   </div>
                 </div>
                 <div class="row">
@@ -1952,7 +1952,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years?</label>
+                      <label>Any motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years? <span class="required">*</span></label>
                       <div class="col-xs-12 col-md-3">
                         <input type="radio" name="ca_motor_offences_1" value="Yes" required>
                         <label class="form-check-label">Yes</label>
@@ -2292,8 +2292,8 @@
 
                 <div class="row">
                   <div class="form-group col-xs-12 col-md-4">
-                    <label for="ca_employed_ocupation_2">If Employed/Self Employed, what is your occupation: </label>
-                    <input id="ca_employed_ocupation_2" class="form-control" type="text" name="ca_employed_ocupation_2">
+                    <label for="ca_employed_occupation_2">If Employed/Self Employed, what is your occupation: </label>
+                    <input id="ca_employed_occupation_2" class="form-control" type="text" name="ca_employed_occupation_2">
                   </div>
                 </div>
                 <div class="row">
@@ -3076,6 +3076,11 @@
 	      var bool = (this.value !== "No");
 	      $('#became_resident').prop({'readonly':bool,'required':(!bool)}).val('');
 	    });
+      
+      $('#employment_status').change(function(){
+        var bool = (this.value == "Employed" || this.value == "Self-Employed");
+        $('#business_type,#occupation').prop({'readonly':!bool,'required':bool}).val('');
+      });
 
 	    //Activar si Do you own a business = Yes
 	    $("input[name='business_owner']").click(function(){
@@ -3083,10 +3088,10 @@
 	      $('#business').prop({'readonly':bool,'required':(!bool)}).val('');
 	    });
 
-	    $("#license_type").change(function(){
-	      var bool = (this.value !== "Full UK Automatic");
-	      $('#date_provitional_license').prop({'readonly':bool,'required':(!bool)}).val('');
-	    });
+      $("#license_type").change(function(){
+        var bool = (this.value == "Full UK Automatic" || this.value == "Full UK Manual");
+        $('#date_provitional_license').prop({'readonly':!bool,'required':bool}).val('');
+      });
 
 	    $("input[name='license_enter']").click(function(){
 	      var bool = (this.value !== "Yes");

@@ -235,8 +235,39 @@ class CarsController extends Controller
     public function show($id)
     {
         
+        //$car = Cars::motor_accidents()->with('Cars')->findOrFail($id);
         $car = Cars::findOrFail($id);
-        return view("cars.show", ["car" => $car]);
+        //Accidentes 
+        if($car->motor_accidents==="Yes"){ $acc = Cars::find($id)->accidents->where('id_additional_driver',"=",NULL); }else{ $acc = NULL; }
+        //Offences
+        if($car->motor_offences==="Yes"){ $ofe = Cars::find($id)->offences->where('id_additional_drive_offences',"=",NULL); }else{ $ofe = NULL; }
+        if($car->additional_driver1==="Yes"){
+            $adt1 = Cars::find($id)->additional->first();
+            if($adt1->ca_motor_accidents==="Yes"){
+                $acc1 = Cars::find($id)->accidents->where('id_additional_driver',$adt1->id_additional_driver);
+            }else{ $acc1 = NULL; }
+
+            if($adt1->ca_motor_offences==="Yes"){
+                $ofe1 = Cars::find($id)->offences->where('id_additional_drive_offences',$adt1->id_additional_driver);
+            }else{ $ofe1 = NULL; }
+
+            if($car->additional_driver2==="Yes"){
+                $adt2 = Cars::find($id)->additional->first();
+                if($adt2->ca_motor_accidents==="Yes"){
+                    $acc2 = Cars::find($id)->accidents->where('id_additional_driver',$adt1->id_additional_driver);
+                }else{ $acc2 = NULL; }
+                if($adt2->ca_motor_offences==="Yes"){
+                    $ofe2 = Cars::find($id)->offences->where('id_additional_drive_offences',$adt1->id_additional_driver);
+                }else{ $ofe2 = NULL; }
+            }else{ $adt2 = NULL; $acc2 = NULL; $ofe2 = NULL; }
+        }else{
+            $adt1 = NULL;$acc1 = NULL;$ofe1 = NULL;
+            $adt2 = NULL;$acc2 = NULL;$ofe2 = NULL;
+        }
+        $adt1 = (object) array('data'=>$adt1,'acc'=>$acc1,'ofe'=>$ofe1);
+        $adt2 = (object) array('data'=>$adt2,'acc'=>$acc2,'ofe'=>$ofe2);
+        //dd($ofe);
+        return view("cars.show", ["car"=>$car,"acc"=>$acc,"ofe"=>$ofe,"adt1"=>$adt1,"adt2"=>$adt2]);
     }
 
     /**

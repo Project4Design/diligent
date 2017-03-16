@@ -22,7 +22,14 @@
   </head>
 
   <style type="text/css">
+    .view-subtitle{
+      color: #d22a2a;
+      font-weight: 600;
+      font-size: 17px;
+    }
+
     .perfil{
+<<<<<<< HEAD
   position: relative;
   background: #fff;
   border: 1px solid #f4f4f4;
@@ -36,6 +43,14 @@
    height: 0px; 
    text-align: center; 
  } 
+=======
+      position: relative;
+      background: #fff;
+      border: 1px solid #f4f4f4;
+      padding: 20px;
+      margin: 10px 25px;
+    }
+>>>>>>> 130176e6fec02bcafa1af506d775ca2b8dd69513
   </style>
   <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">

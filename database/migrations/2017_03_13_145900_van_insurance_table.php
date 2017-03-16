@@ -81,6 +81,7 @@ class VanInsuranceTable extends Migration
       $table->string('type_business',15); //NEWWWW-----------------------------------------------------------
       $table->string('type_coverage',28);
       $table->string('no_claims',15);
+      $table->string('how_earn_ncd',15)->nullable(); //NEWWWW------------------------------------------------
       $table->string('no_claims_earned_uk',3)->nullable();
       $table->string('no_claims_protect',3)->nullable();
       $table->string('any_other_ncd',10); //NEWWWW-----------------------------------------------------------
