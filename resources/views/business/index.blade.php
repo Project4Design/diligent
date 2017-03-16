@@ -38,9 +38,10 @@
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th class="text-center">Title</th>
-									<th class="text-center">Description</th>
-									<th class="text-center">Price</th>
+									<th class="text-center">Name</th>
+									<th class="text-center">Phone</th>
+									<th class="text-center">Email</th>
+									<th class="text-center">Business Name</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
@@ -49,11 +50,12 @@
 								@foreach ($business AS $d )
 								<tr>
 									<td class="text-center">{{ $i }}</td>
-									<td class="text-center">{{ $d->title }}</td>
-									<td>{{ $d->description }}</td>
-									<td class="text-right">{{ $d->price }}</td>
+									<td class="text-center">{{ $d->title.' '.$d->first_name.' '.$d->sur_name }}</td>
+									<td class="text-center">{{ $d->mobile_telephone }}</td>
+									<td class="text-right">{{ $d->email }}</td>
+									<td class="text-center">{{ $d->bussiness_name }}</td>
 									<td class="text-center">
-										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/business/'.$d->id) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
+										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/business/'.$d->id_insurance_bussiness) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
 									</td>
 								</tr>
 								@php $i++; @endphp

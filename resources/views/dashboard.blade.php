@@ -38,13 +38,13 @@
       <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>{{ count($homes) }}</h3>
+            <h3>{{ $homes }}</h3>
             <p>Home Insurances</p>
           </div>
           <div class="icon">
             <i class="fa fa-home"></i>
           </div>
-          <a href="{{ url('admin/homes') }}" class="small-box-footer">
+          <a href="{{ route('homes.index') }}" class="small-box-footer">
             More info <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>

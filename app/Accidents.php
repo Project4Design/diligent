@@ -43,4 +43,9 @@ class Accidents extends Model
     'friend_family_referral',
     'additional_comments_details',];
 
+     public function accidents_witnesses()
+    {
+        return $this->hasMany(accidents_witnesses::class);
+    }
+
 }

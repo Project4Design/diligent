@@ -31,33 +31,33 @@
     	<div class="col-md-12">
 	    	<div class="box box-danger">
 		      <div class="box-header with-border">
-		        <h3 class="box-title"><i class="fa fa-file-text-o"></i> Homes Quotes</h3>
+		        <h3 class="box-title"><i class="fa fa-home"></i> Homes Quotes</h3>
 		      </div>
 		      <div class="box-body">
 		        <table class="table tabe-bordered">
-							<thead>
+							<thead style="background-color: skyblue">
 								<tr>
 									<th class="text-center">#</th>
-									<th class="text-center">Proposer</th>
-									<th class="text-center">Mobile</th>
-									<th class="text-center">Coverage</th>
-									<th class="text-center">Registered</th>
-									<th class="text-center">Policy Start</th>
+									<th class="text-center">Name</th>
+									<th class="text-center">Email</th>
+									<th class="text-center">Property number</th>
+									<th class="text-center">Type property</th>
+									<th class="text-center">Stimate built</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								@php $i=1; @endphp
-								@foreach ($cars AS $d )
+								@foreach ($homes AS $d )
 								<tr>
 									<td class="text-center">{{ $i }}</td>
-									<td>{{ $d->title." ".$d->first_name." ".$d->sur_name }}</td>
-									<td>{{ $d->mobile }}</td>
-									<td>{{ $d->type_coverage }}</td>
-									<td>{{ $d->created_at }}</td>
-									<td>{{ $d->policy_start }}</td>
-									<td class="text-center">
-										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/cars/'.$d->id) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
+									<td class="text-center">{{ $d->title." ".$d->first_name." ".$d->sur_name }}</td>
+									<td class="text-center">{{ $d->email }}</td>
+									<td class="text-center">{{ $d->property_number }}</td>
+									<td class="text-center">{{ $d->type_property }}</td>
+									<td class="text-center">{{ $d->stimate_built }}</td>
+									<td>
+										<a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/homes/'.$d->id_home_insurance) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
 									</td>
 								</tr>
 								@php $i++; @endphp

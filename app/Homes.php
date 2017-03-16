@@ -57,7 +57,7 @@ class Homes extends Model
     'like_away_home',
     'accidentals_damage_contents',
     'ncb_content_insurance',
-    'property_losses_damage',
+    'property_losses_damage', //RElations
     'like_cover_start',
     'built_blick_walls',
     'meter_from_water',
