@@ -37,7 +37,7 @@
 		      	 		</div>
 		      	 		<div class="col-md-4">
 			      	 		<strong>If Employed/Self Employed, what type of business: </strong> {{$business->business_type}}<br><br>
-			      	 		<strong>Email address: </strong> {{$business->email}}
+			      	 		<strong>Email address: </strong> <a href="mailto:{{$business->email}}">{{$business->email}}</a>
 		      	 		</div>
 		      	 	</div>
 		      	 	<h2 class="text-center">Business / Trade Address</h2>
@@ -118,9 +118,74 @@
 		      	 	      	<div class="col-md-3">
 		      	 	      		<strong>If you are running a: Café, Take Away and Restaurant: </strong> {{$business->if_running}}
 		      	 	      	</div>
+		      	 	      	@if($business->if_running == "Yes")
+		      	 	      		@foreach($business_details as $bu)
+		      	 	      	<div class="col-md-4">
+		      	 	      		<h3>Café, Take Away and Restaurant Details</h3>
+		      	 	      		<hr>
+			      	 	      		<strong>Percentage of collection: </strong> {{$bu->porcentage_collection?$bu->porcentage_collection:'N/A'}}%<br><br>
+			      	 	      		<strong>How many persons could be dined at a time?: </strong> {{$bu->many_persons?$bu->many_persons:'N/A'}}<br><br>
+			      	 	      		<strong>How often the kitchen extractor fan is cleaned?: </strong>{{$bu->often_kitchen?$bu->often_kitchen:'N/A'}}<br><br>
+			      	 	      		<strong>Is your fryer a standing fryer or just a small basket fryer?</strong> {{$bu->basket_fryer?$bu->basket_fryer:'N/A'}}<br><br>
+			      	 	      		<strong>Maximum how many liters of oil the fryer can occupy?</strong> {{$bu->maximum_occupy?$bu->maximum_occupy:'N/A'}}
+		      	 	      	</div>	
 		      	 	      </div>
+		      	 	           @endforeach
+		      	 	      @endif
 		      	 	      <h2 class="text-center">Cover Details</h2>
 		      	 	       <hr class="separador">
+		      	 	        <div class="row">
+		      	 	        	<div class="col-md-4">
+			      	 	        	<strong>Is the Premises’ Owned / Leased / Rented by you?: </strong> {{$business->premises_owned_rented?$business->premises_owned_rented:'N/A'}}<br><br>
+			      	 	        	<strong>Do you require buildings cover?: </strong> {{$business->require_building_cover?$business->require_building_cover:'N/A'}}
+		      	 	        	</div>
+		      	 	        	<div class="col-md-4">
+			      	 	        	<strong>What’s the maximum cash amount to be covered during the business hours?: </strong> {{$business->maximum_cash?$business->maximum_cash:'N/A'}}<br><br>
+			      	 	        	<strong>Do you want any cash sum to be covered outside the premises?:  </strong> {{$business->cash_premises?$business->cash_premises:'N/A'}}
+		      	 	        	</div>
+		      	 	        </div>
+		      	 	        <h2 class="text-center">Stocks to be insured</h2>
+		      	 	         <hr class="separador">
+		      	 	           <div class="row">
+			      	 	           	<div class="col-md-4">
+				      	 	           	<strong>Cigarettes, Cigars and tabacco sum insured amount: </strong> {{$business->cigarettes_insured?$business->cigarettes_insured:'N/A'}}<br><br>
+				      	 	           	<strong>Wines, Fortified Wines and Spirits sum insured amount</strong> {{$business->wines_insured?$business->wines_insured:'N/A'}}
+			      	 	           	</div>
+			      	 	           	<div class="col-md-4">
+				      	 	           	<strong>Frozen items to be insured</strong> {{$business->frozen_insured?$business->frozen_insured:'N/A'}}<br><br>
+				      	 	           	<strong>Other Stock (other than target stock shown above) to be insured</strong> {{$business->other_stock?$business->other_stock:'N/A'}}
+			      	 	           	</div>
+			      	 	           	<div class="col-md-4">
+				      	 	           	<strong>Contents (Fixtures & Furniture’s) sum insured amount</strong> {{$business->contents_insured?$business->contents_insured:'N/A'}}<br><br>
+				      	 	           	<strong>Contents (If any Till, Computers & other electrical Equipment’s) sum insured amount</strong> {{$business->contents_other_insured?$business->contents_other_insured:'N/A'}}
+			      	 	           	</div>
+		      	 	           </div>
+		      	 	           <h2 class="text-center">Claim Summary</h2>
+		      	 	            <hr class="separador">
+		      	 	             <div class="row">
+		      	 	             	<div class="col-md-4 col-md-offset-4">
+		      	 	             	   <strong>Have you had any losses or incidents that have or could have given rise to claims (whether insured or not) in the past 5 years in connection with your current, or previous, business? </strong><br>
+		      	 	             	    <center>{{$business->have_losses_accidents}}</center>
+		      	 	             	</div>
+		      	 	             </div>
+		      	 	             <h2 class="text-center">Employer Reference Number Details</h2>
+		      	 	              <hr class="separador">
+		      	 	               <div class="row">
+			      	 	               	<div class="col-md-4">
+			      	 	               	  <strong>Are you exempt from paying PAYE?:  </strong> {{$business->paying_paye}}
+			      	 	               	</div>
+			      	 	               	<div class="col-md-4">
+			      	 	               	  <strong>Please provide your Employer Reference Number: </strong> {{$business->employer_reference?$business->employer_reference:'N/A'}}
+			      	 	               	</div>
+		      	 	               </div>
+		      	 	               <h2 class="text-center">Policy Start Date</h2>
+		      	 	                <hr class="separador">
+		      	 	                 <div class="row">
+		      	 	                 	<div class="col-md-4">
+		      	 	                 	   <strong>When would you like the cover to start: </strong> {{$business->policy_start?$business->policy_start:'N/A'}}
+		      	 	                 	</div>
+		      	 	                 	<strong>Additional comments:  </strong> {{$business->additional_comments?$business->additional_comments:'N/A'}}
+		      	 	                 </div>
 
 		      	 </div>
 		      </div>
