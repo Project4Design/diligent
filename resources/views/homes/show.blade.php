@@ -42,7 +42,7 @@
 						<div class="col-md-4">
 							<strong>¿Born UK?</strong>  {{$homes->born_uk}}<br><br>
 							<strong>Became resident</strong>  {{$homes->became_resident?$homes->became_resident:'N/A'}}<br><br>
-							<strong>Email</strong>  {{$homes->email}}<br><br>
+							<strong>Email</strong>  <a href="mailto:{{$homes->email}}">{{$homes->email}}</a><br><br>
 							<strong>Contact number</strong>  {{$homes->contact_number}}
 						</div>
 					</div>

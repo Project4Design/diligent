@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="col-xs-12 quote-button">
-      <a href="{{ url('car-quote') }}">Get a quote</a>
+      <a href="{{ url('business-quote') }}">Get a quote</a>
     </div>
   </section>
 </div>

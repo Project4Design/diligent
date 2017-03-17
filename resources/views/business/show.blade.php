@@ -37,7 +37,7 @@
 		      	 		</div>
 		      	 		<div class="col-md-4">
 			      	 		<strong>If Employed/Self Employed, what type of business: </strong> {{$business->business_type}}<br><br>
-			      	 		<strong>Email address: </strong> {{$business->email}}
+			      	 		<strong>Email address: </strong> <a href="mailto:{{$business->email}}">{{$business->email}}</a>
 		      	 		</div>
 		      	 	</div>
 		      	 	<h2 class="text-center">Business / Trade Address</h2>
