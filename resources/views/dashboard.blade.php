@@ -53,7 +53,7 @@
       <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>{{ count($business) }}</h3>
+            <h3>{{ $business }}</h3>
             <p>Business Insurance</p>
           </div>
           <div class="icon">
