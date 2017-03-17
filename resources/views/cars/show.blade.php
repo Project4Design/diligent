@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-12 text-center">
         	<h3>Contact Information</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
       	<div class="col-md-4">
       		<h4 class="view-subtitle">Details</h4>
@@ -42,15 +42,16 @@
       		<p><b>Referrer:</b> {{ $car->referrer ?$car->referrer:'N/A' }}</p>
       		<p><b>Comments:</b> {{ $car->phone ?$car->comments:'N/A' }}</p>
       	</div>
+        
         <div class="col-md-12 text-center">
         	<h3>Personal Information</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Information</h4>
           <p><b>Title:</b> {{ $car->title }}</p>
           <p><b>First name:</b> {{ $car->first_name }}</p>
-          <p><b>Middle Name:</b> {{ $car->middle_name }}</p>
+          <p><b>Middle Name:</b> {{ $car->middle_name?$car->middle_name:'N/A' }}</p>
           <p><b>Surname:</b> {{ $car->sur_name }}</p>
           <p><b>Birthdate:</b> {{ $car->birthdate }}</p>
           <p><b>Marital Status:</b> {{ $car->marital_status }}</p>
@@ -84,7 +85,7 @@
         	<p><b>Additional qualification: </b> {{ $car->additional_qualifications }}</p>
         	<p><b>Obtained: </b> {{ $car->date_qualifications_obtained?$car->date_qualifications_obtained:'N/A' }}</p>
         </div>
-        <div class="col-md-12 text-center"><h3>Vehicle details</h3><hr></div>
+        <div class="col-md-12 text-center"><h3>Vehicle details</h3><hr class="separador"></div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Details</h4>
         	<p><b>Registration:</b> {{ $car->vehicle_registration?$car->vehicle_registration:'N/A' }}</p>
@@ -116,7 +117,7 @@
         </div>
         <div class="col-md-12 text-center">
         	<h3>Vehicle usage</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Kept details</h4>
@@ -140,7 +141,7 @@
         </div>
         <div class="col-md-12 text-center">
         	<h3>Policy</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Policy details</h4>
@@ -152,7 +153,7 @@
 
         <div class="col-md-12 text-center">
         	<h3>Household</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Household details</h4>
@@ -168,7 +169,7 @@
 
         <div class="col-md-12 text-center">
         	<h3>Claims & convictions</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
         <div class="col-md-4">
         	<h4 class="view-subtitle">Convictions</h4>
@@ -176,7 +177,7 @@
         </div>
         <div class="col-md-12 text-center">
         	<h3>Motor accidents or claims in the last 5 years</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
       	@if($car->motor_accidents==="Yes")
       		@php $i=1; @endphp
@@ -199,7 +200,7 @@
 				@endif
         <div class="col-md-12 text-center">
         	<h3>Motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years</h3>
-        	<hr>
+        	<hr class="separador">
         </div>
       	@if($car->motor_offences==="Yes")
       		@php $i=1; @endphp
@@ -222,7 +223,7 @@
 
 				<div class="col-md-12 text-center">
         	<h3>Additional Driver (1)</h3>
-        	<hr>
+        	<hr class="separador">
       	</div>
 				@if($adt1->data)
         	<div class="col-md-4">
@@ -258,7 +259,7 @@
 	        </div>
 	        <div class="col-md-12 text-center">
 	        	<h3>Additional Driver (1)<br>Claims & convictions</h3>
-	        	<hr>
+	        	<hr class="separador">
 	        </div>
 	        <div class="col-md-4">
 	        	<h4 class="view-subtitle">Convictions</h4>
@@ -266,7 +267,7 @@
 	        </div>
 	        <div class="col-md-12 text-center">
 	        	<h3>Additional Driver (1)<br>Motor accidents or claims in the last 5 years</h3>
-	        	<hr>
+	        	<hr class="separador">
 	        </div>
 	        @if($adt1->data->ca_motor_accidents==="Yes")
 	      		@php $i=1; @endphp
@@ -289,7 +290,7 @@
 					@endif
 					<div class="col-md-12 text-center">
 	        	<h3>Additional Driver (1)<br>Motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years</h3>
-	        	<hr>
+	        	<hr class="separador">
 	        </div>
 	      	@if($adt1->data->ca_motor_offences==="Yes")
 	      		@php $i=1; @endphp
@@ -314,7 +315,7 @@
 					@if($adt2->data)
 						<div class="col-md-12 text-center">
 		        	<h3>Additional Driver (2)</h3>
-		        	<hr>
+		        	<hr class="separador">
 	        	</div>
 	        	<div class="col-md-4">
 		        	<h4 class="view-subtitle">Information</h4>
@@ -349,7 +350,7 @@
 		        </div>
 		        <div class="col-md-12 text-center">
 		        	<h3>Additional Driver (2)<br>Claims & convictions</h3>
-		        	<hr>
+		        	<hr class="separador">
 		        </div>
 		        <div class="col-md-4">
 		        	<h4 class="view-subtitle">Convictions</h4>
@@ -357,7 +358,7 @@
 		        </div>
 		        <div class="col-md-12 text-center">
 		        	<h3>Additional Driver (2)<br>Motor accidents or claims in the last 5 years</h3>
-		        	<hr>
+		        	<hr class="separador">
 		        </div>
 		        @if($adt2->data->ca_motor_accidents==="Yes")
 		      		@php $i=1; @endphp
@@ -380,7 +381,7 @@
 						@endif
 						<div class="col-md-12 text-center">
 		        	<h3>Additional Driver (2)<br>Motoring convictions, driving license endorsements or fixed penalty points withing the last 5 years</h3>
-		        	<hr>
+		        	<hr class="separador">
 		        </div>
 		      	@if($adt2->data->ca_motor_offences==="Yes")
 		      		@php $i=1; @endphp

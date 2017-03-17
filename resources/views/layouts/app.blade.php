@@ -121,7 +121,7 @@
 
             <li>
               <a href="{{ route('index') }}">
-                <i class="fa fa-home"></i> <span>Home</span>
+                <i class="fa fa-dashboard" aria-hidden="true"></i> <span>Dashboard</span>
               </a>
             </li>
 
@@ -187,6 +187,13 @@
     <script src="{{asset('js/app.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('plugins/datatables/dataTables.bootstrap.js')}}"></script>
+    <script type="text/javascript">
+      $(window).ready(function(){
+        $('.data-table').DataTable({
+          responsive: true
+        });
+      })
+    </script>
 
     @yield('script')
   </body>

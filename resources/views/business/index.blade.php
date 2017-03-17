@@ -5,7 +5,7 @@
 @section('breadcrumb')
 	<ol class="breadcrumb">
 	  <li><a href="{{ route('index') }}"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a></li>
-	  <li class="active"> Busines </li>
+	  <li class="active"> Business </li>
 	</ol>
 @endsection
 
@@ -34,7 +34,7 @@
 		        <h3 class="box-title"><i class="fa fa-file-text-o"></i> Business Quotes</h3>
 		      </div>
 		      <div class="box-body">
-		        <table class="table tabe-bordered">
+		        <table class="table tabe-bordered data-hover data-table">
 							<thead>
 								<tr>
 									<th class="text-center">#</th>

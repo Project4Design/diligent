@@ -24,7 +24,7 @@
 	        <legend class="legend">Your Personal Information</legend>
           <div class="row">
             <div class="col-md-12">
-              <label>Your Name *</label>
+              <label>Your Name <span class="required">*</span></label>
             </div>
             <div class="form-group col-md-2">
               <select class="form-control" id="title" name="title" required>
@@ -135,7 +135,7 @@
           <legend class="legend">Accident Details</legend>
 					<div class="row">
             <div class="form-group col-xs-12 col-md-4">
-              <label for="valid_insurance">Was a valid insurance policy in force at the time of accident *</label>
+              <label for="valid_insurance">Was a valid insurance policy in force at the time of accident <span class="required">*</span></label>
               <select id="valid_insurance" class="form-control" name="valid_insurance" required>
               	<option value="" selected>Please select</option>
               	<option value="Yes">Yes</option>
@@ -154,7 +154,7 @@
           </div>
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-	            <label for="time_incident">Time of Incident <span class="required">*</span></label>
+	            <label for="time_incident">Approximate Time of Incident <span class="required">*</span></label>
 	            <div class="input-group bootstrap-timepicker timepicker">
 	              <input id="time_incident" class="form-control timepicker" type="text" name="time_incident" required>
 		            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
@@ -332,8 +332,12 @@
 
 					<div class="row">
 	          <div class="col-md-4 col-md-offset-4">
+              <div class="alert alert-danger" style="display:none">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong class="text-center">You must complete all required fields</strong> 
+              </div>
 	            <br>
-	            <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
+	            <button type="submit" class="btn btn-block btn-submit b-submit">Submit Quote</button>
 	          </div>
 	        </div>
       		<br><br><br>
@@ -379,6 +383,62 @@
         $('#passengers-subfrom').hide().prop('disabled',!bool);
       }
     });
+
+
+
+
+      //VALIDAR
+      $('.b-submit').click(function(e){
+        e.preventDefault();
+        var btn    = $(this);
+        var form   = btn.closest('form');
+        var action = form.attr('action');
+        var bar    = form.find('.progress');
+        var alert  = form.find('.alert');
+
+        alert.hide();
+        btn.button('loading');
+        bar.show();
+
+        //Validacion
+        var fields = form.find('input:visible,select:visible,textarea:visible').filter('[required]').length;
+        form.find('input:visible,select:visible,textarea:visible').filter('[required]').each(function(){
+          var regex = $(this).attr('pattern');
+          var val   = $(this).val();
+          if(val == ""){
+            $(this).closest('.form-group').addClass('has-error');
+            if(!$(this).closest('.form-group').find('.help-block').length){
+              $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+            }
+          }
+          else{
+            if(val.match(regex)){
+              $(this).closest('.form-group').removeClass('has-error');
+              $(this).closest('.form-group').find('.help-block').remove();
+              fields = fields-1;
+            }else{
+              $(this).closest('.form-group').addClass('has-error');
+              if(!$(this).closest('.form-group').find('.help-block').length){
+                $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+              }
+            }
+          }
+        });
+
+        if(fields!=0){
+          alert.removeClass('alert-success').addClass('alert-danger');
+          alert.find('#msj').text('You must complete all required fields.');
+          bar.hide();
+          btn.button('reset');
+          alert.show().delay(7000).hide('slow');
+        }else{
+          form.submit();
+        }
+      })
+
+
+
+
 
 	});
 </script>

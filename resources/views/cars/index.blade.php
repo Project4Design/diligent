@@ -33,7 +33,7 @@
 		        <h3 class="box-title"><i class="fa fa-file-text-o"></i> Cars Quotes</h3>
 		      </div>
 		      <div class="box-body">
-		        <table class="table tabe-bordered">
+		        <table class="table tabe-bordered table-hover data-table">
 							<thead>
 								<tr>
 									<th class="text-center">#</th>

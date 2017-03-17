@@ -11,7 +11,7 @@
     <div class="col-xs-12">
       <h1 class="main-title">Home Insurance Quote</h1>
     </div>
-@include('partials.flash')
+    @include('partials.flash')
     <div class="col-xs-12">
       <form action="{{ route('home_register') }}" method="POST">
          {{ csrf_field() }}
@@ -19,23 +19,23 @@
         <br>
         <div class="row">
           <div class="col-md-12">
-            <label>Name *</label>
+            <label>Name <span class="required">*</span></label>
           </div>
           <div class="form-group col-md-2">
-            <select class="form-control" id="title" name="title" >
+            <select class="form-control" id="title" name="title" required>
               <option value="Mr.">Mr.</option>
               <option value="Mrs.">Mrs.</option>
               <option value="Miss">Miss</option>
             </select>
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name">
+            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name" required>
           </div>
           <div class="form-group col-xs-12 col-md-2">
             <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name">
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname">
+            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname" required>
           </div>
         </div><!--Row-->
 
@@ -77,14 +77,14 @@
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
-            <label for="occupation">If Employed/Self Employed, what is your occupation: <span class="required">*</span></label>
-            <input id="occupation" class="form-control" type="text" name="occupation" required>
+            <label for="occupation">If Employed/Self Employed, what is your occupation</label>
+            <input id="occupation" class="form-control" type="text" name="occupation" readonly>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
-            <label for="business_type">If Employed/Self Employed, what type of business: <span class="required">*</span></label>
-            <input id="business_type" class="form-control" type="text" name="business_type"  required>
+            <label for="business_type">If Employed/Self Employed, what type of business</label>
+            <input id="business_type" class="form-control" type="text" name="business_type" readonly>
           </div>
         </div><!--Row-->
 
@@ -134,19 +134,19 @@
         </div>
 				<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="property_first_line" class="form-control" type="text" name="property_first_line" placeholder="1st line of address" >
+            <input id="property_first_line" class="form-control" type="text" name="property_first_line" placeholder="1st line of address" required>
           </div>
         </div>
        	<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="property_postcode" class="form-control" type="text" name="property_postcode" placeholder="Postcode" >
+            <input id="property_postcode" class="form-control" type="text" name="property_postcode" placeholder="Postcode" required>
           </div>
         </div><!--Row-->
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="type_property">Type of property <span class="required">*</span></label>
-	          <select id="type_property" class="form-control" name="type_property" required>
+	          <label for="type_property">Type of property</label>
+	          <select id="type_property" class="form-control" name="type_property">
               <option value="" selected>Please Select</option>
               <option value="Semi Detached">Semi Detached</option>
               <option value="Detached">Detached</option>
@@ -213,8 +213,8 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="approximate_roof">Approximate % of flat roof <span class="required">*</span></label>
-	          <select id="approximate_roof" class="form-control" name="approximate_roof" required>
+	          <label for="approximate_roof">Approximate % of flat roof</label>
+	          <select id="approximate_roof" class="form-control" name="approximate_roof">
               <option value="" selected>Please Select</option>
               <option value="None">None</option>
               <option value="Less than 20%">Less than 20%</option>
@@ -276,7 +276,7 @@
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
 	          <label for="property_usually_occupied">When is the property usually occupied</label>
-	          <select id="property_usually_occupied" class="form-control" name="property_usually_occupied" required>
+	          <select id="property_usually_occupied" class="form-control" name="property_usually_occupied">
               <option value="" selected>Please Select</option>
               <option value="Day and night">Day and night</option>
               <option value="Only day">Only day</option>
@@ -288,7 +288,7 @@
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
 	          <label for="many_days_row_property">For how many days in a row is the property left empty (e.g. holidays)</label>
-	          <select id="many_days_row_property" class="form-control" name="many_days_row_property" required>     
+	          <select id="many_days_row_property" class="form-control" name="many_days_row_property">
               <option value="" selected>Please Select</option>
               <option value="Less than 14">Less than 14</option>
               <option value="Less than 30">Less than 30</option>
@@ -336,9 +336,9 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="property_alarm">Does the property have an alarm <span class="required">*</span></label>
-	          <select id="property_alarm" class="form-control" name="property_alarm" required>
-              <option value="" selected="">Please Select</option>
+	          <label for="property_alarm">Does the property have an alarm</label>
+	          <select id="property_alarm" class="form-control" name="property_alarm">
+              <option value="" selected>Please Select</option>
               <option value="Yes  bells only">Yes  bells only</option>
               <option value="Yes  Maintained by NACOSS or NSI annually">Yes  Maintained by NACOSS or NSI annually</option>
               <option value="No">No</option>
@@ -348,9 +348,9 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="lock_main_door">What lock is fitted to your main door <span class="required">*</span></label>
-	          <select id="lock_main_door" class="form-control" name="lock_main_door" required>
-              <option value="" selected="">Please Select</option>
+	          <label for="lock_main_door">What lock is fitted to your main door </label>
+	          <select id="lock_main_door" class="form-control" name="lock_main_door">
+              <option value="" selected>Please Select</option>
               <option value="5 lever mortice deadlock">5 lever mortice deadlock</option>
               <option value="Key operated multi point lock">Key operated multi point lock</option>
               <option value="Rim lock">Rim lock</option>
@@ -361,8 +361,8 @@
 
 	      <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="lock_external_doors">For how many days in a row is the property left empty (e.g. holidays) <span class="required">*</span></label>
-	          <select id="lock_external_doors" class="form-control" name="lock_external_doors" required>
+	          <label for="lock_external_doors">For how many days in a row is the property left empty (e.g. holidays)</label>
+	          <select id="lock_external_doors" class="form-control" name="lock_external_doors">
               <option value="" selected="">Please Select</option>
               <option value="No other external doors">No other external doors</option>
               <option value="5 lever mortice deadlock">5 lever mortice deadlock</option>
@@ -421,8 +421,8 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="ncb_buildings_insurance">How many years NCB do you have buildings insurance <span class="required">*</span></label>
-	          <select id="ncb_buildings_insurance" class="form-control" name="ncb_buildings_insurance" required>
+	          <label for="ncb_buildings_insurance">How many years NCB do you have buildings insurance</label>
+	          <select id="ncb_buildings_insurance" class="form-control" name="ncb_buildings_insurance">
               <option value="" selected>Please Select</option>
               <option value="Never had building insurance">Never had building insurance</option>
               <option value="0">0</option>
@@ -499,8 +499,8 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="ncb_content_insurance">How many years NCB do you have buildings insurance <span class="required">*</span></label>
-	          <select id="ncb_content_insurance" class="form-control" name="ncb_content_insurance" required>
+	          <label for="ncb_content_insurance">How many years NCB do you have buildings insurance</label>
+	          <select id="ncb_content_insurance" class="form-control" name="ncb_content_insurance">
               <option value="" selected="">Please Select</option>
               <option value="Never had building insurance">Never had building insurance</option>
               <option value="0">0</option>
@@ -519,15 +519,15 @@
             <div class="form-group">
             	<div class="col-md-12">
               	<label>In the past 5 years, have you or anyone living at the property made any home insurance claims or
-              		suffered any losses or damage, whether insured or not
+              		suffered any losses or damage, whether insured or not <span class="required">*</span>
               	</label>
               </div>
               <div class="col-xs-12 col-md-3">
-                <input type="radio" name="property_losses_damage" value="Yes">
+                <input type="radio" name="property_losses_damage" value="Yes" required>
                 <label>Yes</label>
               </div>
               <div class="col-xs-12 col-md-3">
-                <input type="radio" name="property_losses_damage" value="No" checked>
+                <input type="radio" name="property_losses_damage" value="No" checked required>
                 <label>No</label>
               </div>
             </div>
@@ -650,8 +650,12 @@
 
       	<div class="row">
           <div class="col-md-4 col-md-offset-4">
+            <div class="alert alert-danger" style="display:none">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong class="text-center">You must complete all required fields</strong> 
+            </div>
             <br>
-            <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
+            <button type="submit" class="btn btn-block btn-submit b-submit">Submit Quote</button>
           </div>
         </div>
       	<br><br><br>
@@ -675,12 +679,23 @@
 	      enableOnReadonly: false
 	    });
 
+      $("input[name='born_uk']").click(function(){
+        var bool = (this.value !== "No");
+        $('#became_resident').prop({'readonly':bool,'required':(!bool)}).val('');
+      });
+      
+      $('#employment_status').change(function(){
+        var bool = (this.value == "Employed" || this.value == "Self-Employed");
+        $('#business_type,#occupation').prop({'readonly':!bool,'required':bool}).val('');
+      });
+
 			$('input[name="date_claim"]').datepicker({
         autoclose: true,
 		    format: "mm-yyyy",
 		    startView: "years", 
 		    minViewMode: "months"
 	    });
+
 	    $("input[name='property_losses_damage']").click(function(){
         var bool = (this.value === "Yes");
         if(bool){
@@ -689,10 +704,55 @@
           $('#insurance-history').hide().prop('disabled',!bool);
         }
       });
-	  
 
+      //VALIDAR
+      $('.b-submit').click(function(e){
+        e.preventDefault();
+        var btn    = $(this);
+        var form   = btn.closest('form');
+        var action = form.attr('action');
+        var bar    = form.find('.progress');
+        var alert  = form.find('.alert');
 
+        alert.hide();
+        btn.button('loading');
+        bar.show();
 
+        //Validacion
+        var fields = form.find('input:visible,select:visible').filter('[required]').length;
+        form.find('input:visible,select:visible').filter('[required]').each(function(){
+          var regex = $(this).attr('pattern');
+          var val   = $(this).val();
+          if(val == ""){
+            $(this).closest('.form-group').addClass('has-error');
+            if(!$(this).closest('.form-group').find('.help-block').length){
+              $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+            }
+          }
+          else{
+            if(val.match(regex)){
+              $(this).closest('.form-group').removeClass('has-error');
+              $(this).closest('.form-group').find('.help-block').remove();
+              fields = fields-1;
+            }else{
+              $(this).closest('.form-group').addClass('has-error');
+              if(!$(this).closest('.form-group').find('.help-block').length){
+                $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+              }
+            }
+          }
+        });
+
+        if(fields!=0){
+          alert.removeClass('alert-success').addClass('alert-danger');
+          alert.find('#msj').text('You must complete all required fields.');
+          bar.hide();
+          btn.button('reset');
+          alert.show().delay(7000).hide('slow');
+        }else{
+          form.submit();
+        }
+      })
 
 
 	  });//Ready

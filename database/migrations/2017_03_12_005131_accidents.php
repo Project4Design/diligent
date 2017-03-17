@@ -18,7 +18,7 @@ class Accidents extends Migration
             $table->increments('id_accidents_management');
             $table->string('title')->comment('starting form personal info all required');
             $table->string('first_name',50);
-            $table->string('middle_name',50);
+            $table->string('middle_name',50)->nullable();
             $table->string('sur_name',50);
             $table->string('vehicle_registration',50);
             $table->string('birthdate',10)->comment('DD-MM-YYYY');

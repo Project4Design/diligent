@@ -53,7 +53,7 @@
       <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>{{ count($business) }}</h3>
+            <h3>{{ $business }}</h3>
             <p>Business Insurance</p>
           </div>
           <div class="icon">
@@ -85,7 +85,7 @@
 	    <div class="col-md-12">
 	      <div class="box box-danger">
 	        <div class="box-header with-border">
-	          <h3 class="box-title">Last Insurance registered</h3>
+	          <h3 class="box-title">Last quotes registered</h3>
 	          <div class="box-tools pull-right">
 	            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 	            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -93,11 +93,35 @@
 	        </div>
 	        <!-- /.box-header -->
 	        <div class="box-body">
-          	<div class="row">
-            	<div class="col-md-12">
+          	<table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Type</th>
+                  <th>Registered</th>
+                  <th>Proposer</th>
+                  <th>Phone</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                @php $i=1; @endphp
+                @foreach($latest AS $d)
+                <tr>
+                  <td class="text-center">{{ $i }}</td>
+                  <td>{{ $d->type}}</td>
+                  <td>{{ $d->created }}</td>
+                  <td>{{ $d->title." ".$d->name." ".$d->surname }}</td>
+                  <td>{{ $d->phone }}</td>
+                  <td class="text-center">
+                    <a class="btn btn-primary btn-flat btn-sm" href="{{ url('admin/'.$d->link.'/'.$d->id) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
+                  </td>
+                </tr>
+                @php $i++; @endphp
+                @endforeach
+              </tbody>
 
-          		</div>
-          	</div><!-- /.row -->
+            </table>
 	        </div><!-- /.box-body -->
 	      </div><!-- /.box -->
 	    </div><!-- /.col -->

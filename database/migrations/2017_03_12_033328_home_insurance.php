@@ -17,7 +17,7 @@ class HomeInsurance extends Migration
             $table->increments('id_home_insurance');
             $table->string('title',5);
             $table->string('first_name',45);
-            $table->string('middle_name',45);
+            $table->string('middle_name',45)->nullable();
             $table->string('sur_name',45);
             $table->string('birthdate',10);
             $table->string('marital_status',10);
@@ -26,7 +26,7 @@ class HomeInsurance extends Migration
             $table->string('business_type')->nullable();
             $table->string('born_uk',3);
             $table->string('became_resident',10)->nullable();
-            $table->string('email',50);
+            $table->string('email',50)->nullable();;
             $table->string('contact_number',20);
             $table->string('property_number',10);
             $table->string('property_first_line',50);

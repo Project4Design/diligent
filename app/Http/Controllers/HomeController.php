@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Accidents;
-<<<<<<< HEAD
+use App\Business;
 use App\Homes;
-=======
 use App\Vans;
 use App\Cars;
 
->>>>>>> 130176e6fec02bcafa1af506d775ca2b8dd69513
 class HomeController extends Controller
 {
     /**
@@ -19,7 +18,6 @@ class HomeController extends Controller
      * @return void
      */
 
-    
     public function __construct()
     {
         $this->middleware('auth');
@@ -33,13 +31,24 @@ class HomeController extends Controller
     public function index()
     {
         $accidents = Accidents::count();
-<<<<<<< HEAD
-        $homes = Homes::count();
-        return view('dashboard',['cars'=>array(),'vans'=>array(),'homes'=>$homes,'business'=>array(),'accidents' =>  $accidents]);
-=======
         $cars = Cars::count();
         $vans = Vans::count();
-        return view('dashboard',['cars'=>$cars,'vans'=>$vans,'homes'=>array(),'business'=>array(),'accidents' =>  $accidents]);
->>>>>>> 130176e6fec02bcafa1af506d775ca2b8dd69513
+        $homes = Homes::count();
+        $business = Business::count();
+        $accidents = Accidents::count();
+        $latest = DB::select("SELECT id AS id,'cars' AS link, 'Cars' AS type, title AS title, first_name AS name, sur_name AS surname,mobile AS phone, created_at AS created
+                                FROM cars
+                                GROUP BY id
+                            UNION SELECT id_home_insurance AS id,'homes' AS link,'Homes' AS type, title AS title, first_name AS name, sur_name AS surname,contact_number AS phone,created_at AS created
+                                FROM home_insurance
+                                GROUP BY id_home_insurance
+                            UNION SELECT id_insurance_bussiness AS id,'business' AS link, 'Business' AS type, title AS title, first_name AS name, sur_name AS surname,mobile_telephone, created_at AS created
+                                FROM business
+                                GROUP BY id_insurance_bussiness
+                            UNION SELECT id_accidents_management AS id, 'accidents' AS link,'Accidents' AS type, title AS title,first_name AS name,sur_name AS surname,phone AS phone, created_at AS created
+                                FROM accidents
+                                GROUP BY id_accidents_management
+                            ORDER BY created DESC");
+        return view('dashboard',['cars'=>$cars,'vans'=>$vans,'homes'=>$homes,'business'=>$business,'accidents' =>  $accidents,'latest' => $latest]);
     }
 }

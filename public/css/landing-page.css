@@ -311,14 +311,14 @@ p.copyright {
   -moz-transition-duration: 0.25s;
   border-style: solid;
   position: absolute;
-  margin-left:-18.8px; /*-9px*/
+  margin-left:-19px; /*-9px*/
   /*ADDED*/
   margin-top: -59.5px; /*-29px*/
   /*
   EFFECT
   border-width: 0px 45.5px 0px 45.5px;
   */
-  border-width: 0px 60px 40px 60px;
+  border-width: 0px 55px 40px 55px;
   border-color: transparent transparent #b51235 transparent;
   content: '';
 }
