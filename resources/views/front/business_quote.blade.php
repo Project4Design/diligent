@@ -19,7 +19,7 @@
         <br>
         <div class="row">
           <div class="col-md-12">
-            <label>Name *</label>
+            <label>Name <span class="required">*</span></label>
           </div>
           <div class="form-group col-md-2">
             <select class="form-control" id="title" name="title" required>
@@ -30,19 +30,19 @@
             </select>
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name">
+            <input id="first_name" class="form-control" type="text" name="first_name" placeholder="First name" required>
           </div>
           <div class="form-group col-xs-12 col-md-2">
             <input id="middle_name" class="form-control" type="text" name="middle_name" placeholder="Middle name">
           </div>
           <div class="form-group col-xs-12 col-md-2">
-            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname">
+            <input id="sur_name" class="form-control" type="text" name="sur_name" placeholder="Surname" required>
           </div>
         </div><!--Row-->
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-2">
-            <label for="birthdate">Date of Birth *</label>
+            <label for="birthdate">Date of Birth <span class="required">*</span></label>
             <div class="input-group">
               <input id="birthdate" class="form-control datepicker" type="text" name="birthdate" placeholder="DD-MM-YYYY" required>
               <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
@@ -52,7 +52,7 @@
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="employment_status">What's your employment status? *</label>
+	          <label for="employment_status">What's your employment status? <span class="required">*</span></label>
 	          <select id="employment_status" class="form-control" name="employment_status" required>
 	            <option value="" selected>Please Select</option>
 	            <option value="Employed">Employed</option>
@@ -69,13 +69,13 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
             <label for="occupation">If Employed/Self Employed, what is your occupation: </label>
-            <input id="occupation" class="form-control" type="text" name="occupation">
+            <input id="occupation" class="form-control" type="text" name="occupation" readonly>
           </div>
         </div>
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
             <label for="business_type">If Employed/Self Employed, what type of business: </label>
-            <input id="business_type" class="form-control" type="text" name="business_type">
+            <input id="business_type" class="form-control" type="text" name="business_type" readonly>
           </div>
         </div><!--Row-->
 
@@ -83,7 +83,7 @@
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <label for="mobile_telephone">Mobile / Telephone Number *</label>
+            <label for="mobile_telephone">Mobile / Telephone Number <span class="required">*</span></label>
             <input id="mobile_telephone" class="form-control" type="text" name="mobile_telephone" required>
           </div>
         </div>
@@ -99,26 +99,26 @@
 
         <div class="row">
           <div class="col-md-12">
-            <label>Address *</label>
+            <label>Address <span class="required">*</span></label>
           </div>
           <div class="form-group col-xs-12 col-md-3">
-            <input id="house_number" class="form-control" type="text" name="house_number" placeholder="Door n#">
+            <input id="house_number" class="form-control" type="text" name="house_number" placeholder="Door n#" required>
           </div>
         </div>
 				<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="house_first_line" class="form-control" type="text" name="house_first_line" placeholder="1st line of address">
+            <input id="house_first_line" class="form-control" type="text" name="house_first_line" placeholder="1st line of address" required>
           </div>
         </div>
        	<div class="row">
           <div class="form-group col-xs-12 col-md-3">
-            <input id="postcode" class="form-control" type="text" name="postcode" placeholder="Postcode">
+            <input id="postcode" class="form-control" type="text" name="postcode" placeholder="Postcode" required>
           </div>
         </div><!--Row-->
 
         <div class="row">
 	        <div class="form-group col-xs-12 col-md-4">
-	          <label for="stablished_address">Year established at this address since *</label>
+	          <label for="stablished_address">Year established at this address since <span class="required">*</span></label>
 	          <select id="stablished_address" class="form-control" name="stablished_address" required>
               <option value="" selected> Please select</option>
               <option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option>
@@ -385,7 +385,7 @@
               <option value="Greeting Card Retailing">Greeting Card Retailing </option>
               <option value="Grocer">Grocer </option>
               <option value="Grocer - Licensed">Grocer - Licensed </option>
-              <option value="Guest House &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">Guest House &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </option>
+              <option value="Guest House">Guest House </option>
               <option value="Gun Retailing">Gun Retailing </option>
               <option value="Gunsmith">Gunsmith </option>
               <option value="Haberdashery">Haberdashery </option>
@@ -400,7 +400,7 @@
               <option value="Home Brew Materials Retailing">Home Brew Materials Retailing </option>
               <option value="Horticultural Goods Retailing">Horticultural Goods Retailing </option>
               <option value="Hosiery">Hosiery </option>
-              <option value="Hotel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">Hotel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </option>
+              <option value="Hotel">Hote</option>
               <option value="Household Goods Retailing">Household Goods Retailing </option>
               <option value="Ice Cream Parlour">Ice Cream Parlour </option>
               <option value="In Car Entertainment Retailing">In Car Entertainment Retailing </option>
@@ -603,7 +603,7 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-4">
             <label for="premises_located">Where is your premises located?</label>
-            <select id="premises_located" class="form-control" name="premises_located" required>
+            <select id="premises_located" class="form-control" name="premises_located">
               <option value="" selected> Please select</option>
               <option value="Arcade">Arcade</option>
               <option value="Business Park">Business Park</option>
@@ -841,14 +841,14 @@
         			<div class="row">
 			          <div class="form-group col-xs-12 col-md-3">
 			            <label for="porcentage_collection">Percentage of collection: (Please specify in the box)</label>
-			            <input id="porcentage_collection" class="form-control" type="number" min="1" step="1" max="100" name="porcentage_collection">
+			            <input id="porcentage_collection" class="form-control" type="number" min="1" step="1" max="1000" name="porcentage_collection">
 			          </div>
 			        </div>
 
               <div class="row">
                 <div class="form-group col-xs-12 col-md-3">
                   <label for="many_persons">How many persons could be dined at a time? (Please specify in the box)</label>
-                  <input id="many_persons" class="form-control" type="number" min="1" step="1" max="500" name="many_persons">
+                  <input id="many_persons" class="form-control" type="number" min="1" step="1" max="50" name="many_persons">
                 </div>
               </div>
 
@@ -953,42 +953,42 @@
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="cigarettes_insured">Cigarettes, Cigars and tabacco sum insured amount</label>
-            <input id="cigarettes_insured" class="form-control" type="number" min="1" step="any" name="cigarettes_insured">
+            <input id="cigarettes_insured" class="form-control" type="number" min="0" step="any" name="cigarettes_insured">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="wines_insured">Wines, Fortified Wines and Spirits sum insured amount</label>
-            <input id="wines_insured" class="form-control" type="number" min="1" step="any" name="wines_insured">
+            <input id="wines_insured" class="form-control" type="number" min="0" step="any" name="wines_insured">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="frozen_insured">Frozen items to be insured</label>
-            <input id="frozen_insured" class="form-control" type="number" min="1" step="any" name="frozen_insured">
+            <input id="frozen_insured" class="form-control" type="number" min="0" step="any" name="frozen_insured">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="other_stock">Other Stock (other than target stock shown above) to be insured</label>
-            <input id="other_stock" class="form-control" type="number" min="1" step="any" name="other_stock">
+            <input id="other_stock" class="form-control" type="number" min="0" step="any" name="other_stock">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="contents_insured">Contents (Fixtures & Furniture’s) sum insured amount</label>
-            <input id="contents_insured" class="form-control" type="number" min="1" step="any" name="contents_insured">
+            <input id="contents_insured" class="form-control" type="number" min="0" step="any" name="contents_insured">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-xs-12 col-md-3">
             <label for="contents_other_insured">Contents (If any Till, Computers & other electrical Equipment’s) sum insured amount</label>
-            <input id="contents_other_insured" class="form-control" type="number" min="1" step="any" name="contents_other_insured">
+            <input id="contents_other_insured" class="form-control" type="number" min="0" step="any" name="contents_other_insured">
           </div>
         </div>
 
@@ -1063,8 +1063,12 @@
 
       	<div class="row">
           <div class="col-md-4 col-md-offset-4">
+            <div class="alert alert-danger" style="display:none">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong class="text-center">You must complete all required fields</strong> 
+            </div>
             <br>
-            <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
+            <button type="submit" class="btn btn-block btn-submit b-submit">Submit Quote</button>
           </div>
         </div>
       	<br><br><br>
@@ -1087,6 +1091,11 @@
 	      endDate: "today",
 	      enableOnReadonly: false
 	    });
+      
+      $('#employment_status').change(function(){
+        var bool = (this.value == "Employed" || this.value == "Self-Employed");
+        $('#business_type,#occupation').prop({'readonly':!bool,'required':bool}).val('');
+      });
 
 			$('input[name="date_claim"]').datepicker({
         autoclose: true,
@@ -1094,6 +1103,7 @@
 		    startView: "years", 
 		    minViewMode: "months"
 	    });
+
 	    $("input[name='if_running']").click(function(){
         var bool = (this.value === "Yes");
         if(bool){
@@ -1102,11 +1112,56 @@
           $('#running-subform').hide().prop('disabled',!bool);
         }
       });
-	  
 
 
+      //VALIDAR
+      $('.b-submit').click(function(e){
+        e.preventDefault();
+        var btn    = $(this);
+        var form   = btn.closest('form');
+        var action = form.attr('action');
+        var bar    = form.find('.progress');
+        var alert  = form.find('.alert');
 
+        alert.hide();
+        btn.button('loading');
+        bar.show();
 
+        //Validacion
+        var fields = form.find('input:visible,select:visible').filter('[required]').length;
+        form.find('input:visible,select:visible').filter('[required]').each(function(){
+          var regex = $(this).attr('pattern');
+          var val   = $(this).val();
+          if(val == ""){
+            $(this).closest('.form-group').addClass('has-error');
+            if(!$(this).closest('.form-group').find('.help-block').length){
+              $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+            }
+          }
+          else{
+            if(val.match(regex)){
+              $(this).closest('.form-group').removeClass('has-error');
+              $(this).closest('.form-group').find('.help-block').remove();
+              fields = fields-1;
+            }else{
+              $(this).closest('.form-group').addClass('has-error');
+              if(!$(this).closest('.form-group').find('.help-block').length){
+                $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+              }
+            }
+          }
+        });
+
+        if(fields!=0){
+          alert.removeClass('alert-success').addClass('alert-danger');
+          alert.find('#msj').text('You must complete all required fields.');
+          bar.hide();
+          btn.button('reset');
+          alert.show().delay(7000).hide('slow');
+        }else{
+          form.submit();
+        }
+      });
 
 	  });//Ready
 	</script>
