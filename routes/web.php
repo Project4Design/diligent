@@ -60,7 +60,9 @@ Route::name('register_vans')->post('vans_store', 'VansController@store');
 
 //------FIN DE RUTAS PARA FORMULARIOS 
 
-
+//Perfil
+Route::get('perfil','PerfilController@perfil')->name('perfil');
+Route::put('perfil','PerfilController@update')->name('modificar_perfil');
 
 Route::get('/login','AuthController@index')->name('login');
 

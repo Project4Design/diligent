@@ -79,8 +79,12 @@
                   <!-- User image -->
                   <li class="user-header">
                     <p>
-                      <small>{{ Auth::user()->email }}</small>
+                      <h4>{{ Auth::user()->email }}</h4>
                     </p>
+                    <p>
+                    <h4>ADMINISTRADOR</h4>
+                    </p><br><br>
+                    <a class="btn btn-flat btn-warning" href="{{route('perfil')}}"><i class="fa fa-user"></i><strong>Modify Perfil</strong></a>
                   </li>
                   
                   <!-- Menu Footer-->
@@ -91,6 +95,9 @@
                         {{ csrf_field() }}
                         <input type="submit" name="logout" class="btn btn-flat btn-default" value="Logout">
                       </form>
+                    </div>
+                    <div class="pull-left">
+                      
                     </div>
                   </li>
                 </ul>
