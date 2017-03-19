@@ -24,11 +24,20 @@ class PerfilController extends Controller
     	$perfil->email = $request->input('email');
 	    	if ($request->input('checkbox') == "Yes")
 	    	{
-	    		$request->password = bcrypt($request->input('password_new'));
+	    		
+	    		 $pass = bcrypt($request->input('password_new'));
+	    		 $perfil->password = $pass;
 	    	}
-    	$perfil->update();
+    	if($perfil->update())
+    	{
+    		$with = [
+            'flash_message' => 'Your profile has been updated!',
+            'flash_class' => 'alert-success'
+            ];
+    	}
+    	return redirect('perfil')->with($with);
 
-    	return "modificado";
+    	
     	
     	
 

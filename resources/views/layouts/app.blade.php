@@ -79,17 +79,19 @@
                   <!-- User image -->
                   <li class="user-header">
                     <p>
-                      <h4>{{ Auth::user()->email }}</h4>
+                      <strong><h4>{{ Auth::user()->email }}</h4></strong>
                     </p>
                     <p>
-                    <h4>ADMINISTRADOR</h4>
+                    <strong><h4>Administrator</h4></strong>
                     </p><br><br>
-                    <a class="btn btn-flat btn-warning" href="{{route('perfil')}}"><i class="fa fa-user"></i><strong>Modify Perfil</strong></a>
+                    
                   </li>
                   
                   <!-- Menu Footer-->
                   <li class="user-footer">
-                    
+                    <div class="pull-left">
+                      <a class="btn btn-flat btn-warning" href="{{route('perfil')}}"><i class="fa fa-user"></i><strong> Modify Profile</strong></a>
+                    </div>
                     <div class="pull-right">
                       <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}

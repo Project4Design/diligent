@@ -29,12 +29,13 @@
 			  <form action="{{url('perfil/'.$perfil->id.'/edit')}}" method="POST" id="editar">
 					  {{csrf_field()}}
 					  {{method_field('PUT')}}
-
+					@include('partials.flash')
 				  <div class="form-group col-md-4 col-md-offset-4">
 						 <div class="alert alert-danger" style="display:none;" id="message">
 						      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 						      <strong class="text-center">Passwords must be the same</strong> 
 	  				     </div>
+
 				    <label for="name">Name</label>
 				    <input type="text" class="form-control" name="name"  value="{{$perfil->name}}" required>
 				  </div>
