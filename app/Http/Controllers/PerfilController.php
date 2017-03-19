@@ -15,17 +15,17 @@ class PerfilController extends Controller
     	return view('perfil.perfil', ['perfil' => $perfil]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
 
     	
-    	$perfil = new User;
+    	$perfil = User::findOrFail($id);
     	$perfil->name = $request->input('name');
-    	$perfil->name = $request->input('email');
-    	if ($request->input('checkbox') == "Yes")
-    	{
-    		$request->password = bcrypt($request->input('password_new'));
-    	}
+    	$perfil->email = $request->input('email');
+	    	if ($request->input('checkbox') == "Yes")
+	    	{
+	    		$request->password = bcrypt($request->input('password_new'));
+	    	}
     	$perfil->update();
 
     	return "modificado";
