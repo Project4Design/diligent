@@ -182,7 +182,6 @@
                   103 Reddish Lane<br>
                   Manchester<br>
                   Denton – M34 2NF
-
               </li>
             </ul>
           </div>
