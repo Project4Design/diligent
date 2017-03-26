@@ -12,20 +12,16 @@
 
 <div class="content">
 	<section>
-		<a class="btn btn-flat btn-default" href="{{ url('admin/homes') }}"><i class="fa fa-reply"></i> Back</a>
+		<a class="btn btn-flat btn-default" href="{{ route('index') }}"><i class="fa fa-reply"></i> Back</a>
 	</section>
 	<section class="perfil">
 		<div class="row">
 			<div class="col-md-12">
 	          <h2 class="page-header" style="margin-top:0!important">
-	            <i class="fa fa-clipboard" aria-hidden="true"></i>
+	            <i class="fa fa-user" aria-hidden="true"></i>
 	            {{$perfil->name}}
-	            <small class="pull-right">Role:&nbsp;&nbsp;&nbsp; Admistrator</small>
+	            <small class="pull-right">Role: Admistrator</small>
 	          </h2>
-	          	  <div class="col-md-12 text-center">
-			        	<h3>Perfil</h3>
-			        	<hr class="separador">
-        		  </div>
 			  <form action="{{url('perfil/'.$perfil->id.'/edit')}}" method="POST" id="editar">
 					  {{csrf_field()}}
 					  {{method_field('PUT')}}
@@ -72,14 +68,10 @@
 @stop
 
 @section('script')
-
  	<script type="text/javascript">
  	$(document).ready(function(){
  			$("#pp").click(function(event) {
 	 		var bool = this.checked;
-	 		
-	 		
-
 	 		if(bool === true){
 	 			$("#pass").show('slow/400/fast');
 	 			$("#pass_new,pass_rep").prop('required',true);
@@ -102,22 +94,9 @@
 				$("#pass_new").css('border','solid 1px red');
 				$("#pass_rep").css('border','solid 1px red');
 				message.fadeIn('slow/400/fast');
-				message.fadeOut(3000);
-				console.log("checked")
-				console.log(pass1)
-				console.log(pass2)
-
-				
+				message.fadeOut(3000);				
 			}
 	 	});
-
-
  	});
-
-	 	
-
-	 	
-	 		
  	</script>
-
 @stop

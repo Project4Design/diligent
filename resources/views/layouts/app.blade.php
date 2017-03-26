@@ -26,32 +26,31 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     	folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
+    
+	  <style type="text/css">
+	    .view-subtitle{
+	      color: #d22a2a;
+	      font-weight: 600;
+	      font-size: 17px;
+	    }
 
+	    .perfil{
+			  position: relative;
+			  background: #fff;
+			  border: 1px solid #f4f4f4;
+			  padding: 20px;
+			  margin: 10px 25px;
+			}
+
+			.separador{ 
+			   border: 0.3px solid #dd4b39; 
+			   border-radius: 200px /8px; 
+			   height: 0px; 
+			   text-align: center; 
+			 }
+	  </style>
   </head>
 
-  <style type="text/css">
-    .view-subtitle{
-      color: #d22a2a;
-      font-weight: 600;
-      font-size: 17px;
-    }
-
-    .perfil{
-  position: relative;
-  background: #fff;
-  border: 1px solid #f4f4f4;
-  padding: 20px;
-  margin: 10px 25px;
-}
-
-.separador{ 
-   border: 0.3px solid #dd4b39; 
-   border-radius: 200px /8px; 
-   height: 0px; 
-   text-align: center; 
- } 
-    
-  </style>
   <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
       <header class="main-header">
@@ -86,24 +85,20 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <p>
-                      <strong><h4>{{ Auth::user()->email }}</h4></strong>
-                    </p>
-                    <p>
-                    <strong><h4>Administrator</h4></strong>
-                    </p><br><br>
+                    <h4>{{ Auth::user()->email }}</h4>
+                    <h4>Administrator</h4>
                     
                   </li>
                   
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a class="btn btn-flat btn-warning" href="{{route('perfil')}}"><i class="fa fa-user"></i><strong> Modify Profile</strong></a>
+                      <a class="btn btn-flat btn-warning" href="{{route('perfil')}}"><i class="fa fa-user"></i> Modify Profile</a>
                     </div>
                     <div class="pull-right">
                       <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
-                        <input type="submit" name="logout" class="btn btn-flat btn-default" value="Logout">
+                        <button class="btn btn-flat btn-default" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</button>
                       </form>
                     </div>
                     <div class="pull-left">
@@ -183,7 +178,7 @@
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
       <footer class="main-footer">
-        <strong>Copyright &copy; 2016-2017 <a href="http://www.project4design.com.ve">Project 4 Design C.A</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017 <a href="http://www.project4design.com.ve">Project 4 Design C.A.</a></strong> All rights reserved.
       </footer>
     </div>
 
