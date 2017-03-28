@@ -255,7 +255,7 @@
 	        	<p><b>License number:</b> {{ ($adt1->data->ca_license_enter == "Yes")?$adt1->data->ca_license_number:'N/A' }} </p>
 	        	<br>
 	        	<h4 class="view-subtitle">Conditions</h4>
-	        	<p><b>DVLA medical condition: </b> {{ $adt1->data->ca_dvla_medical }}</p>
+	        	<p><b>DVLA medical condition: </b> {{ $adt1->data->ca_dvla_medical ? $adt1->data->ca_dvla_medical : 'N/A' }}</p>
 	        </div>
 	        <div class="col-md-12 text-center">
 	        	<h3>Additional Driver (1)<br>Claims & convictions</h3>
@@ -346,7 +346,7 @@
 		        	<p><b>License number:</b> {{ ($adt2->data->ca_license_enter == "Yes")?$adt2->data->ca_license_number:'N/A' }} </p>
 		        	<br>
 		        	<h4 class="view-subtitle">Conditions</h4>
-		        	<p><b>DVLA medical condition: </b> {{ $adt2->data->ca_dvla_medical }}</p>
+		        	<p><b>DVLA medical condition: </b> {{ $adt2->data->ca_dvla_medical ? $adt2->data->ca_dvla_medical:'N/A' }}</p>
 		        </div>
 		        <div class="col-md-12 text-center">
 		        	<h3>Additional Driver (2)<br>Claims & convictions</h3>
@@ -362,7 +362,7 @@
 		        </div>
 		        @if($adt2->data->ca_motor_accidents==="Yes")
 		      		@php $i=1; @endphp
-		        	@foreach($adt1->acc as $accident)
+		        	@foreach($adt2->acc as $accident)
 		      			<div class="col-md-3">
 		      				<h4 class="view-subtitle">{{$i}}</h4>
 		      				<p><b>Type:</b> {{ $accident->type?$accident->type:'N/A' }}</p>
@@ -385,7 +385,7 @@
 		        </div>
 		      	@if($adt2->data->ca_motor_offences==="Yes")
 		      		@php $i=1; @endphp
-		        	@foreach($adt1->ofe as $offence)
+		        	@foreach($adt2->ofe as $offence)
 		      			<div class="col-md-3">
 		      				<h4 class="view-subtitle">{{$i}}</h4>
 		      				<p><b>Conviction code:</b> {{ $offence->conviction_code?$offence->conviction_code:'N/A' }}</p>
