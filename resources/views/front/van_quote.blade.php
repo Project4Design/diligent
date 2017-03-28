@@ -256,7 +256,7 @@
           </div><!--Row-->
           <div class="row">
             <div class="form-group col-xs-12 col-md-3">
-              <label for="vehicle_aprox_value">How much is the van worth? <span class="required">*</span></label>
+              <label for="vehicle_aprox_value">How much is the van worth?</label>
               <input id="vehicle_aprox_value" class="form-control" type="number" name="vehicle_aprox_value">
             </div>
           </div><!--Row-->
@@ -310,7 +310,7 @@
             </div>
             <div class="form-group col-xs-12 col-md-2">
               <label for="vehicle_number_doors">Number of Doors <span class="required">*</span></label>
-              <select id="vehicle_number_doors" class="form-control" name="vehicle_number_doors" reuired>
+              <select id="vehicle_number_doors" class="form-control" name="vehicle_number_doors" required>
                 <option value="" selected>Please select</option>
                 <option value="3 Door">3 Door</option>
                 <option value="5 Door">5 Door</option>
@@ -321,7 +321,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
-                <label id="vehicle_alarms">Alarms - Immobiliser:</label>
+                <label for="vehicle_alarms">Alarms - Immobiliser:</label>
                 <select id="vehicle_alarms" class="form-control" name="vehicle_alarms">
                   <option value="" selected>Please select</option>
                   <option value="Factory Fitted Thatcham Approved Alarm/Immobiliser">Factory Fitted Thatcham Approved Alarm/Immobiliser</option>
@@ -441,7 +441,7 @@
                 </div>
                 <div class="form-check">
                   <div class="col-xs-12 col-md-3">
-                    <input type="radio" name="vehicle_imported" value="No" required>
+                    <input type="radio" name="vehicle_imported" value="No" checked required>
                     <label>No</label>
                   </div>
                 </div>
@@ -506,8 +506,8 @@
             </div><!--Row-->
 
             <div class="row">
-              <div class="form-group">
-                <div class="col-xs-12 col-md-3">
+              <div class="col-xs-12 col-md-3">
+                <div class="form-group">
                   <label for="vehicle_registered_keeper">Registered keeper <span class="required">*</span></label>
                   <select id="vehicle_registered_keeper" class="form-control" name="vehicle_registered_keeper" required>
                     <option value="" selected>Please select</option>
@@ -629,13 +629,13 @@
                 <div class="form-group">
                   <label>Carriage of dangerous goods? <span class="required">*</span></label>
                   <div class="form-check">
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-3">
                       <input type="radio" name="dangerous_goods" value="Yes" required>
                       <label>Yes</label>
                     </div>
                   </div>
                   <div class="form-check">
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-xs-12 col-md-3">
                       <input type="radio" name="dangerous_goods" value="No" checked required>
                       <label>No</label>
                     </div>
@@ -655,7 +655,7 @@
                     </div>
                   </div>
                   <div class="form-check">
-                    <div class="col-xs-12 col-md-9">
+                    <div class="col-xs-12 col-md-3">
                       <input type="radio" name="drivers_insurance_imposed" value="No" checked required>
                       <label>No</label>
                     </div>
@@ -1503,7 +1503,7 @@
             <div class="row">
               <div class="col-xs-12 col-md-4">
                 <div class="form-group">
-                  <label>Please contact me via <span class="required">*</span></label>
+                  <label>Please contact me via </label>
                   <div class="form-check">
                     <div class="col-xs-12 col-md-3">
                       <input type="radio" class="form-check-input" name="contact_via" value="Phone" required>
@@ -3186,8 +3186,13 @@
             
             <div class="row">
               <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-danger" style="display:none">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong class="text-center">You must complete all required fields</strong> 
+                </div>
+
                 <br>
-                <button type="submit" class="btn btn-block btn-submit">Submit Quote</button>
+                <button type="submit" class="btn btn-block btn-submit b-submit">Submit Quote</button>
               </div>
             </div>
           </form>
@@ -3373,6 +3378,57 @@
           $('#offences-sub-from_2').hide().prop('disabled',!bool);
         }
       });
+
+
+
+      //VALIDAR
+      $('.b-submit').click(function(e){
+        e.preventDefault();
+        var btn    = $(this);
+        var form   = btn.closest('form');
+        var action = form.attr('action');
+        var bar    = form.find('.progress');
+        var alert  = form.find('.alert');
+
+        alert.hide();
+        btn.button('loading');
+        bar.show();
+
+        //Validacion
+        var fields = form.find('input:visible,select:visible').filter('[required]').length;
+        form.find('input:visible,select:visible').filter('[required]').each(function(){
+          var regex = $(this).attr('pattern');
+          var val   = $(this).val();
+          if(val == ""){
+            $(this).closest('.form-group').addClass('has-error');
+            if(!$(this).closest('.form-group').find('.help-block').length){
+              $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+            }
+          }
+          else{
+            if(val.match(regex)){
+              $(this).closest('.form-group').removeClass('has-error');
+              $(this).closest('.form-group').find('.help-block').remove();
+              fields = fields-1;
+            }else{
+              $(this).closest('.form-group').addClass('has-error');
+              if(!$(this).closest('.form-group').find('.help-block').length){
+                $(this).closest('.form-group').append($('<p class="help-block">This field  is required</p>'));
+              }
+            }
+          }
+        });
+
+        if(fields!=0){
+          alert.removeClass('alert-success').addClass('alert-danger');
+          alert.find('#msj').text('You must complete all required fields.');
+          bar.hide();
+          btn.button('reset');
+          alert.show().delay(7000).hide('slow');
+        }else{
+          form.submit();
+        }
+      })
 	  });
 	</script>
 @endsection

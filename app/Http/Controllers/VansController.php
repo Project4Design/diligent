@@ -39,202 +39,111 @@ class VansController extends Controller
      */
     public function store(Request $request)
     {
+      $vans = new Vans;
+      $vans->fill($request->all());
+      if($vans->save()){
+        if ($request->input('motor_accidents') == 'Yes') {
+          for($i = 1; $i < 5 ; $i++){
+            $vans_accidents = new vans_motors_accidents;
+            $vans_accidents->vans_id = $vans->id_vans;
+            $vans_accidents->type = $request->input('type_'.$i);
+            $vans_accidents->date = $request->input('date_'.$i);
+            $vans_accidents->damage = $request->input('damage_'.$i);
+            $vans_accidents->cost = $request->input('cost_'.$i);
+            $vans_accidents->fault = $request->input('fault_'.$i);
+            $vans_accidents->any_injuries = $request->input('any_injuries_'.$i);
+            $vans_accidents->save();
+          }//fin for cars_accidents
+        }//fin if motor accidents
 
+	      if ($request->input('motor_offences') == 'Yes') {
+	        for($i = 1; $i < 5 ; $i++){
+            $vans_offences = new vans_motors_fixed;
+            $vans_offences->id_vans_fixed = $vans->id_vans;
+            $vans_offences->conviction_code = $request->input('conviction_code_'.$i);
+            $vans_offences->date_conviction = $request->input('date_conviction_'.$i);
+            $vans_offences->points = $request->input('points_'.$i);
+            $vans_offences->fine_libras = $request->input('fine_libras_'.$i);
+            $vans_offences->ban_month = $request->input('ban_month_'.$i);
+            $vans_offences->save();
+	        }//fin for
+	      }// fin if offences
 
-        $vans = new Vans;
-        $vans->fill($request->all());
-        if($vans->save()){
-            if ($request->input('motor_accidents') == 'Yes') {
-                for($i = 1; $i < 5 ; $i++){
-                    $vans_accidents = new vans_motors_accidents;
-                    $vans_accidents->vans_id = $vans->id_vans;
-                    $vans_accidents->type = $request->input('type_'.$i);
-                    $vans_accidents->date = $request->input('date_'.$i);
-                    $vans_accidents->damage = $request->input('damage_'.$i);
-                    $vans_accidents->cost = $request->input('cost_'.$i);
-                    $vans_accidents->fault = $request->input('fault_'.$i);
-                    $vans_accidents->any_injuries = $request->input('any_injuries_'.$i);
-                    $vans_accidents->save();
-                      
+	      for($j = 1; $j < 3; $j++){
+	       	if($request->input('additional_driver'.$j) == "Yes"){
+	          $additional_driver = new vans_additional_driver;
+	          $additional_driver->id_vans_add = $vans->id_vans;
+	          $additional_driver->ca_title = $request->input('ca_title_'.$j);
+	          $additional_driver->ca_first_name = $request->input('ca_first_name_'.$j);
+	          $additional_driver->ca_middle_name = $request->input('ca_middle_name_'.$j);
+	          $additional_driver->ca_sur_name = $request->input('ca_sur_name_'.$j);
+	          $additional_driver->ca_relationship = $request->input('ca_relationship_'.$j);
+	          $additional_driver->ca_birthdate = $request->input('ca_birthdate_'.$j);
+	          $additional_driver->ca_marital_status = $request->input('ca_marital_status_'.$j);
+	          $additional_driver->ca_employment_status = $request->input('ca_employment_status_'.$j);
+	          $additional_driver->ca_employed_occupation = $request->input('ca_employed_occupation_'.$j);
+	          $additional_driver->ca_employed_business = $request->input('ca_employed_business_'.$j);
+	          $additional_driver->ca_type_license = $request->input('ca_type_license_'.$j);
+	          $additional_driver->ca_period_license = $request->input('ca_period_license_'.$j);
+	          $additional_driver->ca_date_provitional_license = $request->input('ca_date_provitional_license_'.$j);
+	          $additional_driver->ca_license_enter = $request->input('ca_license_enter_'.$j);
+	          $additional_driver->ca_license_number = $request->input('ca_license_number_'.$j);
+	          $additional_driver->ca_dvla_medical = $request->input('ca_dvla_medical_'.$j);
+	          $additional_driver->ca_born_uk = $request->input('ca_born_uk_'.$j);
+	          $additional_driver->ca_uk_resident = $request->input('ca_uk_resident_'.$j);
+	          $additional_driver->ca_other_vehicle = $request->input('ca_other_vehicle_'.$j);
+	          $additional_driver->ca_non_motoring_convictions = $request->input('ca_non_motoring_convictions_'.$j);
+	          $additional_driver->ca_motor_accidents = $request->input('ca_motor_accidents_'.$j);
+	          $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_'.$j);
+	          $additional_driver->save();
+	          
+	          if($request->input('ca_motor_accidents_'.$j) == "Yes"){
+	            for($i = 1; $i < 5 ; $i++){
+	              $cars_accidents = new vans_motors_accidents;
+	              $cars_accidents->vans_id = $vans->id_vans;
+	              $cars_accidents->id_additional_driver = $additional_driver->id_vans_additional;
+	              $cars_accidents->type = $request->input('type_'.$i.'_'.$j);
+	              $cars_accidents->date = $request->input('date_'.$i.'_'.$j);
+	              $cars_accidents->damage = $request->input('damage_'.$i.'_'.$j);
+	              $cars_accidents->cost = $request->input('cost_'.$i.'_'.$j);
+	              $cars_accidents->fault = $request->input('fault_'.$i.'_'.$j);
+	              $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_'.$j);
+	              $cars_accidents->save();
+	            }//fin for cars_accidents              
+	          }// fin if motor accidentes additional driver
 
-                }//fin for cars_accidents              
-            }//fin if motor accidents
+	          if($request->input('ca_motor_offences_'.$j) == 'Yes'){
+	            for($i = 1; $i < 5 ; $i++){
+	              $cars_offences = new vans_motors_fixed;
+	              $cars_offences->id_vans_fixed = $vans->id_vans;
+	              $cars_offences->id_additional_drive_fixed = $additional_driver->id_vans_additional;
+	              $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_'.$j);
+	              $cars_offences->date_conviction = $request->input('date_conviction_'.$i.'_'.$j);
+	              $cars_offences->points = $request->input('points_'.$i.'_'.$j);
+	              $cars_offences->fine_libras = $request->input('fine_libras_'.$i.'_'.$j);
+	              $cars_offences->ban_month = $request->input('ban_month_'.$i.'_'.$j);
+	              $cars_offences->save();
+	            }//fin for
+	          } //fin if motor offence yes
+	        }//fin YES additional driver 1
+	      }//For additional driver
 
-              if ($request->input('motor_offences') == 'Yes') {
+        $with = [
+	        'flash_message' => 'Vans quote submitted successfully!',
+	        'flash_class' => 'alert-success',
+	        'alert-important' => true
+        ];
 
-                for($i = 1; $i < 5 ; $i++){
-                    $vans_offences = new vans_motors_fixed;
-                    $vans_offences->id_vans_fixed = $vans->id_vans;
-                    $vans_offences->conviction_code = $request->input('conviction_code_'.$i);
-                    $vans_offences->date_conviction = $request->input('date_conviction_'.$i);
-                    $vans_offences->points = $request->input('points_'.$i);
-                    $vans_offences->fine_libras = $request->input('fine_libras_'.$i);
-                    $vans_offences->ban_month = $request->input('ban_month_'.$i);
-                    $vans_offences->save();
-
-                    //echo $request->input('points_'.$i);
-                }//fin for
-
-            }// fin if offences
-
-             if($request->input('additional_driver1') == "Yes")
-             {
-                $additional_driver = new vans_additional_driver;
-                $additional_driver->id_vans_add = $vans->id_vans;
-                $additional_driver->ca_title = $request->input('ca_title_1');
-                $additional_driver->ca_first_name = $request->input('ca_first_name_1');
-                $additional_driver->ca_middle_name = $request->input('ca_middle_name_1');
-                $additional_driver->ca_sur_name = $request->input('ca_sur_name_1');
-                $additional_driver->ca_relationship = $request->input('ca_relationship_1');
-                $additional_driver->ca_birthdate = $request->input('ca_birthdate_1');
-                $additional_driver->ca_marital_status = $request->input('ca_marital_status_1');
-                $additional_driver->ca_employment_status = $request->input('ca_employment_status_1');
-                $additional_driver->ca_employed_occupation = $request->input('ca_employed_occupation_1');
-                $additional_driver->ca_employed_business = $request->input('ca_employed_business_1');
-                $additional_driver->ca_type_license = $request->input('ca_type_license_1');
-                $additional_driver->ca_period_license = $request->input('ca_period_license_1');
-                $additional_driver->ca_date_provitional_license = $request->input('ca_date_provitional_license_1');
-                $additional_driver->ca_license_enter = $request->input('ca_license_enter_1');
-                $additional_driver->ca_license_number = $request->input('ca_license_number_1');
-                $additional_driver->ca_dvla_medical = $request->input('ca_dvla_medical_1');
-                $additional_driver->ca_born_uk = $request->input('ca_born_uk_1');
-                $additional_driver->ca_uk_resident = $request->input('ca_uk_resident_1');
-                $additional_driver->ca_other_vehicle = $request->input('ca_other_vehicle_1');
-                $additional_driver->ca_non_motoring_convictions = $request->input('ca_non_motoring_convictions_1');
-                $additional_driver->ca_motor_accidents = $request->input('ca_motor_accidents_1');
-                $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_1');
-                $additional_driver->save();
-
-                  echo $request->input('ca_employed_occupation_1')."-1";
-
-
-                    if ($request->input('ca_motor_accidents_1') == "Yes")
-                     {
-
-                            for($i = 1; $i < 5 ; $i++){
-                                $cars_accidents = new vans_motors_accidents;
-                                $cars_accidents->vans_id = $vans->id_vans;
-                                $cars_accidents->id_additional_driver = $additional_driver->id_vans_additional;
-                                $cars_accidents->type = $request->input('type_'.$i.'_1');
-                                $cars_accidents->date = $request->input('date_'.$i.'_1');
-                                $cars_accidents->damage = $request->input('damage_'.$i.'_1');
-                                $cars_accidents->cost = $request->input('cost_'.$i.'_1');
-                                $cars_accidents->fault = $request->input('fault_'.$i.'_1');
-                                $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_1');
-                                $cars_accidents->save();
-
-                                
-
-                            }//fin for cars_accidents              
-                        
-                    }// fin if motor accidentes additional driver
-
-                    if ($request->input('ca_motor_offences_1') == 'Yes')
-                     {
-                        for($i = 1; $i < 5 ; $i++){
-                            $cars_offences = new vans_motors_fixed;
-                            $cars_offences->id_vans_fixed = $vans->id_vans;
-                            $cars_offences->id_additional_drive_fixed = $additional_driver->id_vans_additional;
-                            $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_1');
-                            $cars_offences->date_conviction = $request->input('date_conviction_'.$i.'_1');
-                            $cars_offences->points = $request->input('points_'.$i.'_1');
-                            $cars_offences->fine_libras = $request->input('fine_libras_'.$i.'_1');
-                            $cars_offences->ban_month = $request->input('ban_month_'.$i.'_1');
-                            $cars_offences->save();
-
-                            
-
-                       }//fin for
-                    } //fin if motor offence yes
-
-                    //Additional driver 2
-                    if ($request->input('additional_driver2') == 'Yes') {
-
-                        $additional_driver = new vans_additional_driver;
-                        $additional_driver->id_vans_add = $vans->id_vans;
-                        $additional_driver->ca_title = $request->input('ca_title_2');
-                        $additional_driver->ca_first_name = $request->input('ca_first_name_2');
-                        $additional_driver->ca_middle_name = $request->input('ca_middle_name_2');
-                        $additional_driver->ca_sur_name = $request->input('ca_sur_name_2');
-                        $additional_driver->ca_relationship = $request->input('ca_relationship_2');
-                        $additional_driver->ca_birthdate = $request->input('ca_birthdate_2');
-                        $additional_driver->ca_marital_status = $request->input('ca_marital_status_2');
-                        $additional_driver->ca_employment_status = $request->input('ca_employment_status_2');
-                        $additional_driver->ca_employed_occupation = $request->input('ca_employed_occupation_2');
-                        $additional_driver->ca_employed_business = $request->input('ca_employed_business_2');
-                        $additional_driver->ca_type_license = $request->input('ca_type_license_2');
-                        $additional_driver->ca_period_license = $request->input('ca_period_license_2');
-                        $additional_driver->ca_date_provitional_license = $request->input('ca_date_provitional_license_2');
-                        $additional_driver->ca_license_enter = $request->input('ca_license_enter_2');
-                        $additional_driver->ca_license_number = $request->input('ca_license_number_2');
-                        $additional_driver->ca_dvla_medical = $request->input('ca_dvla_medical_2');
-                        $additional_driver->ca_born_uk = $request->input('ca_born_uk_2');
-                        $additional_driver->ca_uk_resident = $request->input('ca_uk_resident_2');
-                        $additional_driver->ca_other_vehicle = $request->input('ca_other_vehicle_2');
-                        $additional_driver->ca_non_motoring_convictions = $request->input('ca_non_motoring_convictions_2');
-                        $additional_driver->ca_motor_accidents = $request->input('ca_motor_accidents_2');
-                        $additional_driver->ca_motor_offences = $request->input('ca_motor_offences_2');
-                        $additional_driver->save();
-
-                        echo $request->input('ca_employed_occupation_2');
-
-                            if ($request->input('ca_motor_accidents_2') == "Yes")
-                             {
-
-                                for($i = 1; $i < 5 ; $i++){
-                                    $cars_accidents = new vans_motors_accidents;
-                                    $cars_accidents->vans_id = $vans->id_vans;
-                                    $cars_accidents->id_additional_driver = $additional_driver->id_vans_additional;
-                                    $cars_accidents->type = $request->input('type_'.$i.'_2');
-                                    $cars_accidents->date = $request->input('date_'.$i.'_2');
-                                    $cars_accidents->damage = $request->input('damage_'.$i.'_2');
-                                    $cars_accidents->cost = $request->input('cost_'.$i.'_2');
-                                    $cars_accidents->fault = $request->input('fault_'.$i.'_2');
-                                    $cars_accidents->any_injuries = $request->input('any_injuries_'.$i.'_2');
-                                    $cars_accidents->save();
-
-                                    
-
-                            }//fin for cars_accidents              
-                        
-                         }// fin if motor accidentes additional driver
-
-                         if ($request->input('ca_motor_offences_2') == 'Yes')
-                         {
-                            for($i = 1; $i < 5 ; $i++){
-                                $cars_offences = new vans_motors_fixed;
-                                $cars_offences->id_vans_fixed = $vans->id_vans;
-                                $cars_offences->id_additional_drive_fixed = $additional_driver->id_vans_additional;
-                                $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_2');
-                                $cars_offences->date_conviction = $request->input('date_conviction_'.$i.'_2');
-                                $cars_offences->points = $request->input('points_'.$i.'_2');
-                                $cars_offences->fine_libras = $request->input('fine_libras_'.$i.'_2');
-                                $cars_offences->ban_month = $request->input('ban_month_'.$i.'_2');
-                                $cars_offences->save();
-                            }//fin for
-
-                         } //fin if motor offence yes
-
-                    }
-
-            }//fin YES additional driver 1
-
-            $with = [
-            'flash_message' => 'Vans quote submitted successfully!',
-            'flash_class' => 'alert-success',
-            'alert-important' => true
-            ];
-
-        }//Fin save PRINCIPAL VANS
-        else{
-            $with = [
-            'flash_message' => 'An error has ocurred.',
-            'flash_class' => 'alert-danger',
-            'alert-important' => true
-            ];
-        }
-        
-        return redirect("/van-quote")->with($with);
+      }//Fin save PRINCIPAL VANS
+      else{
+        $with = [
+	        'flash_message' => 'An error has ocurred.',
+	        'flash_class' => 'alert-danger',
+	        'alert-important' => true
+        ];
+      }
+       dd($with);
+      //return redirect("/van-quote")->with($with);
     }
 
     /**
@@ -248,26 +157,26 @@ class VansController extends Controller
         //$car = Cars::motor_accidents()->with('Cars')->findOrFail($id);
         $van = Vans::findOrFail($id);
         //Accidentes 
-        if($van->motor_accidents==="Yes"){ $acc = Vans::find($id)->accidents->where('id_additional_driver',"=",NULL); }else{ $acc = NULL; }
+        if($van->motor_accidents === "Yes"){ $acc = Vans::find($id)->accidents->where('id_additional_driver',"=",NULL); }else{ $acc = NULL; }
         //Offences
-        if($van->motor_offences==="Yes"){ $ofe = Vans::find($id)->offences->where('id_additional_drive_fixed',"=",NULL); }else{ $ofe = NULL; }
-        if($van->additional_driver1==="Yes"){
-            $adt1 = Vans::find($id)->additional->first();
-            if($adt1->ca_motor_accidents==="Yes"){
-                $acc1 = Vans::find($id)->accidents->where('id_additional_driver',$adt1->id_additional_driver);
+        if($van->motor_offences === "Yes"){ $ofe = Vans::find($id)->offences->where('id_additional_drive_fixed',"=",NULL); }else{ $ofe = NULL; }
+        if($van->additional_driver1 === "Yes"){
+            $adt1 = Vans::find($id)->additional->get(0);
+            if($adt1->ca_motor_accidents === "Yes"){
+                $acc1 = Vans::find($id)->accidents->where('id_additional_driver',$adt1->id_vans_additional);
             }else{ $acc1 = NULL; }
 
-            if($adt1->ca_motor_offences==="Yes"){
-                $ofe1 = Vans::find($id)->offences->where('id_additional_drive_fixed',$adt1->id_additional_driver);
+            if($adt1->ca_motor_offences === "Yes"){
+                $ofe1 = Vans::find($id)->offences->where('id_additional_drive_fixed',$adt1->id_vans_additional);
             }else{ $ofe1 = NULL; }
 
-            if($van->additional_driver2==="Yes"){
-                $adt2 = Vans::find($id)->additional->first();
-                if($adt2->ca_motor_accidents==="Yes"){
-                    $acc2 = Vans::find($id)->accidents->where('id_additional_driver',$adt1->id_additional_driver);
+            if($van->additional_driver2 === "Yes"){
+                $adt2 = Vans::find($id)->additional->get(1);
+                if($adt2->ca_motor_accidents === "Yes"){
+                    $acc2 = Vans::find($id)->accidents->where('id_additional_driver',$adt2->id_vans_additional);
                 }else{ $acc2 = NULL; }
-                if($adt2->ca_motor_offences==="Yes"){
-                    $ofe2 = Vans::find($id)->offences->where('id_additional_drive_fixed',$adt1->id_additional_driver);
+                if($adt2->ca_motor_offences === "Yes"){
+                    $ofe2 = Vans::find($id)->offences->where('id_additional_drive_fixed',$adt2->id_vans_additional);
                 }else{ $ofe2 = NULL; }
             }else{ $adt2 = NULL; $acc2 = NULL; $ofe2 = NULL; }
         }else{
@@ -276,7 +185,7 @@ class VansController extends Controller
         }
         $adt1 = (object) array('data'=>$adt1,'acc'=>$acc1,'ofe'=>$ofe1);
         $adt2 = (object) array('data'=>$adt2,'acc'=>$acc2,'ofe'=>$ofe2);
-        //dd($ofe);
+        //dd($ofe2);
         return view("vans.show", ["van"=>$van,"acc"=>$acc,"ofe"=>$ofe,"adt1"=>$adt1,"adt2"=>$adt2]);
     }
 

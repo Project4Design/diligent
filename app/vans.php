@@ -114,7 +114,7 @@ class Vans extends Model
 
    public function offences()
    {
-      return $this->hasMany('App\Vans_motors_fixed','id_cars_offences');
+      return $this->hasMany('App\Vans_motors_fixed','id_vans_fixed');
    }
 
 }

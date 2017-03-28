@@ -97,7 +97,7 @@ class VanInsuranceTable extends Migration
       $table->string('business',100)->nullable()->comment('If own a business');
 
       //Claims & Convictions
-      $table->string('non_motoring_convictions',3);
+      $table->string('non_motoring_convictions',3)->nullable();
       $table->string('motor_accidents',3); //RELATION WITH CAR_MOTOR_ACCIDENTS
       $table->string('motor_offences',3); //RELATION WITH CAR_MOTOR_OFFENSES
 
