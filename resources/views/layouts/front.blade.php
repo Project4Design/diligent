@@ -36,6 +36,16 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+			footer .designer{
+				color: #ffffff80;
+				padding:10px;
+			  background-color: #51001666;
+			}
+			footer .designer a{
+				color: #ffffff80;
+			}
+    </style>
   </head>
 
   <body id="main-body">
@@ -87,9 +97,9 @@
 
     <!-- Footer -->
     <footer>
-      <div class="container">
+      <div class="container" style="padding-bottom:10px">
         <div class="row">
-          <div class="col-md-3 ">
+          <div class="col-md-3">
             <h4>Inurance Quotes</h4>
             <ul class="list-unstyled footer-quote-list">
               <li><a href="{{ url('/accident-quote') }}">Accident Quote</a></li>
@@ -120,6 +130,13 @@
                 Copyright &copy; <b>Diligent Services</b> 2017. All Rights Reserved
               </p>
           </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row designer">
+        	<div class="col-md-4 col-md-offset-4 text-center">
+        		Designed by<br><a href="http://www.project4design.com.ve">Project 4 Design</a>
+        	</div>
         </div>
       </div>
     </footer>
