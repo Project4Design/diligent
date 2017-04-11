@@ -1,3 +1,4 @@
+<div class="col-md-12"><h2>Our services</h2></div>
 <div class="col-xs-6 col-md-2 col-md-offset-1">
   <div class="menu-item">
     <a href="{{ url('/accident-quote') }}">

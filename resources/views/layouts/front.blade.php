@@ -22,7 +22,7 @@
     <!--Timepicker-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-timepicker.min.css') }}">
     <!-- jQuery -->
-    <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jQuery-2.1.4.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>

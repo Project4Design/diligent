@@ -9,10 +9,11 @@
         <div class="col-lg-12">
           <div class="intro-message">
             <h1>
-              Diligent <br>Services <br>Shopper
+              Diligent <br>Personal <br>Shopper
             </h1>
-
+            <!--
             <a href="#services" class="btn btn-float services link-scroll">Services</a>
+            -->
           </div>
         </div>
       </div>
