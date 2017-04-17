@@ -331,6 +331,15 @@ p.copyright {
   z-index: 3;
 }
 
+.btn-quote{
+  padding: 12px;
+  color: #fff;
+  background-color: #b51235;
+}
+.btn-quote:hover{
+color:#fff;
+}
+
 /*=======================|| Boton para llevar al inicio de la pagina ||===================*/
 .scrolltop a{
   display:none;
@@ -410,4 +419,12 @@ label{
 }
 input, select{
   margin-bottom: 5px;
+}
+.designer{
+  position: relative;
+  height: 25px;
+}
+.designer img{
+  height: 100%;
+  max-width: 100%;
 }

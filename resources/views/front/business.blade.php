@@ -56,6 +56,10 @@
             </p>
           </div>
 
+			    <div class="col-xs-12 col-md-4 col-md-offset-4">
+			      <a class="btn btn-quote btn-block" href="{{ url('business-quote') }}">Get a quote</a>
+			    </div>
+
           <div class="col-md-12">
             
             @include('front.insurances')
@@ -63,9 +67,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-12 quote-button">
-      <a href="{{ url('business-quote') }}">Get a quote</a>
     </div>
   </section>
 </div>

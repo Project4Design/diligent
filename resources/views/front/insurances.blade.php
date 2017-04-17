@@ -1,11 +1,13 @@
-<div class="col-md-12"><h2>Our services</h2></div>
+<div class="col-md-12 text-center">
+	<h2>Out Services</h2>
+</div>
 <div class="col-xs-6 col-md-2 col-md-offset-1">
   <div class="menu-item">
     <a href="{{ url('/accident-quote') }}">
       <div class="container-img">
         <img src="img/car-collision.png" alt="Accidents">
       </div>
-      <h4>Accidents Insurance</h4>
+      <h4>Accidents Claim</h4>
     </a>
   </div>
 </div>

@@ -36,16 +36,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-			footer .designer{
-				color: #ffffff80;
-				padding:10px;
-			  background-color: #51001666;
-			}
-			footer .designer a{
-				color: #ffffff80;
-			}
-    </style>
   </head>
 
   <body id="main-body">
@@ -68,11 +58,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ route('front') }}">Home</a></li>
+            <li><a href="{{ route('front') }}">Homepage</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Motor <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Accident Insurance</a></li>
+                <li><a href="{{ url('/accident-quote') }}">Accident Claim</a></li>
                 <li><a href="{{ url('/car') }}">Car Insurance</a></li>
                 <li><a href="{{ url('/van') }}">Van Insurance</a></li>
                 <!--
@@ -82,7 +72,7 @@
                 -->
               </ul>
             </li>
-            <li><a href="{{url('/home') }}">Home &amp; Landlord</a></li>
+            <li><a href="{{url('/home') }}">Home</a></li>
             <li><a class="link-scroll" href="{{ url('/business') }}">Business</a></li>
             <li><a class="link-scroll" href="{{ url('/') }}#about">About us</a></li>
             <li><a class="link-scroll" href="{{ url('/') }}#contact">Contact us</a></li>
@@ -133,9 +123,9 @@
         </div>
       </div>
       <div class="container-fluid">
-        <div class="row designer">
-        	<div class="col-md-4 col-md-offset-4 text-center">
-        		Designed by<br><a href="http://www.project4design.com.ve">Project 4 Design</a>
+        <div class="row">
+        	<div class="col-md-4 col-md-offset-4 text-center">Designed by
+        	<div class="designer" style="position:relative;height:25px;"><a href="http://www.project4design.com.ve" title="Project 4 Deisgn"><img src="http://www.p4d.com.ve/logos/logo-gris.png" style="height:100%;max-width:100%;"></a></div>
         	</div>
         </div>
       </div>

@@ -9,7 +9,7 @@
   <div class="row">
    <form action="{{ route('register_accidents') }}" method="POST">
     {{ csrf_field() }}
-      <h1 class="main-title">Accidents Insurance Quote</h1>
+      <h1 class="main-title">Accidents Claim Quote</h1>
       @if ( session()->has('message') )
     <div class="col-md-5 col-md-offset-4">
         <div class="alert alert-success alert-dismissible" role="alert">
