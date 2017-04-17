@@ -38,7 +38,7 @@
                   <div class="container-img">
                     <img src="img/car-collision.png" alt="Accidents">
                   </div>
-                  <h4>Accidents Insurance</h4>
+                  <h4>Accidents Claim</h4>
                 </a>
               </div>
             </div>
