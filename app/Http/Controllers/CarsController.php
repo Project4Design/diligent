@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Cars;
 use App\Cars_motors_accidents;
 use App\Cars_motors_offences;
-use App\cars_additional_driver;
+use App\Cars_additional_driver;
 
 class CarsController extends Controller
 {
@@ -72,7 +72,7 @@ class CarsController extends Controller
 
           for($j = 1; $j < 3; $j++){
           	if($request->input('additional_driver'.$j) == "Yes"){
-              $additional_driver = new cars_additional_driver;
+              $additional_driver = new Cars_additional_driver;
               $additional_driver->id_cars_additional     = $cars->id;
               $additional_driver->ca_title               = $request->input('ca_title_'.$j);
               $additional_driver->ca_first_name          = $request->input('ca_first_name_'.$j);

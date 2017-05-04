@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cars_additional_driver extends Model
+class Cars_additional_driver extends Model
 {
     protected $table = "cars_additional_driver";
 

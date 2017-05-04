@@ -45,7 +45,7 @@ class Accidents extends Model
 
      public function accidents_witnesses()
     {
-        return $this->hasMany(accidents_witnesses::class);
+        return $this->hasMany(Accidents_witnesses::class);
     }
 
 }

@@ -58,7 +58,7 @@ class VansController extends Controller
 
 	      if ($request->input('motor_offences') == 'Yes') {
 	        for($i = 1; $i < 5 ; $i++){
-            $vans_offences = new vans_motors_fixed;
+            $vans_offences = new Vans_motors_fixed;
             $vans_offences->id_vans_fixed = $vans->id_vans;
             $vans_offences->conviction_code = $request->input('conviction_code_'.$i);
             $vans_offences->date_conviction = $request->input('date_conviction_'.$i);
@@ -71,7 +71,7 @@ class VansController extends Controller
 
 	      for($j = 1; $j < 3; $j++){
 	       	if($request->input('additional_driver'.$j) == "Yes"){
-	          $additional_driver = new vans_additional_driver;
+	          $additional_driver = new Vans_additional_driver;
 	          $additional_driver->id_vans_add = $vans->id_vans;
 	          $additional_driver->ca_title = $request->input('ca_title_'.$j);
 	          $additional_driver->ca_first_name = $request->input('ca_first_name_'.$j);
@@ -99,7 +99,7 @@ class VansController extends Controller
 	          
 	          if($request->input('ca_motor_accidents_'.$j) == "Yes"){
 	            for($i = 1; $i < 5 ; $i++){
-	              $cars_accidents = new vans_motors_accidents;
+	              $cars_accidents = new Vans_motors_accidents;
 	              $cars_accidents->vans_id = $vans->id_vans;
 	              $cars_accidents->id_additional_driver = $additional_driver->id_vans_additional;
 	              $cars_accidents->type = $request->input('type_'.$i.'_'.$j);
@@ -114,7 +114,7 @@ class VansController extends Controller
 
 	          if($request->input('ca_motor_offences_'.$j) == 'Yes'){
 	            for($i = 1; $i < 5 ; $i++){
-	              $cars_offences = new vans_motors_fixed;
+	              $cars_offences = new Vans_motors_fixed;
 	              $cars_offences->id_vans_fixed = $vans->id_vans;
 	              $cars_offences->id_additional_drive_fixed = $additional_driver->id_vans_additional;
 	              $cars_offences->conviction_code = $request->input('conviction_code_'.$i.'_'.$j);

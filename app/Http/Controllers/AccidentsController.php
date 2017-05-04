@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Accidents;
-use App\accidents_passengers;
-use App\accidents_witnesses;
+use App\Accidents_passengers;
+use App\Accidents_witnesses;
 use DB;
 use Session;
 
@@ -47,7 +47,7 @@ class AccidentsController extends Controller
             if ($request->input('witnesses_details') == 'Yes') {
 
               for($i = 1; $i < 4 ; $i++){
-                $witnesses = new accidents_witnesses;
+                $witnesses = new Accidents_witnesses;
                 $witnesses->id_management_accidents = $accident->id_accidents_management;
                 $witnesses->witness_name = $request->input('witness_name_'.$i);
                 $witnesses->witness_address = $request->input('witness_address_'.$i);
@@ -61,7 +61,7 @@ class AccidentsController extends Controller
                 
                 for($i = 1; $i < 4 ; $i++)
                 {
-                    $passengers = new accidents_passengers;
+                    $passengers = new Accidents_passengers;
                     $passengers->id_accidents_injury = $accident->id_accidents_management;
                     $passengers->passenger_name = $request->input('passenger_name_'.$i);
                     $passengers->passenger_address = $request->input('passenger_address_'.$i);
@@ -82,8 +82,8 @@ class AccidentsController extends Controller
     public function show($id)
     {
         $accidents = Accidents::findOrFail($id);
-        $witness = accidents_witnesses::where('id_management_accidents',$id)->get();
-        $passengers = accidents_passengers::where('id_accidents_injury',$id)->get();
+        $witness = Accidents_witnesses::where('id_management_accidents',$id)->get();
+        $passengers = Accidents_passengers::where('id_accidents_injury',$id)->get();
 
         return view('accidents.show' , ['accidents' => $accidents,'witness' => $witness,'passengers' => $passengers]);
     }

@@ -119,28 +119,28 @@
       <div class="record row">
         <div class="col-xs-6 col-md-2 col-md-offset-2">
           <div class="records">
-            <p class="record-badge">230</p>
+            <p class="record-badge">{{ $cars+$vans+$homes+$business+$accidents }}</p>
             <img src="img/diploma.png" alt="">
             <p>Contrats signed</p>
           </div>
         </div>
         <div class="col-xs-6 col-md-2">
           <div class="records">
-            <p class="record-badge">230</p>
+            <p class="record-badge">{{ $cars+$vans }}</p>
             <img src="img/car-insurance.png" alt="">
             <p>Protected vehicles</p>
           </div>
         </div>
         <div class="col-xs-6 col-md-2">
           <div class="records">
-            <p class="record-badge">56</p>
+            <p class="record-badge">{{ $homes }}</p>
             <img src="img/house.png" alt="">
             <p>Protected houses</p>
           </div>
         </div>
         <div class="col-xs-6 col-md-2">
           <div class="records">
-            <p class="record-badge">56</p>
+            <p class="record-badge">{{ $business }}</p>
             <img src="img/businessman.png" alt="">
             <p>Protected business</p>
           </div>
